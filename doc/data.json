@@ -1,0 +1,3441 @@
+{
+    "project": {
+        "name": "PhotonUI",
+        "description": "Javascript Web User Interface",
+        "version": "0.1.0",
+        "url": "http://www.wanadev.fr/"
+    },
+    "files": {
+        "photonui/composite/popupmenu.js": {
+            "name": "photonui/composite/popupmenu.js",
+            "modules": {
+                "Composite": 1
+            },
+            "classes": {
+                "photonui.PopupMenu": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/container/layout/boxlayout.js": {
+            "name": "photonui/container/layout/boxlayout.js",
+            "modules": {
+                "Container": 1
+            },
+            "classes": {
+                "photonui.BoxLayout": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/container/layout/gridlayout.js": {
+            "name": "photonui/container/layout/gridlayout.js",
+            "modules": {},
+            "classes": {
+                "photonui.GridLayout": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/container/layout/layout.js": {
+            "name": "photonui/container/layout/layout.js",
+            "modules": {},
+            "classes": {
+                "photonui.Layout": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/container/menu/menu.js": {
+            "name": "photonui/container/menu/menu.js",
+            "modules": {},
+            "classes": {
+                "photonui.Menu": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/container/menu/menuitem.js": {
+            "name": "photonui/container/menu/menuitem.js",
+            "modules": {},
+            "classes": {
+                "photonui.MenuItem": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/container/menu/submenuitem.js": {
+            "name": "photonui/container/menu/submenuitem.js",
+            "modules": {},
+            "classes": {
+                "photonui.SubMenuItem": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/container/viewport/viewport.js": {
+            "name": "photonui/container/viewport/viewport.js",
+            "modules": {},
+            "classes": {
+                "photonui.Viewport": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/container/window/basewindow.js": {
+            "name": "photonui/container/window/basewindow.js",
+            "modules": {},
+            "classes": {
+                "photonui.BaseWindow": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/container/window/popupwindow.js": {
+            "name": "photonui/container/window/popupwindow.js",
+            "modules": {},
+            "classes": {
+                "photonui.PopupWindow": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/container/window/window.js": {
+            "name": "photonui/container/window/window.js",
+            "modules": {},
+            "classes": {
+                "photonui.Window": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/container/container.js": {
+            "name": "photonui/container/container.js",
+            "modules": {},
+            "classes": {
+                "photonui.Container": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/input/button/button.js": {
+            "name": "photonui/input/button/button.js",
+            "modules": {
+                "Input": 1
+            },
+            "classes": {
+                "photonui.Button": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/input/button/colorbutton.js": {
+            "name": "photonui/input/button/colorbutton.js",
+            "modules": {},
+            "classes": {
+                "photonui.ColorButton": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/input/checkbox/checkbox.js": {
+            "name": "photonui/input/checkbox/checkbox.js",
+            "modules": {},
+            "classes": {
+                "photonui.CheckBox": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/input/checkbox/switch.js": {
+            "name": "photonui/input/checkbox/switch.js",
+            "modules": {},
+            "classes": {
+                "photonui.Switch": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/input/color/colorpalette.js": {
+            "name": "photonui/input/color/colorpalette.js",
+            "modules": {},
+            "classes": {
+                "photonui.ColorPalette": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/input/field/field.js": {
+            "name": "photonui/input/field/field.js",
+            "modules": {},
+            "classes": {
+                "photonui.Field": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/input/field/numericfield.js": {
+            "name": "photonui/input/field/numericfield.js",
+            "modules": {},
+            "classes": {
+                "photonui.NumericField": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/input/field/textareafield.js": {
+            "name": "photonui/input/field/textareafield.js",
+            "modules": {},
+            "classes": {
+                "photonui.TextAreaField": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/input/field/textfield.js": {
+            "name": "photonui/input/field/textfield.js",
+            "modules": {},
+            "classes": {
+                "photonui.TextField": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/visual/baseicon.js": {
+            "name": "photonui/visual/baseicon.js",
+            "modules": {
+                "Visual": 1
+            },
+            "classes": {
+                "photonui.BaseIcon": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/visual/faicon.js": {
+            "name": "photonui/visual/faicon.js",
+            "modules": {},
+            "classes": {
+                "photonui.FAIcon": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/visual/label.js": {
+            "name": "photonui/visual/label.js",
+            "modules": {},
+            "classes": {
+                "photonui.Label": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/visual/progressbar.js": {
+            "name": "photonui/visual/progressbar.js",
+            "modules": {},
+            "classes": {
+                "photonui.ProgressBar": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/visual/separator.js": {
+            "name": "photonui/visual/separator.js",
+            "modules": {},
+            "classes": {
+                "photonui.Separator": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/helpers.js": {
+            "name": "photonui/helpers.js",
+            "modules": {
+                "Helpers": 1
+            },
+            "classes": {
+                "photonui.Helpers": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/photonui.js": {
+            "name": "photonui/photonui.js",
+            "modules": {
+                "PhotonUI": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/widget.js": {
+            "name": "photonui/widget.js",
+            "modules": {},
+            "classes": {
+                "photonui.Widget": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        }
+    },
+    "modules": {
+        "PhotonUI": {
+            "name": "PhotonUI",
+            "submodules": {
+                "Composite": 1,
+                "Container": 1,
+                "Input": 1,
+                "Visual": 1,
+                "Helpers": 1
+            },
+            "classes": {
+                "photonui.PopupMenu": 1,
+                "photonui.BoxLayout": 1,
+                "photonui.GridLayout": 1,
+                "photonui.Layout": 1,
+                "photonui.Menu": 1,
+                "photonui.MenuItem": 1,
+                "photonui.SubMenuItem": 1,
+                "photonui.Viewport": 1,
+                "photonui.BaseWindow": 1,
+                "photonui.PopupWindow": 1,
+                "photonui.Window": 1,
+                "photonui.Container": 1,
+                "photonui.Button": 1,
+                "photonui.ColorButton": 1,
+                "photonui.CheckBox": 1,
+                "photonui.Switch": 1,
+                "photonui.ColorPalette": 1,
+                "photonui.Field": 1,
+                "photonui.NumericField": 1,
+                "photonui.TextAreaField": 1,
+                "photonui.TextField": 1,
+                "photonui.BaseIcon": 1,
+                "photonui.FAIcon": 1,
+                "photonui.Label": 1,
+                "photonui.ProgressBar": 1,
+                "photonui.Separator": 1,
+                "photonui.Helpers": 1,
+                "photonui.Widget": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            },
+            "tag": "main",
+            "file": "photonui/widget.js",
+            "line": 59,
+            "description": "PhotonUI - Javascript Web User Interface.",
+            "itemtype": "main"
+        },
+        "Composite": {
+            "name": "Composite",
+            "submodules": {},
+            "classes": {
+                "photonui.PopupMenu": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "photonui": 1
+            },
+            "module": "PhotonUI",
+            "namespace": "",
+            "file": "photonui/composite/popupmenu.js",
+            "line": 43,
+            "description": "PhotonUI - Javascript Web User Interface."
+        },
+        "Container": {
+            "name": "Container",
+            "submodules": {},
+            "classes": {
+                "photonui.BoxLayout": 1,
+                "photonui.GridLayout": 1,
+                "photonui.Layout": 1,
+                "photonui.Menu": 1,
+                "photonui.MenuItem": 1,
+                "photonui.SubMenuItem": 1,
+                "photonui.Viewport": 1,
+                "photonui.BaseWindow": 1,
+                "photonui.PopupWindow": 1,
+                "photonui.Window": 1,
+                "photonui.Container": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "photonui": 1
+            },
+            "module": "PhotonUI",
+            "namespace": "",
+            "file": "photonui/container/container.js",
+            "line": 43,
+            "description": "PhotonUI - Javascript Web User Interface."
+        },
+        "Input": {
+            "name": "Input",
+            "submodules": {},
+            "classes": {
+                "photonui.Button": 1,
+                "photonui.ColorButton": 1,
+                "photonui.CheckBox": 1,
+                "photonui.Switch": 1,
+                "photonui.ColorPalette": 1,
+                "photonui.Field": 1,
+                "photonui.NumericField": 1,
+                "photonui.TextAreaField": 1,
+                "photonui.TextField": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "photonui": 1
+            },
+            "module": "PhotonUI",
+            "namespace": "",
+            "file": "photonui/input/field/textfield.js",
+            "line": 43,
+            "description": "PhotonUI - Javascript Web User Interface."
+        },
+        "Visual": {
+            "name": "Visual",
+            "submodules": {},
+            "classes": {
+                "photonui.BaseIcon": 1,
+                "photonui.FAIcon": 1,
+                "photonui.Label": 1,
+                "photonui.ProgressBar": 1,
+                "photonui.Separator": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "photonui": 1
+            },
+            "module": "PhotonUI",
+            "namespace": "",
+            "file": "photonui/visual/separator.js",
+            "line": 43,
+            "description": "PhotonUI - Javascript Web User Interface."
+        },
+        "Helpers": {
+            "name": "Helpers",
+            "submodules": {},
+            "classes": {
+                "photonui.Helpers": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "photonui": 1
+            },
+            "module": "PhotonUI",
+            "namespace": "",
+            "file": "photonui/helpers.js",
+            "line": 44,
+            "description": "PhotonUI - Javascript Web User Interface.",
+            "tag": "main",
+            "itemtype": "main"
+        }
+    },
+    "classes": {
+        "photonui.PopupMenu": {
+            "name": "photonui.PopupMenu",
+            "shortname": "PopupMenu",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Composite",
+            "namespace": "photonui",
+            "file": "photonui/composite/popupmenu.js",
+            "line": 43,
+            "description": "Popup Menu.",
+            "is_constructor": 1,
+            "extends": "photonui.PopupWindow",
+            "uses": [
+                "photonui.Layout",
+                "photonui.Menu"
+            ]
+        },
+        "photonui.BoxLayout": {
+            "name": "photonui.BoxLayout",
+            "shortname": "BoxLayout",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/layout/boxlayout.js",
+            "line": 43,
+            "description": "Vertical and horizontal box layout.\n\nLayout Options:\n\n    {\n         verticalExpansion: <Boolean, default: true>,\n         horizontalExpansion: <Boolean, default: true>,\n         width: <Number, default: undefined>,\n         height: <Number, default: undefined>,\n         minWidth: <Number, default: undefined>,\n         minHeight: <Number, default: undefined>,\n         maxWidth: <Number, default: undefined>,\n         maxHeight: <Number, default: undefined>,\n         horizontalAlign: <String (left, center, right), default: undefined>\n    }",
+            "is_constructor": 1,
+            "extends": "photonui.GridLayout"
+        },
+        "photonui.GridLayout": {
+            "name": "photonui.GridLayout",
+            "shortname": "GridLayout",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/layout/gridlayout.js",
+            "line": 43,
+            "description": "Grid layout.\n\nLayout Options:\n\n    {\n         verticalExpansion: <Boolean, default: true>,\n         horizontalExpansion: <Boolean, default: true>,\n         width: <Number, default: undefined>,\n         height: <Number, default: undefined>,\n         minWidth: <Number, default: undefined>,\n         minHeight: <Number, default: undefined>,\n         maxWidth: <Number, default: undefined>,\n         maxHeight: <Number, default: undefined>,\n         horizontalAlign: <String (left, center, right), default: center>,\n         gridX: <Number, default: 0>,\n         gridY: <Number, default: 0>,\n         gridWidth: <Number, default: 1>,\n         gridHeight: <Number, default: 1>,\n    }",
+            "is_constructor": 1,
+            "extends": "photonui.Layout"
+        },
+        "photonui.Layout": {
+            "name": "photonui.Layout",
+            "shortname": "Layout",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "photonui.PopupMenu"
+            ],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/layout/layout.js",
+            "line": 43,
+            "description": "Base class for layout.",
+            "is_constructor": 1,
+            "extends": "photonui.Container"
+        },
+        "photonui.Menu": {
+            "name": "photonui.Menu",
+            "shortname": "Menu",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "photonui.PopupMenu"
+            ],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/menu/menu.js",
+            "line": 43,
+            "description": "Menu.",
+            "is_constructor": 1,
+            "extends": "photonui.Layout"
+        },
+        "photonui.MenuItem": {
+            "name": "photonui.MenuItem",
+            "shortname": "MenuItem",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/menu/menuitem.js",
+            "line": 43,
+            "description": "Menu item.",
+            "is_constructor": 1,
+            "extends": "photonui.Container"
+        },
+        "photonui.SubMenuItem": {
+            "name": "photonui.SubMenuItem",
+            "shortname": "SubMenuItem",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/menu/submenuitem.js",
+            "line": 43,
+            "description": "Submenu Menu item (fold/unfold a submenu).",
+            "is_constructor": 1,
+            "extends": "photonui.MenuItem"
+        },
+        "photonui.Viewport": {
+            "name": "photonui.Viewport",
+            "shortname": "Viewport",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/viewport/viewport.js",
+            "line": 43,
+            "description": "Viewport.",
+            "is_constructor": 1,
+            "extends": "photonui.Container"
+        },
+        "photonui.BaseWindow": {
+            "name": "photonui.BaseWindow",
+            "shortname": "BaseWindow",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/window/basewindow.js",
+            "line": 43,
+            "description": "Windows base class.\n\nwEvents:\n\n  * position-changed:\n     - description: called when the widows is moved.\n     - callback:    function(widget, x, y)",
+            "is_constructor": 1,
+            "extends": "photonui.Container"
+        },
+        "photonui.PopupWindow": {
+            "name": "photonui.PopupWindow",
+            "shortname": "PopupWindow",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/window/popupwindow.js",
+            "line": 43,
+            "description": "Popup Window.",
+            "is_constructor": 1,
+            "extends": "photonui.BaseWindow"
+        },
+        "photonui.Window": {
+            "name": "photonui.Window",
+            "shortname": "Window",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/window/window.js",
+            "line": 44,
+            "description": "Window.\n\nwEvents:\n\n  * close-button-clicked:\n     - description: called when the close button was clicked.\n     - callback:    function(widget)",
+            "is_constructor": 1,
+            "extends": "photonui.BaseWindow"
+        },
+        "photonui.Container": {
+            "name": "photonui.Container",
+            "shortname": "Container",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/container.js",
+            "line": 43,
+            "description": "Base class for container widgets.",
+            "is_constructor": 1,
+            "extends": "photonui.Widget"
+        },
+        "photonui.Button": {
+            "name": "photonui.Button",
+            "shortname": "Button",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/button/button.js",
+            "line": 43,
+            "description": "Button.\n\nwEvents:\n\n  * click:\n    - description: called when the button was clicked.\n    - callback:    function(widget, event)",
+            "is_constructor": 1,
+            "extends": "photonui.Widget"
+        },
+        "photonui.ColorButton": {
+            "name": "photonui.ColorButton",
+            "shortname": "ColorButton",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/button/colorbutton.js",
+            "line": 43,
+            "description": "Color Button.\n\nwEvents:\n\n  * value-changed:\n     - description: the selected color changed.\n     - callback:    function(widget, color)",
+            "is_constructor": 1,
+            "extends": "photonui.Widget"
+        },
+        "photonui.CheckBox": {
+            "name": "photonui.CheckBox",
+            "shortname": "CheckBox",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/checkbox/checkbox.js",
+            "line": 43,
+            "description": "Checkbox.\n\nwEvents:\n\n  * value-changed:\n    - description: called when the value was modified.\n    - callback:    function(widget, value)",
+            "is_constructor": 1,
+            "extends": "photonui.Widget"
+        },
+        "photonui.Switch": {
+            "name": "photonui.Switch",
+            "shortname": "Switch",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/checkbox/switch.js",
+            "line": 43,
+            "description": "Switch.",
+            "is_constructor": 1,
+            "extends": "photonui.CheckBox"
+        },
+        "photonui.ColorPalette": {
+            "name": "photonui.ColorPalette",
+            "shortname": "ColorPalette",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/color/colorpalette.js",
+            "line": 54,
+            "description": "A Color Palette.\n\nwEvents:\n\n  * value-changed:\n     - description: the selected color changed.\n     - callback:    function(widget, color)",
+            "is_constructor": 1,
+            "extends": "photonui.Widget",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "An object that can contain any property of the widget (optional).",
+                    "type": "Object"
+                }
+            ]
+        },
+        "photonui.Field": {
+            "name": "photonui.Field",
+            "shortname": "Field",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/field/field.js",
+            "line": 43,
+            "description": "Base class for fields.\n\nwEvents:\n\n  * value-changed:\n    - description: called when the value was modified.\n    - callback:    function(widget, value)\n\n  * keydown:\n    - description: called when a key is pressed.\n    - callback:    function(widget, event)\n\n  * keyup:\n    - description: called when a key is released.\n    - callback:    function(widget, event)\n\n  * keypress:\n    - description: called just before the insertion of a char.\n    - callback:    function(widget, event)\n\n  * selection-changed:\n    - description: called when the selection was changed.\n    - callback:    function(widget, selectionStart, selectionEnd, selectedText, event)",
+            "is_constructor": 1,
+            "extends": "photonui.Widget"
+        },
+        "photonui.NumericField": {
+            "name": "photonui.NumericField",
+            "shortname": "NumericField",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/field/numericfield.js",
+            "line": 43,
+            "description": "Numeric field.",
+            "is_constructor": 1,
+            "extends": "photonui.Field"
+        },
+        "photonui.TextAreaField": {
+            "name": "photonui.TextAreaField",
+            "shortname": "TextAreaField",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/field/textareafield.js",
+            "line": 43,
+            "description": "Multiline text field.",
+            "is_constructor": 1,
+            "extends": "photonui.Field"
+        },
+        "photonui.TextField": {
+            "name": "photonui.TextField",
+            "shortname": "TextField",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/field/textfield.js",
+            "line": 43,
+            "description": "Text, Password, Email, Search, Tel, URL Fields.",
+            "is_constructor": 1,
+            "extends": "photonui.Field"
+        },
+        "photonui.BaseIcon": {
+            "name": "photonui.BaseIcon",
+            "shortname": "BaseIcon",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui",
+            "file": "photonui/visual/baseicon.js",
+            "line": 44,
+            "description": "Base class for icons.",
+            "is_constructor": 1,
+            "extends": "photonui.Widget"
+        },
+        "photonui.FAIcon": {
+            "name": "photonui.FAIcon",
+            "shortname": "FAIcon",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui",
+            "file": "photonui/visual/faicon.js",
+            "line": 44,
+            "description": "Font Awesome Icon.\n\nSpecial contructor params:\n\n     new photonui.FAIcon( {optional params...} )\n     new photonui.FAIcon( \"iconName\", {optional params...} )",
+            "is_constructor": 1,
+            "extends": "photonui.BaseIcon"
+        },
+        "photonui.Label": {
+            "name": "photonui.Label",
+            "shortname": "Label",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui",
+            "file": "photonui/visual/label.js",
+            "line": 43,
+            "description": "Label.",
+            "is_constructor": 1,
+            "extends": "photonui.Widget"
+        },
+        "photonui.ProgressBar": {
+            "name": "photonui.ProgressBar",
+            "shortname": "ProgressBar",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui",
+            "file": "photonui/visual/progressbar.js",
+            "line": 43,
+            "description": "ProgressBar.",
+            "is_constructor": 1,
+            "extends": "photonui.Widget"
+        },
+        "photonui.Separator": {
+            "name": "photonui.Separator",
+            "shortname": "Separator",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui",
+            "file": "photonui/visual/separator.js",
+            "line": 43,
+            "description": "Separator.",
+            "is_constructor": 1,
+            "extends": "photonui.Widget"
+        },
+        "photonui.Helpers": {
+            "name": "photonui.Helpers",
+            "shortname": "Helpers",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Helpers",
+            "namespace": "photonui",
+            "file": "photonui/helpers.js",
+            "line": 44,
+            "description": "Helpers.",
+            "is_constructor": 1
+        },
+        "photonui.Widget": {
+            "name": "photonui.Widget",
+            "shortname": "Widget",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "namespace": "photonui",
+            "file": "photonui/widget.js",
+            "line": 59,
+            "description": "Base class for all PhotonUI widgets.\n\nwEvents:\n\n  * destroy:\n     - description: called before the widget was destroyed.\n     - callback:    function(widget)\n\n  * show:\n     - description: called when the widget is displayed.\n     - callback:    function(widget)\n\n  * hidden:\n     - description: called when the widget is hidden.\n     - callback:    function(widget)",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "params",
+                    "description": "An object that can contain any property of the widget (optional).",
+                    "type": "Object"
+                }
+            ]
+        }
+    },
+    "classitems": [
+        {
+            "file": "photonui/composite/popupmenu.js",
+            "line": 87,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.PopupMenu",
+            "module": "PhotonUI",
+            "submodule": "Composite",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/boxlayout.js",
+            "line": 81,
+            "description": "The layout orientation (\"vertical\" or \"horizontal\").",
+            "itemtype": "property",
+            "name": "orientation",
+            "type": "String",
+            "default": "\"vertical\"",
+            "class": "photonui.BoxLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/boxlayout.js",
+            "line": 115,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.BoxLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/boxlayout.js",
+            "line": 126,
+            "description": "Update the layout.",
+            "itemtype": "method",
+            "name": "_updateLayout",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.BoxLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/gridlayout.js",
+            "line": 85,
+            "description": "The vertical spacing between children widgets.",
+            "itemtype": "property",
+            "name": "verticalSpacing",
+            "type": "Number",
+            "default": "5",
+            "class": "photonui.GridLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/gridlayout.js",
+            "line": 103,
+            "description": "The horizontal spacing between children widgets.",
+            "itemtype": "property",
+            "name": "horizontalSpacing",
+            "type": "Number",
+            "default": "5",
+            "class": "photonui.GridLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/gridlayout.js",
+            "line": 121,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.GridLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/gridlayout.js",
+            "line": 141,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.GridLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/gridlayout.js",
+            "line": 158,
+            "description": "Update the layout.",
+            "itemtype": "method",
+            "name": "_updateLayout",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.GridLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/layout.js",
+            "line": 67,
+            "description": "Layout children widgets name.",
+            "itemtype": "property",
+            "name": "childrenNames",
+            "type": "Array",
+            "default": "[]",
+            "class": "photonui.Layout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/layout.js",
+            "line": 85,
+            "description": "Layout children widgets.",
+            "itemtype": "property",
+            "name": "children",
+            "type": "Array",
+            "default": "[]",
+            "class": "photonui.Layout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/layout.js",
+            "line": 139,
+            "description": "Add a widget to the layout.",
+            "itemtype": "method",
+            "name": "addChild",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "The widget to add.",
+                    "type": "photonui.Widget"
+                },
+                {
+                    "name": "layoutOption",
+                    "description": "Specific option for the layout (optional).",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.Layout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/layout.js",
+            "line": 154,
+            "description": "Remove a widget from the layout.",
+            "itemtype": "method",
+            "name": "removeChild",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "The widget to remove.",
+                    "type": "photonui.Widget"
+                }
+            ],
+            "class": "photonui.Layout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/layout.js",
+            "line": 168,
+            "description": "Destroy the widget.",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "photonui.Layout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/layout.js",
+            "line": 185,
+            "description": "Update the layout.",
+            "itemtype": "method",
+            "name": "_updateLayout",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Layout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menu.js",
+            "line": 67,
+            "description": "Define if icon on menu items are visible.",
+            "itemtype": "property",
+            "name": "iconVisible",
+            "type": "Boolean",
+            "default": ": true",
+            "class": "photonui.Menu",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menu.js",
+            "line": 90,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.Menu",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menu.js",
+            "line": 111,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Menu",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menu.js",
+            "line": 122,
+            "description": "Update the layout.",
+            "itemtype": "method",
+            "name": "_updateLayout",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Menu",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menuitem.js",
+            "line": 72,
+            "description": "The item text.",
+            "itemtype": "property",
+            "name": "text",
+            "type": "String",
+            "default": "\"Menu Item\"",
+            "class": "photonui.MenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menuitem.js",
+            "line": 90,
+            "description": "Right icon widget name.",
+            "itemtype": "property",
+            "name": "iconName",
+            "type": "String",
+            "default": ": null",
+            "class": "photonui.MenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menuitem.js",
+            "line": 111,
+            "description": "Right icon widget.",
+            "itemtype": "property",
+            "name": "icon",
+            "type": "photonui.BaseIcon",
+            "default": ": null",
+            "class": "photonui.MenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menuitem.js",
+            "line": 130,
+            "description": "Determine if the item is active (highlighted).",
+            "itemtype": "property",
+            "name": "active",
+            "type": "Boolean",
+            "default": "false",
+            "class": "photonui.MenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menuitem.js",
+            "line": 154,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.MenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menuitem.js",
+            "line": 166,
+            "description": "HTML Element that contain the child widget HTML.",
+            "itemtype": "property",
+            "name": "containerNode",
+            "type": "HTMLElement",
+            "readonly": "",
+            "class": "photonui.MenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menuitem.js",
+            "line": 186,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.MenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/submenuitem.js",
+            "line": 69,
+            "description": "The submenu widget name.",
+            "itemtype": "property",
+            "name": "menuName",
+            "type": "String",
+            "default": "null",
+            "class": "photonui.SubMenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/submenuitem.js",
+            "line": 95,
+            "description": "The submenu widget.",
+            "itemtype": "property",
+            "name": "menu",
+            "type": "photonui.Menu",
+            "default": "null",
+            "class": "photonui.SubMenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/submenuitem.js",
+            "line": 121,
+            "itemtype": "method",
+            "name": "__onToggleFold",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.SubMenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/submenuitem.js",
+            "line": 129,
+            "itemtype": "method",
+            "name": "__onItemClicked",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.SubMenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/viewport/viewport.js",
+            "line": 68,
+            "description": "Window container node padding.",
+            "itemtype": "property",
+            "name": "padding",
+            "type": "Number",
+            "default": "0",
+            "class": "photonui.Viewport",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/viewport/viewport.js",
+            "line": 86,
+            "description": "Visibility of the vertical scrollbar.\n\n  * `true`: displayed,\n  * `false`: hidden,\n  * `null`: auto.",
+            "itemtype": "property",
+            "name": "verticalScrollbar",
+            "type": "Boolean",
+            "default": "null",
+            "class": "photonui.Viewport",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/viewport/viewport.js",
+            "line": 116,
+            "description": "Visibility of the horizontal scrollbar.\n\n  * `true`: displayed,\n  * `false`: hidden,\n  * `null`: auto.",
+            "itemtype": "property",
+            "name": "horizontalScrollbar",
+            "type": "Boolean",
+            "default": "null",
+            "class": "photonui.Viewport",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/viewport/viewport.js",
+            "line": 146,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.Viewport",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/viewport/viewport.js",
+            "line": 158,
+            "description": "HTML Element that contain the child widget HTML.",
+            "itemtype": "property",
+            "name": "containerNode",
+            "type": "HTMLElement",
+            "readonly": "",
+            "class": "photonui.Viewport",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/viewport/viewport.js",
+            "line": 178,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Viewport",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 90,
+            "description": "Window position.\n\n    {x: Number, y: Number}",
+            "itemtype": "property",
+            "name": "position",
+            "type": "Object",
+            "default": "{x: 0, y: 0}",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 126,
+            "description": "The X position of the Window.",
+            "itemtype": "property",
+            "name": "x",
+            "type": "Number",
+            "default": "0",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 143,
+            "description": "The Y position of the Window.",
+            "itemtype": "property",
+            "name": "y",
+            "type": "Number",
+            "default": "0",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 160,
+            "description": "Width of the container node.",
+            "itemtype": "property",
+            "name": "width",
+            "type": "Number",
+            "default": ": null (auto)",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 186,
+            "description": "Height of the container node.",
+            "itemtype": "property",
+            "name": "height",
+            "type": "Number",
+            "default": ": null (auto)",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 212,
+            "description": "Minimum width of the container node.",
+            "itemtype": "property",
+            "name": "minWidth",
+            "type": "Number",
+            "default": ": null (no minimum)",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 235,
+            "description": "Minimum height of the container node.",
+            "itemtype": "property",
+            "name": "minHeight",
+            "type": "Number",
+            "default": ": null (no minimum)",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 258,
+            "description": "Maximum width of the container node.",
+            "itemtype": "property",
+            "name": "maxWidth",
+            "type": "Number",
+            "default": ": null (no maximum)",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 281,
+            "description": "Maximum height of the container node.",
+            "itemtype": "property",
+            "name": "maxHeight",
+            "type": "Number",
+            "default": ": null (no maximum)",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 304,
+            "description": "Window container node padding.",
+            "itemtype": "property",
+            "name": "padding",
+            "type": "Number",
+            "default": "0",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 322,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 334,
+            "description": "HTML Element that contain the child widget HTML.",
+            "itemtype": "property",
+            "name": "containerNode",
+            "type": "HTMLElement",
+            "readonly": "",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 354,
+            "description": "Center the window.",
+            "itemtype": "method",
+            "name": "center",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/basewindow.js",
+            "line": 370,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/popupwindow.js",
+            "line": 63,
+            "description": "HTML Element that contain the child widget HTML.",
+            "itemtype": "property",
+            "name": "containerNode",
+            "type": "HTMLElement",
+            "readonly": "",
+            "class": "photonui.PopupWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/popupwindow.js",
+            "line": 83,
+            "description": "Pop the window at the given position.",
+            "itemtype": "method",
+            "name": "popupXY",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "class": "photonui.PopupWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/popupwindow.js",
+            "line": 117,
+            "description": "Pop the window at the best position for the given widget.",
+            "itemtype": "method",
+            "name": "popupWidget",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "",
+                    "type": "photonui.Widget"
+                }
+            ],
+            "class": "photonui.PopupWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/popupwindow.js",
+            "line": 163,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.PopupWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 85,
+            "description": "The window title.",
+            "itemtype": "property",
+            "name": "title",
+            "type": "String",
+            "default": "\"Window\"",
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 103,
+            "description": "Determine if the window can be moved (drag & drop) by the user.",
+            "itemtype": "property",
+            "name": "movable",
+            "type": "Boolean",
+            "default": "true",
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 120,
+            "description": "Determine if the close button in the title bar is displayed or not.",
+            "itemtype": "property",
+            "name": "closeButtonVisible",
+            "type": "Boolean\ndefault: true",
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 146,
+            "description": "HTML Element that contain the child widget HTML.",
+            "itemtype": "property",
+            "name": "containerNode",
+            "type": "HTMLElement",
+            "readonly": "",
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 177,
+            "description": "Bring the window to front.",
+            "itemtype": "method",
+            "name": "moveToFront",
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 191,
+            "description": "Bring the window to the back.",
+            "itemtype": "method",
+            "name": "moveToBack",
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 205,
+            "description": "Destroy the widget.",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 222,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 250,
+            "description": "Update all the windows.",
+            "itemtype": "method",
+            "name": "_updateWindowList",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 275,
+            "description": "Start moving the window.",
+            "itemtype": "method",
+            "name": "_moveDragStart",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 293,
+            "description": "Move the window.",
+            "itemtype": "method",
+            "name": "_moveDragging",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "offsetX",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "offsetY",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 312,
+            "description": "Stop moving the window.",
+            "itemtype": "method",
+            "name": "_moveDragEnd",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 325,
+            "description": "Close button clicked.",
+            "itemtype": "method",
+            "name": "_closeButtonClicked",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/container.js",
+            "line": 60,
+            "description": "The child widget name.",
+            "itemtype": "property",
+            "name": "childName",
+            "type": "String",
+            "default": "null (no child)",
+            "class": "photonui.Container",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/container.js",
+            "line": 83,
+            "description": "The child widget.",
+            "itemtype": "property",
+            "name": "child",
+            "type": "photonui.Widget",
+            "default": "null (no child)",
+            "class": "photonui.Container",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/container.js",
+            "line": 102,
+            "description": "HTML Element that contain the child widget HTML.",
+            "itemtype": "property",
+            "name": "containerNode",
+            "type": "HTMLElement",
+            "readonly": "",
+            "class": "photonui.Container",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/container.js",
+            "line": 123,
+            "description": "Destroy the widget.",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "photonui.Container",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 82,
+            "description": "The button text.",
+            "itemtype": "property",
+            "name": "text",
+            "type": "String",
+            "default": "\"Button\"",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 100,
+            "description": "Define if the button text is displayed or hidden.",
+            "itemtype": "property",
+            "name": "textVisible",
+            "type": "Boolean",
+            "default": "true",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 118,
+            "description": "Left icon widget name.",
+            "itemtype": "property",
+            "name": "leftIconName",
+            "type": "String",
+            "default": ": null",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 139,
+            "description": "Left icon widget.",
+            "itemtype": "property",
+            "name": "leftIcon",
+            "type": "photonui.BaseIcon",
+            "default": ": null",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 158,
+            "description": "Define if the left icon is displayed or hidden.",
+            "itemtype": "property",
+            "name": "leftIconVisible",
+            "type": "Boolean",
+            "default": "true",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 176,
+            "description": "Right icon widget name.",
+            "itemtype": "property",
+            "name": "rightIconName",
+            "type": "String",
+            "default": ": null",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 197,
+            "description": "Right icon widget.",
+            "itemtype": "property",
+            "name": "rightIcon",
+            "type": "photonui.BaseIcon",
+            "default": ": null",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 216,
+            "description": "Define if the right icon is displayed or hidden.",
+            "itemtype": "property",
+            "name": "rightIconVisible",
+            "type": "Boolean",
+            "default": "true",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 234,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 255,
+            "description": "Update the button content",
+            "itemtype": "method",
+            "name": "_update",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 285,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 314,
+            "description": "Called when the button is clicked.",
+            "itemtype": "method",
+            "name": "__onButtonClicked",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/colorbutton.js",
+            "line": 78,
+            "description": "The value (color).",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "default": ": \"#FF0000\"",
+            "class": "photonui.ColorButton",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/colorbutton.js",
+            "line": 105,
+            "description": "Update the button content",
+            "itemtype": "method",
+            "name": "_update",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.ColorButton",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/colorbutton.js",
+            "line": 115,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.ColorButton",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/colorbutton.js",
+            "line": 138,
+            "description": "Called when the button is clicked.",
+            "itemtype": "method",
+            "name": "__onButtonClicked",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.ColorButton",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/colorbutton.js",
+            "line": 150,
+            "description": "Called when the palette color change.",
+            "itemtype": "method",
+            "name": "__onPaletteValueChanged",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "",
+                    "type": "photonui.Widget"
+                },
+                {
+                    "name": "color",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "photonui.ColorButton",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/checkbox/checkbox.js",
+            "line": 80,
+            "description": "The input value.",
+            "itemtype": "property",
+            "name": "value",
+            "type": "Boolean",
+            "default": "false",
+            "class": "photonui.CheckBox",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/checkbox/checkbox.js",
+            "line": 95,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.CheckBox",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/checkbox/checkbox.js",
+            "line": 116,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.CheckBox",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpalette.js",
+            "line": 86,
+            "description": "The value (color).",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "default": ": \"#FF0000\"",
+            "class": "photonui.ColorPalette",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpalette.js",
+            "line": 103,
+            "description": "The color palette.",
+            "itemtype": "property",
+            "name": "palette",
+            "type": "Array",
+            "default": "null (= `photonui.palette`)",
+            "class": "photonui.ColorPalette",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpalette.js",
+            "line": 142,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.ColorPalette",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpalette.js",
+            "line": 160,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.ColorPalette",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/field.js",
+            "line": 94,
+            "description": "The field value.",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String (maybe)",
+            "default": "\"\"",
+            "class": "photonui.Field",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/field.js",
+            "line": 109,
+            "description": "The placeholder displayed if the field is empty.",
+            "itemtype": "property",
+            "name": "Placeholder",
+            "type": "String",
+            "default": "\"\"",
+            "class": "photonui.Field",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/field.js",
+            "line": 124,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.Field",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/field.js",
+            "line": 145,
+            "description": "Bind Field events.",
+            "itemtype": "method",
+            "name": "_bindFieldEvents",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Field",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/field.js",
+            "line": 183,
+            "description": "Called when the context menu should be displayed.",
+            "itemtype": "method",
+            "name": "__onContextMenu",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.Field",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 74,
+            "description": "The minimum value of the field.",
+            "itemtype": "property",
+            "name": "min",
+            "type": "Number\ndefault null (no minimum);",
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 91,
+            "description": "The maximum value of the field.",
+            "itemtype": "property",
+            "name": "max",
+            "type": "Number\ndefault null (no maximum);",
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 108,
+            "description": "The incrementation step of the field.",
+            "itemtype": "property",
+            "name": "step",
+            "type": "Number\ndefault 1",
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 125,
+            "description": "The number of digit after the decimal dot.",
+            "itemtype": "property",
+            "name": "decimalDigits",
+            "type": "Number",
+            "default": "null (no limite)",
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 142,
+            "description": "The decimal symbol (\".\" or \",\").",
+            "itemtype": "property",
+            "name": "decimalSymbol",
+            "type": "String",
+            "default": ": \".\"",
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 159,
+            "description": "The field value.",
+            "itemtype": "property",
+            "name": "value",
+            "type": "Number",
+            "default": "0",
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 186,
+            "description": "Update the value (in the widget).",
+            "itemtype": "method",
+            "name": "_updateValue",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The raw value.",
+                    "type": "String|Number"
+                }
+            ],
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 216,
+            "description": "Update the value in the html field.",
+            "itemtype": "method",
+            "name": "_updateFieldValue",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 226,
+            "description": "Validate the user inputs.",
+            "itemtype": "method",
+            "name": "_validateInput",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 249,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 267,
+            "itemtype": "method",
+            "name": "__onKeypress",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 291,
+            "itemtype": "method",
+            "name": "__onKeyup",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 304,
+            "itemtype": "method",
+            "name": "__onChange",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 314,
+            "itemtype": "method",
+            "name": "__onMouseWheel",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/numericfield.js",
+            "line": 353,
+            "itemtype": "method",
+            "name": "__onKeydown",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.NumericField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/textareafield.js",
+            "line": 67,
+            "description": "Number of columns.",
+            "itemtype": "property",
+            "name": "cols",
+            "type": "Number",
+            "default": "20",
+            "class": "photonui.TextAreaField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/textareafield.js",
+            "line": 82,
+            "description": "Number of rows.",
+            "itemtype": "property",
+            "name": "rows",
+            "type": "Number",
+            "default": "3",
+            "class": "photonui.TextAreaField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/textareafield.js",
+            "line": 106,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.TextAreaField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/textfield.js",
+            "line": 67,
+            "description": "Type of the field.\n\n  * text\n  * password\n  * email\n  * search\n  * tel\n  * url",
+            "itemtype": "property",
+            "name": "type",
+            "type": "String",
+            "default": "text",
+            "class": "photonui.TextField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/field/textfield.js",
+            "line": 102,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.TextField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/faicon.js",
+            "line": 85,
+            "description": "The Font Awesome icon name (e.g. \"fa-cog\").\n\nIcon list: http://fontawesome.io/icons/",
+            "itemtype": "property",
+            "name": "iconName",
+            "type": "String",
+            "default": "\"\"",
+            "class": "photonui.FAIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/faicon.js",
+            "line": 105,
+            "description": "Font Awesome icon size (e.g. \"fa-2x\").\n\nIcon sizes list: http://fontawesome.io/examples/#larger",
+            "itemtype": "property",
+            "name": "size",
+            "type": "String",
+            "default": "\"\"",
+            "class": "photonui.FAIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/faicon.js",
+            "line": 125,
+            "description": "The icon color.",
+            "itemtype": "property",
+            "name": "color",
+            "type": "String\ndefault: \"inherit\"",
+            "class": "photonui.FAIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/faicon.js",
+            "line": 143,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.FAIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/faicon.js",
+            "line": 164,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.FAIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/label.js",
+            "line": 72,
+            "description": "The label text.",
+            "itemtype": "property",
+            "name": "text",
+            "type": "String",
+            "default": "\"Label\"",
+            "class": "photonui.Label",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/label.js",
+            "line": 90,
+            "description": "The text horizontal alignement.\n\n  * \"left\",\n  * \"center\",\n  * \"right\".",
+            "itemtype": "property",
+            "name": "textAlign",
+            "type": "String",
+            "default": "\"left\"",
+            "class": "photonui.Label",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/label.js",
+            "line": 115,
+            "description": "Link the label with the given input (Field, CheckBox,...) widget.",
+            "itemtype": "property",
+            "name": "forInputName",
+            "type": "String",
+            "default": "null",
+            "class": "photonui.Label",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/label.js",
+            "line": 137,
+            "description": "Link the label with the given input (Field, CheckBox,...) widget.",
+            "itemtype": "property",
+            "name": "forInput",
+            "type": "photonui.Field, photonui.CheckBox",
+            "default": "null",
+            "class": "photonui.Label",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/label.js",
+            "line": 152,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.Label",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/label.js",
+            "line": 173,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Label",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/progressbar.js",
+            "line": 67,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.ProgressBar",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/progressbar.js",
+            "line": 88,
+            "description": "The progression (form 0.00 to 1.00).",
+            "itemtype": "property",
+            "name": "value",
+            "type": "Number",
+            "default": "0",
+            "class": "photonui.ProgressBar",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/progressbar.js",
+            "line": 112,
+            "description": "The progressbar orientation (\"vertical\" or \"horizontal\").",
+            "itemtype": "property",
+            "name": "orientation",
+            "type": "String",
+            "default": "\"horizontal\"",
+            "class": "photonui.ProgressBar",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/progressbar.js",
+            "line": 136,
+            "description": "Enable or disable the progressbar pulsate mode.",
+            "itemtype": "property",
+            "name": "pulsate",
+            "type": "Boolean",
+            "default": "false",
+            "class": "photonui.ProgressBar",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/progressbar.js",
+            "line": 166,
+            "description": "Display/hide the progression text.",
+            "itemtype": "property",
+            "name": "textVisible",
+            "type": "Boolean",
+            "default": "true",
+            "class": "photonui.ProgressBar",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/progressbar.js",
+            "line": 189,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.ProgressBar",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/separator.js",
+            "line": 67,
+            "description": "The separator orientation (\"vertical\" or \"horizontal\").",
+            "itemtype": "property",
+            "name": "orientation",
+            "type": "String",
+            "default": "\"horizontal\"",
+            "class": "photonui.Separator",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/separator.js",
+            "line": 91,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.Separator",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/separator.js",
+            "line": 112,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Separator",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/helpers.js",
+            "line": 53,
+            "description": "Escape HTML.",
+            "itemtype": "method",
+            "name": "escapeHtml",
+            "static": 1,
+            "params": [
+                {
+                    "name": "string",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "photonui.Helpers",
+            "module": "PhotonUI",
+            "submodule": "Helpers",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/helpers.js",
+            "line": 68,
+            "description": "Generate an UUID version 4 (RFC 4122)\n\nFrom:\nhttp://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript",
+            "itemtype": "method",
+            "name": "uuid4",
+            "static": 1,
+            "return": {
+                "description": "The generated UUID",
+                "type": "String"
+            },
+            "class": "photonui.Helpers",
+            "module": "PhotonUI",
+            "submodule": "Helpers",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/helpers.js",
+            "line": 85,
+            "description": "Clean node (remove all children of the node).",
+            "itemtype": "method",
+            "name": "cleanNode",
+            "static": 1,
+            "params": [
+                {
+                    "name": "node",
+                    "description": "",
+                    "type": "HTMLElement"
+                }
+            ],
+            "class": "photonui.Helpers",
+            "module": "PhotonUI",
+            "submodule": "Helpers",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/helpers.js",
+            "line": 98,
+            "description": "Get the absolute position of an HTML Element.",
+            "itemtype": "method",
+            "name": "getAbsolutePosition",
+            "static": 1,
+            "params": [
+                {
+                    "name": "element",
+                    "description": "",
+                    "type": "HTMLElement"
+                }
+            ],
+            "return": {
+                "description": "`{x: <Number>, y: <Number>}",
+                "type": "Object"
+            },
+            "class": "photonui.Helpers",
+            "module": "PhotonUI",
+            "submodule": "Helpers",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 161,
+            "description": "The unique name of the widget.",
+            "itemtype": "property",
+            "name": "name",
+            "type": "String",
+            "default": "\"widget-\" + photonui.Helpers.uuid4()",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 183,
+            "description": "Is the widget visible or hidden.",
+            "itemtype": "property",
+            "name": "visible",
+            "type": "Boolean",
+            "default": "true",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 211,
+            "description": "The name of the managed contextual menu (`photonui.PopupWindow().name`).",
+            "itemtype": "property",
+            "name": "contextMenuName",
+            "type": "String",
+            "default": "null (= no context menu)",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 228,
+            "description": "The managed contextual menu.",
+            "itemtype": "property",
+            "name": "contextMenu",
+            "type": "photonui.PopupWindow",
+            "default": "null (= no context menu)",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 248,
+            "description": "Layout options.",
+            "itemtype": "property",
+            "name": "layoutOptions",
+            "type": "Object",
+            "default": "{}",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 267,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 280,
+            "description": "Absolute position of the widget on the page.\n\n`{x: Number, y: Number}`",
+            "itemtype": "property",
+            "name": "absolutePosition",
+            "type": "Object",
+            "readonly": "",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 296,
+            "description": "Widget width (outer HTML element).",
+            "itemtype": "property",
+            "name": "offsetWidth",
+            "type": "Number",
+            "readonly": "",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 310,
+            "description": "Widget height (outer HTML element).",
+            "itemtype": "property",
+            "name": "offsetHeight",
+            "type": "Number",
+            "readonly": "",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 328,
+            "description": "Object containing references to the widget HTML elements",
+            "itemtype": "property",
+            "name": "__html",
+            "type": "Object",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 337,
+            "description": "Object containing references javascript events binding (for widget\ninternal use).",
+            "itemtype": "property",
+            "name": "__events",
+            "type": "Object",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 347,
+            "description": "Object containing references to registered callbacks.",
+            "itemtype": "property",
+            "name": "__callbacks",
+            "type": "Object",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 365,
+            "description": "Display the widget (equivalent to widget.visible = true).",
+            "itemtype": "method",
+            "name": "show",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 374,
+            "description": "DHide the widget (equivalent to widget.visible = false).",
+            "itemtype": "method",
+            "name": "hide",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 383,
+            "description": "Destroy the widget.",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 399,
+            "description": "Add a class to the outer HTML element of the widget.",
+            "itemtype": "method",
+            "name": "addClass",
+            "params": [
+                {
+                    "name": "className",
+                    "description": "The class to add.",
+                    "type": "String"
+                }
+            ],
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 416,
+            "description": "Remove a class from the outer HTML element of the widget.",
+            "itemtype": "method",
+            "name": "removeClass",
+            "params": [
+                {
+                    "name": "className",
+                    "description": "The class to remove.",
+                    "type": "String"
+                }
+            ],
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 434,
+            "description": "Register a callback for any widget event (called wEvent).\n\nCallback signature:\n\n    function(widget [, arg1 [, arg2 [, ...]]])",
+            "itemtype": "method",
+            "name": "registerCallback",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "An unique id for the callback.",
+                    "type": "String"
+                },
+                {
+                    "name": "wEvent",
+                    "description": "the widget event name.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback function.",
+                    "type": "Function"
+                },
+                {
+                    "name": "thisArg",
+                    "description": "The value of this (optionnal, default = current widget).",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 458,
+            "description": "Remove a registered callback.",
+            "itemtype": "method",
+            "name": "removeCallback",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The id of the callback.",
+                    "type": "String"
+                }
+            ],
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 476,
+            "description": "Force the update of the given properties.",
+            "itemtype": "method",
+            "name": "_updateProperties",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "properties",
+                    "description": "The properties to update.",
+                    "type": "Array"
+                }
+            ],
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 489,
+            "description": "Javascript event binding (for widget internal use).",
+            "itemtype": "method",
+            "name": "_bindEvent",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "An unique id for the event.",
+                    "type": "String"
+                },
+                {
+                    "name": "element",
+                    "description": "The element on which the event will be bind.",
+                    "type": "DOMElement"
+                },
+                {
+                    "name": "evName",
+                    "description": "The event name (e.g. \"mousemove\", \"click\",...).",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The function that will be called when the event occured.",
+                    "type": "Function"
+                }
+            ],
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 512,
+            "description": "Unbind javascript event.",
+            "itemtype": "method",
+            "name": "_unbindEvent",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The id of the event.",
+                    "type": "String"
+                }
+            ],
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 528,
+            "description": "Register widgets available events (wEvent).",
+            "itemtype": "method",
+            "name": "_registerWidgetEvents",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "wEvents",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 541,
+            "description": "Call all callbacks for the given widget event (wEvent).\n\nNOTE: the first argument passed to the callback is the current widget.\nNOTE²: if the thisArg of the callback is null, this will be binded to the current widget.",
+            "itemtype": "method",
+            "name": "_callCallbacks",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "wEvent",
+                    "description": "The widget event.",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "Parametters that will be sent to the callbacks.",
+                    "type": "Array"
+                }
+            ],
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 562,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 578,
+            "description": "Called when the context menu should be displayed.",
+            "itemtype": "method",
+            "name": "__onContextMenu",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        }
+    ],
+    "warnings": []
+}
