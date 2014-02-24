@@ -54,12 +54,16 @@ photonui.Slider = photonui.NumericField.$extend({
     __init__: function(params) {
         this.$super(params);
 
+        this.inputId = this.name + "-field";
+        this.__html.field.id = this.inputId;
+
         this._updateProperties(["fieldVisible"]);
 
         this._bindEvent("slider-mousedown", this.__html.slider, "mousedown", this.__onSliderMouseDown.bind(this));
         this._bindEvent("slider-keydown", this.__html.slider, "keydown", this.__onSliderKeyDown.bind(this));
         this._bindEvent("slider-mousewheel", this.__html.slider, "mousewheel", this.__onSliderMouseWheel.bind(this));
         this._bindEvent("slider-mousewheel-firefox", this.__html.slider, "DOMMouseScroll", this.__onSliderMouseWheel.bind(this));
+        this._bindEvent("field-contextmenu", this.__html.field, "contextmenu", this.__onFieldContextMenu.bind(this));
     },
 
 
@@ -127,8 +131,8 @@ photonui.Slider = photonui.NumericField.$extend({
         var v = value - this.min;
         var m = this.max - this.min;
         var p = Math.min(Math.max(v/m, 0), 1);
-        var w = this.__html.slider.offsetWidth - this.__html.grip.offsetWidth - 3;
-        this.__html.grip.style.marginLeft = Math.floor(p*w) + "px";
+        var w = this.__html.slider.offsetWidth - this.__html.grip.offsetWidth - 4;
+        this.__html.grip.style.left = Math.floor(p*w) + 2 + "px";
     },
 
 
@@ -268,5 +272,29 @@ photonui.Slider = photonui.NumericField.$extend({
             event.stopPropagation();
         }
         this._callCallbacks("value-changed", [this.value]);
+    },
+
+    /**
+     * Called when the context menu should be displayed.
+     *
+     * @method __onContextMenu
+     * @private
+     * @param event
+     */
+    __onContextMenu: function(event) {
+        event.stopPropagation();
+        event.preventDefault();
+        if (this.contextMenuName) {
+            this.contextMenu.popupXY(event.pageX, event.pageY);
+        }
+    },
+
+    /**
+     * @method __onFieldContextMenu
+     * @private
+     * @param event
+     */
+    __onFieldContextMenu: function(event) {
+        event.stopPropagation();
     }
 });

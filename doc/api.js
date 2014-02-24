@@ -5,6 +5,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "photonui.BaseWindow",
         "photonui.BoxLayout",
         "photonui.Button",
+        "photonui.Canvas",
         "photonui.CheckBox",
         "photonui.ColorButton",
         "photonui.ColorPalette",

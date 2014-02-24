@@ -267,6 +267,17 @@
                 "photonui": 1
             }
         },
+        "photonui/visual/canvas.js": {
+            "name": "photonui/visual/canvas.js",
+            "modules": {},
+            "classes": {
+                "photonui.Canvas": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/visual/faicon.js": {
             "name": "photonui/visual/faicon.js",
             "modules": {},
@@ -381,6 +392,7 @@
                 "photonui.TextField": 1,
                 "photonui.Slider": 1,
                 "photonui.BaseIcon": 1,
+                "photonui.Canvas": 1,
                 "photonui.FAIcon": 1,
                 "photonui.Label": 1,
                 "photonui.ProgressBar": 1,
@@ -473,6 +485,7 @@
             "submodules": {},
             "classes": {
                 "photonui.BaseIcon": 1,
+                "photonui.Canvas": 1,
                 "photonui.FAIcon": 1,
                 "photonui.Label": 1,
                 "photonui.ProgressBar": 1,
@@ -922,6 +935,30 @@
             "description": "Base class for icons.",
             "is_constructor": 1,
             "extends": "photonui.Widget"
+        },
+        "photonui.Canvas": {
+            "name": "photonui.Canvas",
+            "shortname": "Canvas",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui",
+            "file": "photonui/visual/canvas.js",
+            "line": 43,
+            "description": "Canvas.",
+            "is_constructor": 1,
+            "extends": "photonui.Widget",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "An object that can contain any property of the widget (optional).",
+                    "type": "Object"
+                }
+            ]
         },
         "photonui.FAIcon": {
             "name": "photonui.FAIcon",
@@ -2299,6 +2336,78 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/input/checkbox/checkbox.js",
+            "line": 141,
+            "itemtype": "method",
+            "name": "__onChange",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.CheckBox",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/checkbox/checkbox.js",
+            "line": 154,
+            "itemtype": "method",
+            "name": "__onSpanClick",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.CheckBox",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/checkbox/checkbox.js",
+            "line": 165,
+            "itemtype": "method",
+            "name": "__onCheckboxClick",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.CheckBox",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/checkbox/checkbox.js",
+            "line": 174,
+            "itemtype": "method",
+            "name": "__onSpanKeyPress",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.CheckBox",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/input/color/colorpalette.js",
             "line": 86,
             "description": "The value (color).",
@@ -2725,7 +2834,7 @@
         },
         {
             "file": "photonui/input/slider/slider.js",
-            "line": 80,
+            "line": 84,
             "description": "Define if the numeric field should be displayed.",
             "itemtype": "property",
             "name": "fieldVisible",
@@ -2738,7 +2847,7 @@
         },
         {
             "file": "photonui/input/slider/slider.js",
-            "line": 106,
+            "line": 110,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -2752,7 +2861,7 @@
         },
         {
             "file": "photonui/input/slider/slider.js",
-            "line": 143,
+            "line": 147,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -2765,7 +2874,7 @@
         },
         {
             "file": "photonui/input/slider/slider.js",
-            "line": 167,
+            "line": 171,
             "description": "Update the value form a mouse event occured on the slider.",
             "itemtype": "method",
             "name": "_updateFromMouseEvent",
@@ -2784,7 +2893,7 @@
         },
         {
             "file": "photonui/input/slider/slider.js",
-            "line": 190,
+            "line": 194,
             "itemtype": "method",
             "name": "__onSliderMouseDown",
             "access": "private",
@@ -2802,7 +2911,7 @@
         },
         {
             "file": "photonui/input/slider/slider.js",
-            "line": 201,
+            "line": 205,
             "itemtype": "method",
             "name": "__onSliderMouseMove",
             "access": "private",
@@ -2820,7 +2929,7 @@
         },
         {
             "file": "photonui/input/slider/slider.js",
-            "line": 210,
+            "line": 214,
             "itemtype": "method",
             "name": "__onSliderMouseUp",
             "access": "private",
@@ -2838,7 +2947,7 @@
         },
         {
             "file": "photonui/input/slider/slider.js",
-            "line": 237,
+            "line": 241,
             "itemtype": "method",
             "name": "__onSliderMouseWheel",
             "access": "private",
@@ -2852,6 +2961,267 @@
             "class": "photonui.Slider",
             "module": "PhotonUI",
             "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/slider/slider.js",
+            "line": 277,
+            "description": "Called when the context menu should be displayed.",
+            "itemtype": "method",
+            "name": "__onContextMenu",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.Slider",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/slider/slider.js",
+            "line": 292,
+            "itemtype": "method",
+            "name": "__onFieldContextMenu",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.Slider",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 60,
+            "description": "Returns a drawing context on the canvas.\n\nProxy of the native canvas method. For more informations see:\n\n  * https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement",
+            "itemtype": "method",
+            "name": "getContext",
+            "params": [
+                {
+                    "name": "contextId",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The drawing context."
+            },
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 73,
+            "description": "Indicate if the given context is supported by this canvas.\n\nProxy of the native canvas method if exists. For more informations see:\n\n  * https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement",
+            "itemtype": "method",
+            "name": "supportsContext",
+            "params": [
+                {
+                    "name": "contextId",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 88,
+            "description": "Changes the context the element is related to to the given one.\n\nProxy of the native canvas method if exists. For more informations see:\n\n  * https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement",
+            "itemtype": "method",
+            "name": "setContext",
+            "params": [
+                {
+                    "name": "contextId",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 102,
+            "description": "Gives back a proxy to allow the canvas to be used in another Worker.\n\nProxy of the native canvas method if exists. For more informations see:\n\n  * https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement",
+            "itemtype": "method",
+            "name": "transferControlToProxy",
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 115,
+            "description": "Returns a \"data:\" URL containing a representation of the image (at 96dpi).\n\nProxy of the native canvas method. For more informations see:\n\n  * https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement",
+            "itemtype": "method",
+            "name": "toDataURL",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The image format (optional, e.g: \"image/png\", \"image/jpeg\",..., default=\"image/png\")",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The data URL",
+                "type": "String"
+            },
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 128,
+            "description": "Returns a \"data:\" URL containing a representation of the image (at the native resolution of the canvas).\n\nProxy of the native canvas method if exists. For more informations see:\n\n  * https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement",
+            "itemtype": "method",
+            "name": "toDataURLHD",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The image format (optional, e.g: \"image/png\", \"image/jpeg\",..., default=\"image/png\")",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The data URL",
+                "type": "String"
+            },
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 143,
+            "description": "Returns a Blob object representing the image contained in the canvas (at 96dpi).\n\nProxy of the native canvas method if exists. For more informations see:\n\n  * https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement",
+            "itemtype": "method",
+            "name": "toBlob",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The image format (optional, e.g: \"image/png\", \"image/jpeg\",..., default=\"image/png\")",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Blob"
+            },
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 158,
+            "description": "Returns a Blob object representing the image contained in the canvas (at the native resolution of the canvas).\n\nProxy of the native canvas method if exists. For more informations see:\n\n  * https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement",
+            "itemtype": "method",
+            "name": "toBlobHD",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "The image format (optional, e.g: \"image/png\", \"image/jpeg\",..., default=\"image/png\")",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Blob"
+            },
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 183,
+            "description": "Canvas width.",
+            "itemtype": "property",
+            "name": "width",
+            "type": "Number\ndefault 300",
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 198,
+            "description": "Canvas height.",
+            "itemtype": "property",
+            "name": "height",
+            "type": "Number\ndefault 150",
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 213,
+            "description": "The Canvas HTML Element.",
+            "itemtype": "property",
+            "name": "canvas",
+            "readonly": "",
+            "type": "HTMLElement",
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 224,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 245,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
             "namespace": "photonui"
         },
         {

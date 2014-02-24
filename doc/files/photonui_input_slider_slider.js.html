@@ -49,6 +49,8 @@
             
                 <li><a href="../classes/photonui.Button.html">photonui.Button</a></li>
             
+                <li><a href="../classes/photonui.Canvas.html">photonui.Canvas</a></li>
+            
                 <li><a href="../classes/photonui.CheckBox.html">photonui.CheckBox</a></li>
             
                 <li><a href="../classes/photonui.ColorButton.html">photonui.ColorButton</a></li>
@@ -210,12 +212,16 @@ photonui.Slider = photonui.NumericField.$extend({
     __init__: function(params) {
         this.$super(params);
 
+        this.inputId = this.name + &quot;-field&quot;;
+        this.__html.field.id = this.inputId;
+
         this._updateProperties([&quot;fieldVisible&quot;]);
 
         this._bindEvent(&quot;slider-mousedown&quot;, this.__html.slider, &quot;mousedown&quot;, this.__onSliderMouseDown.bind(this));
         this._bindEvent(&quot;slider-keydown&quot;, this.__html.slider, &quot;keydown&quot;, this.__onSliderKeyDown.bind(this));
         this._bindEvent(&quot;slider-mousewheel&quot;, this.__html.slider, &quot;mousewheel&quot;, this.__onSliderMouseWheel.bind(this));
         this._bindEvent(&quot;slider-mousewheel-firefox&quot;, this.__html.slider, &quot;DOMMouseScroll&quot;, this.__onSliderMouseWheel.bind(this));
+        this._bindEvent(&quot;field-contextmenu&quot;, this.__html.field, &quot;contextmenu&quot;, this.__onFieldContextMenu.bind(this));
     },
 
 
@@ -283,8 +289,8 @@ photonui.Slider = photonui.NumericField.$extend({
         var v = value - this.min;
         var m = this.max - this.min;
         var p = Math.min(Math.max(v/m, 0), 1);
-        var w = this.__html.slider.offsetWidth - this.__html.grip.offsetWidth - 3;
-        this.__html.grip.style.marginLeft = Math.floor(p*w) + &quot;px&quot;;
+        var w = this.__html.slider.offsetWidth - this.__html.grip.offsetWidth - 4;
+        this.__html.grip.style.left = Math.floor(p*w) + 2 + &quot;px&quot;;
     },
 
 
@@ -424,6 +430,30 @@ photonui.Slider = photonui.NumericField.$extend({
             event.stopPropagation();
         }
         this._callCallbacks(&quot;value-changed&quot;, [this.value]);
+    },
+
+    /**
+     * Called when the context menu should be displayed.
+     *
+     * @method __onContextMenu
+     * @private
+     * @param event
+     */
+    __onContextMenu: function(event) {
+        event.stopPropagation();
+        event.preventDefault();
+        if (this.contextMenuName) {
+            this.contextMenu.popupXY(event.pageX, event.pageY);
+        }
+    },
+
+    /**
+     * @method __onFieldContextMenu
+     * @private
+     * @param event
+     */
+    __onFieldContextMenu: function(event) {
+        event.stopPropagation();
     }
 });
 

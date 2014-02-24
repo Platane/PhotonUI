@@ -49,6 +49,8 @@
             
                 <li><a href="../classes/photonui.Button.html">photonui.Button</a></li>
             
+                <li><a href="../classes/photonui.Canvas.html">photonui.Canvas</a></li>
+            
                 <li><a href="../classes/photonui.CheckBox.html">photonui.CheckBox</a></li>
             
                 <li><a href="../classes/photonui.ColorButton.html">photonui.ColorButton</a></li>
@@ -294,6 +296,11 @@ photonui.CheckBox = photonui.Widget.$extend({
     //////////////////////////////////////////
 
 
+    /**
+     * @method __onChange
+     * @private
+     * @param event
+     */
     __onChange: function(event) {
         this._callCallbacks(&quot;value-changed&quot;, [this.value]);
         // Focus the span if the real checkbox is hidden (happen when a label is clicked).
@@ -302,16 +309,31 @@ photonui.CheckBox = photonui.Widget.$extend({
         }
     },
 
+    /**
+     * @method __onSpanClick
+     * @private
+     * @param event
+     */
     __onSpanClick: function(event) {
         this.value = !this.value;
         this._callCallbacks(&quot;value-changed&quot;, [this.value]);
         this._callCallbacks(&quot;click&quot;, [event]);
     },
 
+    /**
+     * @method __onCheckboxClick
+     * @private
+     * @param event
+     */
     __onCheckboxClick: function(event) {
         this._callCallbacks(&quot;click&quot;, [event]);
     },
 
+    /**
+     * @method __onSpanKeyPress
+     * @private
+     * @param event
+     */
     __onSpanKeypress: function(event) {
         if (event.charCode == 32 || event.keyCode == 13) {
             this.value = !this.value;

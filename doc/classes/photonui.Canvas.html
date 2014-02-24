@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui.TextAreaField - PhotonUI</title>
+    <title>photonui.Canvas - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -152,25 +152,25 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>photonui.TextAreaField Class</h1>
+                        <h1>photonui.Canvas Class</h1>
 <div class="box meta">
     
 
     
         <div class="extends">
-            Extends <a href="../classes/photonui.Field.html" class="crosslink">photonui.Field</a>
+            Extends <a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a>
         </div>
     
 
     
         <div class="foundat">
-            Defined in: <a href="../files/photonui_input_field_textareafield.js.html#l43"><code>photonui&#x2F;input&#x2F;field&#x2F;textareafield.js:43</code></a>
+            Defined in: <a href="../files/photonui_visual_canvas.js.html#l43"><code>photonui&#x2F;visual&#x2F;canvas.js:43</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/Input.html">Input</a><br>
+            Module: <a href="../modules/Visual.html">Visual</a><br>
             Parent Module: <a href="../modules/PhotonUI.html">PhotonUI</a>
         
     
@@ -181,18 +181,28 @@
 
 
 <div class="box intro">
-    <p>Multiline text field.</p>
+    <p>Canvas.</p>
 
 </div>
 
 
     <div class="constructor">
         <h2>Constructor</h2>
-        <div id="method_photonui.TextAreaField" class="method item">
-    <h3 class="name"><code>photonui.TextAreaField</code></h3>
+        <div id="method_photonui.Canvas" class="method item">
+    <h3 class="name"><code>photonui.Canvas</code></h3>
 
     
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>params</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
     
 
     
@@ -220,7 +230,7 @@
             
         
         
-        <a href="../files/photonui_input_field_textareafield.js.html#l43"><code>photonui&#x2F;input&#x2F;field&#x2F;textareafield.js:43</code></a>
+        <a href="../files/photonui_visual_canvas.js.html#l43"><code>photonui&#x2F;visual&#x2F;canvas.js:43</code></a>
         
         </p>
 
@@ -234,6 +244,30 @@
         
     </div>
 
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">params</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An object that can contain any property of the widget (optional).</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
     
 
     
@@ -268,7 +302,7 @@
 
                     <ul class="index-list methods extends">
                         
-                            <li class="index-item method private inherited inherited">
+                            <li class="index-item method private inherited">
                                 <a href="#method___onContextMenu">__onContextMenu</a>
 
                                 
@@ -277,13 +311,6 @@
                         
                             <li class="index-item method private inherited">
                                 <a href="#method__bindEvent">_bindEvent</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method private inherited">
-                                <a href="#method__bindFieldEvents">_bindFieldEvents</a>
 
                                 
                                 
@@ -338,6 +365,13 @@
                                 
                             </li>
                         
+                            <li class="index-item method">
+                                <a href="#method_getContext">getContext</a>
+
+                                
+                                
+                            </li>
+                        
                             <li class="index-item method inherited">
                                 <a href="#method_hide">hide</a>
 
@@ -366,8 +400,57 @@
                                 
                             </li>
                         
+                            <li class="index-item method">
+                                <a href="#method_setContext">setContext</a>
+
+                                
+                                
+                            </li>
+                        
                             <li class="index-item method inherited">
                                 <a href="#method_show">show</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_supportsContext">supportsContext</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_toBlob">toBlob</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_toBlobHD">toBlobHD</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_toDataURL">toDataURL</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_toDataURLHD">toDataURLHD</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_transferControlToProxy">transferControlToProxy</a>
 
                                 
                                 
@@ -412,7 +495,7 @@
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_cols">cols</a>
+                                <a href="#property_canvas">canvas</a>
 
                                 
                                 
@@ -432,7 +515,14 @@
                                 
                             </li>
                         
-                            <li class="index-item property inherited inherited">
+                            <li class="index-item property">
+                                <a href="#property_height">height</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
                                 <a href="#property_html">html</a>
 
                                 
@@ -468,28 +558,14 @@
                             </li>
                         
                             <li class="index-item property inherited">
-                                <a href="#property_Placeholder">Placeholder</a>
+                                <a href="#property_visible">visible</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_rows">rows</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_value">value</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_visible">visible</a>
+                                <a href="#property_width">width</a>
 
                                 
                                 
@@ -544,16 +620,13 @@
 
     <div class="meta">
         
-            <p>Inherited from
-            <a href="../classes/photonui.Widget.html#method___onContextMenu">
-                photonui.Widget
-            </a>
             
-            but overwritten in
+                <p>Inherited from
+                <a href="../classes/photonui.Widget.html#method___onContextMenu">photonui.Widget</a>:
             
         
         
-        <a href="../files/photonui_input_field_field.js.html#l183"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:183</code></a>
+        <a href="../files/photonui_widget.js.html#l578"><code>photonui&#x2F;widget.js:578</code></a>
         
         </p>
 
@@ -583,7 +656,7 @@
                     
 
                     <div class="param-description">
-                         
+                        
                     </div>
 
                     
@@ -753,60 +826,6 @@
 </div>
 
                 
-                    <div id="method__bindFieldEvents" class="method item private inherited">
-    <h3 class="name"><code>_bindFieldEvents</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Field.html#method__bindFieldEvents">photonui.Field</a>:
-            
-        
-        
-        <a href="../files/photonui_input_field_field.js.html#l145"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:145</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Bind Field events.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
                     <div id="method__buildHtml" class="method item private">
     <h3 class="name"><code>_buildHtml</code></h3>
 
@@ -841,7 +860,7 @@
             
         
         
-        <a href="../files/photonui_input_field_textareafield.js.html#l106"><code>photonui&#x2F;input&#x2F;field&#x2F;textareafield.js:106</code></a>
+        <a href="../files/photonui_visual_canvas.js.html#l245"><code>photonui&#x2F;visual&#x2F;canvas.js:245</code></a>
         
         </p>
 
@@ -1377,6 +1396,114 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
+                    <div id="method_getContext" class="method item">
+    <h3 class="name"><code>getContext</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>contextId</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_visual_canvas.js.html#l60"><code>photonui&#x2F;visual&#x2F;canvas.js:60</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a drawing context on the canvas.</p>
+<p>Proxy of the native canvas method. For more informations see:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement</a></li>
+</ul>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">contextId</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                    <p>The drawing context.</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
                     <div id="method_hide" class="method item inherited">
     <h3 class="name"><code>hide</code></h3>
 
@@ -1755,6 +1882,98 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
+                    <div id="method_setContext" class="method item">
+    <h3 class="name"><code>setContext</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>contextId</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_visual_canvas.js.html#l88"><code>photonui&#x2F;visual&#x2F;canvas.js:88</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Changes the context the element is related to to the given one.</p>
+<p>Proxy of the native canvas method if exists. For more informations see:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement</a></li>
+</ul>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">contextId</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method_show" class="method item inherited">
     <h3 class="name"><code>show</code></h3>
 
@@ -1796,6 +2015,613 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 
     <div class="description">
         <p>Display the widget (equivalent to widget.visible = true).</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_supportsContext" class="method item">
+    <h3 class="name"><code>supportsContext</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>contextId</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_visual_canvas.js.html#l73"><code>photonui&#x2F;visual&#x2F;canvas.js:73</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Indicate if the given context is supported by this canvas.</p>
+<p>Proxy of the native canvas method if exists. For more informations see:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement</a></li>
+</ul>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">contextId</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_toBlob" class="method item">
+    <h3 class="name"><code>toBlob</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>type</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Blob</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_visual_canvas.js.html#l143"><code>photonui&#x2F;visual&#x2F;canvas.js:143</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a Blob object representing the image contained in the canvas (at 96dpi).</p>
+<p>Proxy of the native canvas method if exists. For more informations see:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement</a></li>
+</ul>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">type</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The image format (optional, e.g: &quot;image/png&quot;, &quot;image/jpeg&quot;,..., default=&quot;image/png&quot;)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Blob</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_toBlobHD" class="method item">
+    <h3 class="name"><code>toBlobHD</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>type</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Blob</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_visual_canvas.js.html#l158"><code>photonui&#x2F;visual&#x2F;canvas.js:158</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a Blob object representing the image contained in the canvas (at the native resolution of the canvas).</p>
+<p>Proxy of the native canvas method if exists. For more informations see:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement</a></li>
+</ul>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">type</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The image format (optional, e.g: &quot;image/png&quot;, &quot;image/jpeg&quot;,..., default=&quot;image/png&quot;)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Blob</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_toDataURL" class="method item">
+    <h3 class="name"><code>toDataURL</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>type</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_visual_canvas.js.html#l115"><code>photonui&#x2F;visual&#x2F;canvas.js:115</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a &quot;data:&quot; URL containing a representation of the image (at 96dpi).</p>
+<p>Proxy of the native canvas method. For more informations see:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement</a></li>
+</ul>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">type</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The image format (optional, e.g: &quot;image/png&quot;, &quot;image/jpeg&quot;,..., default=&quot;image/png&quot;)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>:
+                    
+                    <p>The data URL</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_toDataURLHD" class="method item">
+    <h3 class="name"><code>toDataURLHD</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>type</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_visual_canvas.js.html#l128"><code>photonui&#x2F;visual&#x2F;canvas.js:128</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a &quot;data:&quot; URL containing a representation of the image (at the native resolution of the canvas).</p>
+<p>Proxy of the native canvas method if exists. For more informations see:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement</a></li>
+</ul>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">type</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The image format (optional, e.g: &quot;image/png&quot;, &quot;image/jpeg&quot;,..., default=&quot;image/png&quot;)</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>:
+                    
+                    <p>The data URL</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_transferControlToProxy" class="method item">
+    <h3 class="name"><code>transferControlToProxy</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_visual_canvas.js.html#l102"><code>photonui&#x2F;visual&#x2F;canvas.js:102</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Gives back a proxy to allow the canvas to be used in another Worker.</p>
+<p>Proxy of the native canvas method if exists. For more informations see:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement</a></li>
+</ul>
 
     </div>
 
@@ -1991,9 +2817,9 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_cols" class="property item">
-    <h3 class="name"><code>cols</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    <div id="property_canvas" class="property item">
+    <h3 class="name"><code>canvas</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
 
     
 
@@ -2014,7 +2840,7 @@ internal use).</p>
             
         
         
-        <a href="../files/photonui_input_field_textareafield.js.html#l67"><code>photonui&#x2F;input&#x2F;field&#x2F;textareafield.js:67</code></a>
+        <a href="../files/photonui_visual_canvas.js.html#l213"><code>photonui&#x2F;visual&#x2F;canvas.js:213</code></a>
         
         </p>
 
@@ -2024,12 +2850,10 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>Number of columns.</p>
+        <p>The Canvas HTML Element.</p>
 
     </div>
 
-    
-        <p><strong>Default:</strong> 20</p>
     
 
     
@@ -2126,7 +2950,53 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_html" class="property item inherited">
+                    <div id="property_height" class="property item">
+    <h3 class="name"><code>height</code></h3>
+    <span class="type">Number
+default 150</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_visual_canvas.js.html#l198"><code>photonui&#x2F;visual&#x2F;canvas.js:198</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Canvas height.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_html" class="property item">
     <h3 class="name"><code>html</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
 
@@ -2149,7 +3019,7 @@ internal use).</p>
             
         
         
-        <a href="../files/photonui_input_field_field.js.html#l124"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:124</code></a>
+        <a href="../files/photonui_visual_canvas.js.html#l224"><code>photonui&#x2F;visual&#x2F;canvas.js:224</code></a>
         
         </p>
 
@@ -2345,141 +3215,6 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_Placeholder" class="property item inherited">
-    <h3 class="name"><code>Placeholder</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Field.html#property_Placeholder">photonui.Field</a>:
-            
-        
-        
-        <a href="../files/photonui_input_field_field.js.html#l109"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:109</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The placeholder displayed if the field is empty.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> &quot;&quot;</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_rows" class="property item">
-    <h3 class="name"><code>rows</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_input_field_textareafield.js.html#l82"><code>photonui&#x2F;input&#x2F;field&#x2F;textareafield.js:82</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Number of rows.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> 3</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_value" class="property item inherited">
-    <h3 class="name"><code>value</code></h3>
-    <span class="type">String (maybe)</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Field.html#property_value">photonui.Field</a>:
-            
-        
-        
-        <a href="../files/photonui_input_field_field.js.html#l94"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:94</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The field value.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> &quot;&quot;</p>
-    
-
-    
-
-    
-</div>
-
-                
                     <div id="property_visible" class="property item inherited">
     <h3 class="name"><code>visible</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
@@ -2516,6 +3251,52 @@ internal use).</p>
 
     
         <p><strong>Default:</strong> true</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_width" class="property item">
+    <h3 class="name"><code>width</code></h3>
+    <span class="type">Number
+default 300</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_visual_canvas.js.html#l183"><code>photonui&#x2F;visual&#x2F;canvas.js:183</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Canvas width.</p>
+
+    </div>
+
     
 
     
