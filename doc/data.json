@@ -243,6 +243,17 @@
                 "photonui": 1
             }
         },
+        "photonui/input/slider/slider.js": {
+            "name": "photonui/input/slider/slider.js",
+            "modules": {},
+            "classes": {
+                "photonui.Slider": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/visual/baseicon.js": {
             "name": "photonui/visual/baseicon.js",
             "modules": {
@@ -368,6 +379,7 @@
                 "photonui.NumericField": 1,
                 "photonui.TextAreaField": 1,
                 "photonui.TextField": 1,
+                "photonui.Slider": 1,
                 "photonui.BaseIcon": 1,
                 "photonui.FAIcon": 1,
                 "photonui.Label": 1,
@@ -442,7 +454,8 @@
                 "photonui.Field": 1,
                 "photonui.NumericField": 1,
                 "photonui.TextAreaField": 1,
-                "photonui.TextField": 1
+                "photonui.TextField": 1,
+                "photonui.Slider": 1
             },
             "fors": {},
             "is_submodule": 1,
@@ -451,7 +464,7 @@
             },
             "module": "PhotonUI",
             "namespace": "",
-            "file": "photonui/input/field/textfield.js",
+            "file": "photonui/input/slider/slider.js",
             "line": 43,
             "description": "PhotonUI - Javascript Web User Interface."
         },
@@ -868,6 +881,30 @@
             "description": "Text, Password, Email, Search, Tel, URL Fields.",
             "is_constructor": 1,
             "extends": "photonui.Field"
+        },
+        "photonui.Slider": {
+            "name": "photonui.Slider",
+            "shortname": "Slider",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/slider/slider.js",
+            "line": 43,
+            "description": "Slider",
+            "is_constructor": 1,
+            "extends": "photonui.NumericField",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "An object that can contain any property of the widget (optional).",
+                    "type": "Object"
+                }
+            ]
         },
         "photonui.BaseIcon": {
             "name": "photonui.BaseIcon",
@@ -2682,6 +2719,137 @@
             "access": "private",
             "tagname": "",
             "class": "photonui.TextField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/slider/slider.js",
+            "line": 80,
+            "description": "Define if the numeric field should be displayed.",
+            "itemtype": "property",
+            "name": "fieldVisible",
+            "type": "Boolean",
+            "default": ": true",
+            "class": "photonui.Slider",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/slider/slider.js",
+            "line": 106,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.Slider",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/slider/slider.js",
+            "line": 143,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Slider",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/slider/slider.js",
+            "line": 167,
+            "description": "Update the value form a mouse event occured on the slider.",
+            "itemtype": "method",
+            "name": "_updateFromMouseEvent",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.Slider",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/slider/slider.js",
+            "line": 190,
+            "itemtype": "method",
+            "name": "__onSliderMouseDown",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.Slider",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/slider/slider.js",
+            "line": 201,
+            "itemtype": "method",
+            "name": "__onSliderMouseMove",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.Slider",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/slider/slider.js",
+            "line": 210,
+            "itemtype": "method",
+            "name": "__onSliderMouseUp",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.Slider",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/slider/slider.js",
+            "line": 237,
+            "itemtype": "method",
+            "name": "__onSliderMouseWheel",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.Slider",
             "module": "PhotonUI",
             "submodule": "Input",
             "namespace": "photonui"
