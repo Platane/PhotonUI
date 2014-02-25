@@ -792,7 +792,7 @@
             "namespace": "photonui",
             "file": "photonui/event/mousemanager.js",
             "line": 43,
-            "description": "Manage advanced mouse events on Widgets or HTMLElements.\n\nwEvents:\n\n  * mouse-event:\n     - description: Called for *ALL* mouse events.\n     - callback:    function(manager, mstate)\n\n  * mouse-down:\n     - description: Mouse button pressed.\n     - callback:    function(manager, mstate)\n\n  * mouse-up:\n     - description: Mouse button released.\n     - callback:    function(manager, mstate)\n\n  * click:\n     - description: Click...\n     - callback:    function(manager, mstate)\n\n  * double-click:\n     - description: Double click...\n     - callback:    function(manager, mstate)\n\n  * drag-start:\n     - description: Start dragging.\n     - callback:    function(manager, mstate)\n\n  * dragging:\n     - description: dragging.\n     - callback:    function(manager, mstate)\n\n  * drag-end:\n     - description: Stop dragging.\n     - callback:    function(manager, mstate)\n\n  * mouse-move:\n     - description: Mouse move on the element.\n     - callback:    function(manager, mstate)\n\n\nmstate:\n\n  A snapshot of the mouse state ath the moment when the event occured.\n\n    {\n        event: <Object>,       // The original js event\n        action: <String>,      // The event name (mouse-down/up/move, click, double-click, drag-start/end, dragging, scroll-up/down)\n        pageX: <Number>,       // X position, relative to page top-left corner.\n        pageY: <Number>,       // Y position, relative to page top-left corner.\n        x: <Number>,           // X position, relative to the HTML element.\n        y: <Number>,           // Y position, relative to the HTML element.\n        deltaX: <Number>,      // Delta X (current_x - previous_x)\n        deltaY: <Number>,      // Delta Y (current_y - previous_y)\n        btnLeft: <Boolean>,    // Current state of the mouse left button.\n        btnMiddle: <Boolean>,  // Current state of the mouse middle button.\n        btnRight: <Boolean>,   // Current state of the mouse right button.\n        button: <String>       // The button that triggered the last event (none, \"left\", \"middle\", \"right\").\n    }",
+            "description": "Manage advanced mouse events on Widgets or HTMLElements.\n\nwEvents:\n\n  * mouse-event:\n     - description: Called for *ALL* mouse events.\n     - callback:    function(manager, mstate)\n\n  * mouse-down:\n     - description: Mouse button pressed.\n     - callback:    function(manager, mstate)\n\n  * mouse-up:\n     - description: Mouse button released.\n     - callback:    function(manager, mstate)\n\n  * click:\n     - description: Click...\n     - callback:    function(manager, mstate)\n\n  * double-click:\n     - description: Double click...\n     - callback:    function(manager, mstate)\n\n  * drag-start:\n     - description: Start dragging.\n     - callback:    function(manager, mstate)\n\n  * dragging:\n     - description: dragging.\n     - callback:    function(manager, mstate)\n\n  * drag-end:\n     - description: Stop dragging.\n     - callback:    function(manager, mstate)\n\n  * mouse-move:\n     - description: Mouse move on the element.\n     - callback:    function(manager, mstate)\n\n  * scroll-up:\n     - description: Scroll up.\n     - callback:    function(manager, mstate)\n\n  * scroll-down:\n     - description: Scroll down.\n     - callback:    function(manager, mstate)\n\n\nmstate:\n\n  A snapshot of the mouse state ath the moment when the event occured.\n\n    {\n        event: <Object>,       // The original js event\n        action: <String>,      // The event name (mouse-down/up/move, click, double-click, drag-start/end, dragging, scroll-up/down)\n        pageX: <Number>,       // X position, relative to page top-left corner.\n        pageY: <Number>,       // Y position, relative to page top-left corner.\n        x: <Number>,           // X position, relative to the HTML element.\n        y: <Number>,           // Y position, relative to the HTML element.\n        deltaX: <Number>,      // Delta X (current_x - previous_x)\n        deltaY: <Number>,      // Delta Y (current_y - previous_y)\n        btnLeft: <Boolean>,    // Current state of the mouse left button.\n        btnMiddle: <Boolean>,  // Current state of the mouse middle button.\n        btnRight: <Boolean>,   // Current state of the mouse right button.\n        button: <String>       // The button that triggered the last event (none, \"left\", \"middle\", \"right\").\n    }",
             "is_constructor": 1,
             "extends": "photonui.Base",
             "params": [
@@ -2147,7 +2147,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 131,
+            "line": 140,
             "description": "The HTML Element on which the events are binded.\n\nNOTE: If a photonui.Widget object is assigned to this property,\n      its HTML Element will be automatically assigned to the property instead.",
             "itemtype": "property",
             "name": "element",
@@ -2160,7 +2160,20 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 160,
+            "line": 169,
+            "description": "Minimum distance for triggering a drag-start, and maximum distance\nto consider a mouse down/up as a click.",
+            "itemtype": "property",
+            "name": "threshold",
+            "type": "Number",
+            "default": "5",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 187,
             "description": "X position, relative to page top-left corner.",
             "itemtype": "property",
             "name": "pageX",
@@ -2174,7 +2187,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 172,
+            "line": 199,
             "description": "Y position, relative to page top-left corner.",
             "itemtype": "property",
             "name": "pageY",
@@ -2188,7 +2201,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 184,
+            "line": 211,
             "description": "X position, relative to the HTML element.",
             "itemtype": "property",
             "name": "x",
@@ -2201,7 +2214,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 196,
+            "line": 223,
             "description": "Y position, relative to the HTML element.",
             "itemtype": "property",
             "name": "y",
@@ -2214,7 +2227,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 208,
+            "line": 235,
             "description": "Delta X (current_x - previous_x).",
             "itemtype": "property",
             "name": "deltaX",
@@ -2227,7 +2240,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 219,
+            "line": 246,
             "description": "Delta Y (current_y - previous_y).",
             "itemtype": "property",
             "name": "deltaY",
@@ -2240,7 +2253,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 230,
+            "line": 257,
             "description": "The action:\n\n  * \"mouse-down\"\n  * \"moues-up\"\n  * \"click\"\n  * \"double-click\"\n  * \"drag-start\"\n  * \"dragging\"\n  * \"drag-end\"\n  * \"scroll-down\"\n  * \"scroll-up\"\n  * \"mouse-move\"",
             "itemtype": "property",
             "name": "action",
@@ -2253,7 +2266,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 254,
+            "line": 281,
             "description": "Current state of the mouse left button.",
             "itemtype": "property",
             "name": "btnLeft",
@@ -2266,7 +2279,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 267,
+            "line": 294,
             "description": "Current state of the mouse middle button.",
             "itemtype": "property",
             "name": "btnMiddle",
@@ -2279,7 +2292,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 280,
+            "line": 307,
             "description": "Current state of the mouse right button.",
             "itemtype": "property",
             "name": "btnRight",
@@ -2292,7 +2305,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 293,
+            "line": 320,
             "description": "The button that triggered the last event.\n\n  * none\n  * \"left\"\n  * \"middle\"\n  * \"right\"",
             "itemtype": "property",
             "name": "button",
@@ -2305,7 +2318,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 315,
+            "line": 342,
             "description": "Previous state.",
             "itemtype": "property",
             "name": "__prevState",
@@ -2319,7 +2332,21 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 324,
+            "line": 351,
+            "description": "Js event on mouse down.",
+            "itemtype": "property",
+            "name": "__mouseDownEvent",
+            "access": "private",
+            "tagname": "",
+            "type": "Object",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 360,
             "description": "Last event object.",
             "itemtype": "property",
             "name": "__event",
@@ -2334,7 +2361,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 340,
+            "line": 376,
             "description": "Bind events on the HTML Element.",
             "itemtype": "method",
             "name": "_updateEvents",
@@ -2347,7 +2374,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 365,
+            "line": 403,
             "description": "Take a snapshot of the MouseManager",
             "itemtype": "method",
             "name": "_dump",
@@ -2364,7 +2391,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 389,
+            "line": 427,
             "description": "Analyze and dispatche wEvents.",
             "itemtype": "method",
             "name": "_stateMachine",
@@ -2389,7 +2416,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 490,
+            "line": 543,
             "itemtype": "method",
             "name": "__onMouseDown",
             "access": "private",
@@ -2407,7 +2434,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 499,
+            "line": 552,
             "itemtype": "method",
             "name": "__onMouseUp",
             "access": "private",
@@ -2425,7 +2452,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 508,
+            "line": 561,
             "itemtype": "method",
             "name": "__onDoubleClick",
             "access": "private",
@@ -2443,7 +2470,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 517,
+            "line": 570,
             "itemtype": "method",
             "name": "__onMouseMove",
             "access": "private",
@@ -2461,7 +2488,7 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 526,
+            "line": 579,
             "description": "Used to detect drag-end outside the element.",
             "itemtype": "method",
             "name": "__onDocumentMouseUp",
@@ -2480,10 +2507,28 @@
         },
         {
             "file": "photonui/event/mousemanager.js",
-            "line": 539,
+            "line": 592,
             "description": "Used to detect dragging outside the element.",
             "itemtype": "method",
             "name": "__onDocumentMouseMove",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 605,
+            "itemtype": "method",
+            "name": "__onMouseWheel",
             "access": "private",
             "tagname": "",
             "params": [
