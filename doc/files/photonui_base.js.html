@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui/container/container.js - PhotonUI</title>
+    <title>photonui/base.js - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -158,7 +158,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: photonui/container/container.js</h1>
+                        <h1 class="file-heading">File: photonui/base.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -196,7 +196,6 @@
  * PhotonUI - Javascript Web User Interface.
  *
  * @module PhotonUI
- * @submodule Container
  * @namespace photonui
  */
 
@@ -205,75 +204,93 @@ var photonui = photonui || {};
 
 
 /**
- * Base class for container widgets.
+ * Base class for all PhotonUI Classes.
  *
- * @class Container
+ * wEvents:
+ *
+ *   * destroy:
+ *      - description: called before the widget was destroyed.
+ *      - callback:    function(widget)
+ *
+ * @class Base
  * @constructor
- * @extends photonui.Widget
+ * @param {Object} params An object that can contain any property that will be set to the class (optional).
  */
-photonui.Container = photonui.Widget.$extend({
+photonui.Base = Class.$extend({
+
+    // Constructor
+    __init__: function(params) {
+        // New instances for object properties
+        this.__events = {};
+        this.__callbacks = {};
+
+        // wEvents
+        this._registerWEvents([&quot;destroy&quot;]);
+
+        // Create properties from accessors
+        for (var prop in this) {
+            if (prop.indexOf(&quot;get&quot;) == 0) {
+                var propName = prop.slice(3, 4).toLowerCase() + prop.slice(4, prop.length);
+                Object.defineProperty(this, propName, {
+                    get: this[prop],
+                    enumerable: true,
+                    configurable: true
+                });
+            }
+            else if (prop.indexOf(&quot;set&quot;) == 0) {
+                var propName = prop.slice(3, 4).toLowerCase() + prop.slice(4, prop.length);
+                Object.defineProperty(this, propName, {
+                    set: this[prop],
+                    enumerable: true,
+                    configurable: true
+                });
+            }
+            else if (prop.indexOf(&quot;is&quot;) == 0) {
+                var propName = prop.slice(2, 3).toLowerCase() + prop.slice(3, prop.length);
+                Object.defineProperty(this, propName, {
+                    get: this[prop],
+                    enumerable: true,
+                    configurable: true
+                });
+            }
+        }
+
+        // Apply params
+        var params = params || {};
+        for (param in params) {
+            if (this[param] !== undefined) {
+                this[param] = params[param];
+            }
+        }
+    },
+
 
     //////////////////////////////////////////
     // Properties and Accessors             //
     //////////////////////////////////////////
 
 
-    // ====== Public properties ======
+    // ====== Private properties ======
 
 
     /**
-     * The child widget name.
+     * Object containing references javascript events binding (for widget
+     * internal use).
      *
-     * @property childName
-     * @type String
-     * @default null (no child)
+     * @property __events
+     * @type Object
+     * @private
      */
-    _childName: null,
-
-    getChildName: function() {
-        return this._childName;
-    },
-
-    setChildName: function(childName) {
-        if (this.childName &amp;&amp; this.containerNode) {
-            this.containerNode.removeChild(this.child.html);
-        }
-        this._childName = childName;
-        if (this.childName &amp;&amp; this.containerNode) {
-            this.containerNode.appendChild(this.child.html);
-        }
-    },
+    __events: {},    // Javascript internal event
 
     /**
-     * The child widget.
+     * Object containing references to registered callbacks.
      *
-     * @property child
-     * @type photonui.Widget
-     * @default null (no child)
+     * @property __callbacks
+     * @type Object
+     * @private
      */
-    getChild: function() {
-        return photonui.getWidget(this.childName);
-    },
-
-    setChild: function(child) {
-        if (!child instanceof photonui.Widget) {
-            this.childName = null;
-            return;
-        }
-        this.childName = child.name;
-    },
-
-    /**
-     * HTML Element that contain the child widget HTML.
-     *
-     * @property containerNode
-     * @type HTMLElement
-     * @readOnly
-     */
-    getContainerNode: function() {
-        console.warn(&quot;getContainerNode() method not implemented for this widget.&quot;);
-        return null;
-    },
+    __callbacks: {},  // Registered callback
 
 
     //////////////////////////////////////////
@@ -285,17 +302,146 @@ photonui.Container = photonui.Widget.$extend({
 
 
     /**
-     * Destroy the widget.
+     * Destroy the class.
      *
      * @method destroy
      */
     destroy: function() {
-        if (this.childName) {
-            this.child.destroy();
+        this._callCallbacks(&quot;destroy&quot;);
+        for (var id in this.__events) {
+            this._unbindEvent(id);
         }
-        this.$super();
+    },
+
+    /**
+     * Register a callback for any PhotonUI/Widget event (called wEvent).
+     *
+     * Callback signature:
+     *
+     *     function(Object(Base/Widget) [, arg1 [, arg2 [, ...]]])
+     *
+     * @method registerCallback
+     * @param {String} id An unique id for the callback.
+     * @param {String} wEvent the PhotonUI/Widget event name.
+     * @param {Function} callback The callback function.
+     * @param {Object} thisArg The value of this (optionnal, default = current widget).
+     */
+    registerCallback: function(id, wEvent, callback, thisArg) {
+        if (!this.__callbacks[wEvent]) {
+            console.error(&quot;This widget have no &#x27;&quot; + wEvent + &quot;&#x27; event.&quot;);
+            return;
+        }
+        this.__callbacks[wEvent][id] = {
+            callback: callback,
+            thisArg: thisArg || null
+        }
+    },
+
+    /**
+     * Remove a registered callback.
+     *
+     * @method removeCallback
+     * @param {String} id The id of the callback.
+     */
+    removeCallback: function(id) {
+        for (var wEvent in this.__callbacks) {
+            if (this.__callbacks[wEvent][id]) {
+                delete this.__callbacks[wEvent][id];
+            }
+        }
+    },
+
+
+    // ====== Private methods ======
+
+
+    /**
+     * Force the update of the given properties.
+     *
+     * @method _updateProperties
+     * @private
+     * @param {Array} properties The properties to update.
+     */
+    _updateProperties: function(properties) {
+        for (var i=0 ; i&lt;properties.length ; i++) {
+            this[properties[i]] = this[properties[i]];
+        }
+    },
+
+    /**
+     * Javascript event binding (for internal use).
+     *
+     * @method _bindEvent
+     * @private
+     * @param {String} id An unique id for the event.
+     * @param {DOMElement} element The element on which the event will be bind.
+     * @param {String} evName The event name (e.g. &quot;mousemove&quot;, &quot;click&quot;,...).
+     * @param {Function} callback The function that will be called when the event occured.
+     */
+    _bindEvent: function(id, element, evName, callback) {
+        this.__events[id] = {
+            evName: evName,
+            element: element,
+            callback: callback
+        };
+        this.__events[id].element.addEventListener(
+                this.__events[id].evName,
+                this.__events[id].callback,
+                false
+        );
+    },
+
+    /**
+     * Unbind javascript event.
+     *
+     * @method _unbindEvent
+     * @private
+     * @param {String} id The id of the event.
+     */
+    _unbindEvent: function(id) {
+        this.__events[id].element.removeEventListener(
+                this.__events[id].evName,
+                this.__events[id].callback,
+                false
+        );
+        delete this.__events[id];
+    },
+
+    /**
+     * Register available wEvent.
+     *
+     * @method _registerWidgetEvents
+     * @private
+     * @param {Array} wEvents
+     */
+    _registerWEvents: function(wEvents) {
+        for (var i in wEvents) {
+            this.__callbacks[wEvents[i]] = {};
+        }
+    },
+
+    /**
+     * Call all callbacks for the given wEvent.
+     *
+     * NOTE: the first argument passed to the callback is the current widget.
+     * NOTE²: if the thisArg of the callback is null, this will be binded to the current widget.
+     *
+     * @method _callCallbacks
+     * @private
+     * @param {String} wEvent The widget event.
+     * @param {Array} params Parametters that will be sent to the callbacks.
+     */
+    _callCallbacks: function(wEvent, params) {
+        var params = params || [];
+        for (var id in this.__callbacks[wEvent]) {
+            this.__callbacks[wEvent][id].callback.apply(
+                    this.__callbacks[wEvent][id].thisArg || this,
+                    [this].concat(params)
+            );
+        }
     }
 });
+
 
     </pre>
 </div>

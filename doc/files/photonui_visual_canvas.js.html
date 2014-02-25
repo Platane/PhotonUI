@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="../classes/photonui.Base.html">photonui.Base</a></li>
+            
                 <li><a href="../classes/photonui.BaseIcon.html">photonui.BaseIcon</a></li>
             
                 <li><a href="../classes/photonui.BaseWindow.html">photonui.BaseWindow</a></li>
@@ -75,6 +77,8 @@
             
                 <li><a href="../classes/photonui.MenuItem.html">photonui.MenuItem</a></li>
             
+                <li><a href="../classes/photonui.MouseManager.html">photonui.MouseManager</a></li>
+            
                 <li><a href="../classes/photonui.NumericField.html">photonui.NumericField</a></li>
             
                 <li><a href="../classes/photonui.PopupMenu.html">photonui.PopupMenu</a></li>
@@ -108,6 +112,8 @@
                 <li><a href="../modules/Composite.html">Composite</a></li>
             
                 <li><a href="../modules/Container.html">Container</a></li>
+            
+                <li><a href="../modules/Event.html">Event</a></li>
             
                 <li><a href="../modules/Helpers.html">Helpers</a></li>
             
@@ -213,7 +219,7 @@ photonui.Canvas = photonui.Widget.$extend({
         this.$super(params);
         this._updateProperties([&quot;width&quot;, &quot;height&quot;]);
 
-        // --- Canvas proxy methods ---
+        // --- Canvas methods proxies ---
 
         /**
          * Returns a drawing context on the canvas.
@@ -372,7 +378,7 @@ photonui.Canvas = photonui.Widget.$extend({
      * The Canvas HTML Element.
      *
      * @property canvas
-     * @readonly
+     * @readOnly
      * @type HTMLElement
      */
     getCanvas: function() {
@@ -389,6 +395,17 @@ photonui.Canvas = photonui.Widget.$extend({
      */
     getHtml: function() {
         return this.__html.outer;
+    },
+
+    /**
+     * The interactive HTML element (for event managers).
+     *
+     * @property interactiveNode
+     * @type HTMLElement
+     * @readOnly
+     */
+    getInteractiveNode: function() {
+        return this.__html.canvas;
     },
 
 

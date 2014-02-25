@@ -142,6 +142,19 @@
                 "photonui": 1
             }
         },
+        "photonui/event/mousemanager.js": {
+            "name": "photonui/event/mousemanager.js",
+            "modules": {
+                "Event": 1
+            },
+            "classes": {
+                "photonui.MouseManager": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/input/button/button.js": {
             "name": "photonui/input/button/button.js",
             "modules": {
@@ -322,6 +335,17 @@
                 "photonui": 1
             }
         },
+        "photonui/base.js": {
+            "name": "photonui/base.js",
+            "modules": {},
+            "classes": {
+                "photonui.Base": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/helpers.js": {
             "name": "photonui/helpers.js",
             "modules": {
@@ -364,6 +388,7 @@
             "submodules": {
                 "Composite": 1,
                 "Container": 1,
+                "Event": 1,
                 "Input": 1,
                 "Visual": 1,
                 "Helpers": 1
@@ -381,6 +406,7 @@
                 "photonui.PopupWindow": 1,
                 "photonui.Window": 1,
                 "photonui.Container": 1,
+                "photonui.MouseManager": 1,
                 "photonui.Button": 1,
                 "photonui.ColorButton": 1,
                 "photonui.CheckBox": 1,
@@ -397,6 +423,7 @@
                 "photonui.Label": 1,
                 "photonui.ProgressBar": 1,
                 "photonui.Separator": 1,
+                "photonui.Base": 1,
                 "photonui.Helpers": 1,
                 "photonui.Widget": 1
             },
@@ -451,6 +478,23 @@
             "module": "PhotonUI",
             "namespace": "",
             "file": "photonui/container/container.js",
+            "line": 43,
+            "description": "PhotonUI - Javascript Web User Interface."
+        },
+        "Event": {
+            "name": "Event",
+            "submodules": {},
+            "classes": {
+                "photonui.MouseManager": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "photonui": 1
+            },
+            "module": "PhotonUI",
+            "namespace": "",
+            "file": "photonui/event/mousemanager.js",
             "line": 43,
             "description": "PhotonUI - Javascript Web User Interface."
         },
@@ -734,6 +778,35 @@
             "description": "Base class for container widgets.",
             "is_constructor": 1,
             "extends": "photonui.Widget"
+        },
+        "photonui.MouseManager": {
+            "name": "photonui.MouseManager",
+            "shortname": "MouseManager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui",
+            "file": "photonui/event/mousemanager.js",
+            "line": 43,
+            "description": "Manage advanced mouse events on Widgets or HTMLElements.\n\nwEvents:\n\n  * mouse-event:\n     - description: Called for *ALL* mouse events.\n     - callback:    function(manager, mstate)\n\n  * mouse-down:\n     - description: Mouse button pressed.\n     - callback:    function(manager, mstate)\n\n  * mouse-up:\n     - description: Mouse button released.\n     - callback:    function(manager, mstate)\n\n  * click:\n     - description: Click...\n     - callback:    function(manager, mstate)\n\n  * double-click:\n     - description: Double click...\n     - callback:    function(manager, mstate)\n\n  * drag-start:\n     - description: Start dragging.\n     - callback:    function(manager, mstate)\n\n  * dragging:\n     - description: dragging.\n     - callback:    function(manager, mstate)\n\n  * drag-end:\n     - description: Stop dragging.\n     - callback:    function(manager, mstate)\n\n  * mouse-move:\n     - description: Mouse move on the element.\n     - callback:    function(manager, mstate)\n\n\nmstate:\n\n  A snapshot of the mouse state ath the moment when the event occured.\n\n    {\n        event: <Object>,       // The original js event\n        action: <String>,      // The event name (mouse-down/up/move, click, double-click, drag-start/end, dragging, scroll-up/down)\n        pageX: <Number>,       // X position, relative to page top-left corner.\n        pageY: <Number>,       // Y position, relative to page top-left corner.\n        x: <Number>,           // X position, relative to the HTML element.\n        y: <Number>,           // Y position, relative to the HTML element.\n        deltaX: <Number>,      // Delta X (current_x - previous_x)\n        deltaY: <Number>,      // Delta Y (current_y - previous_y)\n        btnLeft: <Boolean>,    // Current state of the mouse left button.\n        btnMiddle: <Boolean>,  // Current state of the mouse middle button.\n        btnRight: <Boolean>,   // Current state of the mouse right button.\n        button: <String>       // The button that triggered the last event (none, \"left\", \"middle\", \"right\").\n    }",
+            "is_constructor": 1,
+            "extends": "photonui.Base",
+            "params": [
+                {
+                    "name": "element",
+                    "description": "Any PhotonUI Widget (optional).",
+                    "type": "photonui.Widget"
+                },
+                {
+                    "name": "element",
+                    "description": "Any HTML element (optional).",
+                    "type": "HTMLElement"
+                }
+            ]
         },
         "photonui.Button": {
             "name": "photonui.Button",
@@ -1028,6 +1101,28 @@
             "is_constructor": 1,
             "extends": "photonui.Widget"
         },
+        "photonui.Base": {
+            "name": "photonui.Base",
+            "shortname": "Base",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "namespace": "photonui",
+            "file": "photonui/base.js",
+            "line": 42,
+            "description": "Base class for all PhotonUI Classes.\n\nwEvents:\n\n  * destroy:\n     - description: called before the widget was destroyed.\n     - callback:    function(widget)",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "params",
+                    "description": "An object that can contain any property that will be set to the class (optional).",
+                    "type": "Object"
+                }
+            ]
+        },
         "photonui.Helpers": {
             "name": "photonui.Helpers",
             "shortname": "Helpers",
@@ -1056,8 +1151,9 @@
             "namespace": "photonui",
             "file": "photonui/widget.js",
             "line": 59,
-            "description": "Base class for all PhotonUI widgets.\n\nwEvents:\n\n  * destroy:\n     - description: called before the widget was destroyed.\n     - callback:    function(widget)\n\n  * show:\n     - description: called when the widget is displayed.\n     - callback:    function(widget)\n\n  * hidden:\n     - description: called when the widget is hidden.\n     - callback:    function(widget)",
+            "description": "Base class for all PhotonUI widgets.\n\nwEvents:\n\n  * show:\n     - description: called when the widget is displayed.\n     - callback:    function(widget)\n\n  * hidden:\n     - description: called when the widget is hidden.\n     - callback:    function(widget)",
             "is_constructor": 1,
+            "extends": "photonui.Base",
             "params": [
                 {
                     "name": "params",
@@ -2047,6 +2143,358 @@
             "class": "photonui.Container",
             "module": "PhotonUI",
             "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 131,
+            "description": "The HTML Element on which the events are binded.\n\nNOTE: If a photonui.Widget object is assigned to this property,\n      its HTML Element will be automatically assigned to the property instead.",
+            "itemtype": "property",
+            "name": "element",
+            "type": "HTMLElement",
+            "default": "null",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 160,
+            "description": "X position, relative to page top-left corner.",
+            "itemtype": "property",
+            "name": "pageX",
+            "readonly": "",
+            "type": "Number",
+            "default": "0",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 172,
+            "description": "Y position, relative to page top-left corner.",
+            "itemtype": "property",
+            "name": "pageY",
+            "readonly": "",
+            "type": "Number",
+            "default": "0",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 184,
+            "description": "X position, relative to the HTML element.",
+            "itemtype": "property",
+            "name": "x",
+            "readonly": "",
+            "type": "Number",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 196,
+            "description": "Y position, relative to the HTML element.",
+            "itemtype": "property",
+            "name": "y",
+            "readonly": "",
+            "type": "Number",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 208,
+            "description": "Delta X (current_x - previous_x).",
+            "itemtype": "property",
+            "name": "deltaX",
+            "readonly": "",
+            "type": "Number",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 219,
+            "description": "Delta Y (current_y - previous_y).",
+            "itemtype": "property",
+            "name": "deltaY",
+            "readonly": "",
+            "type": "Number",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 230,
+            "description": "The action:\n\n  * \"mouse-down\"\n  * \"moues-up\"\n  * \"click\"\n  * \"double-click\"\n  * \"drag-start\"\n  * \"dragging\"\n  * \"drag-end\"\n  * \"scroll-down\"\n  * \"scroll-up\"\n  * \"mouse-move\"",
+            "itemtype": "property",
+            "name": "action",
+            "readonly": "",
+            "type": "String",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 254,
+            "description": "Current state of the mouse left button.",
+            "itemtype": "property",
+            "name": "btnLeft",
+            "type": "Boolean",
+            "readonly": "",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 267,
+            "description": "Current state of the mouse middle button.",
+            "itemtype": "property",
+            "name": "btnMiddle",
+            "type": "Boolean",
+            "readonly": "",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 280,
+            "description": "Current state of the mouse right button.",
+            "itemtype": "property",
+            "name": "btnRight",
+            "type": "Boolean",
+            "readonly": "",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 293,
+            "description": "The button that triggered the last event.\n\n  * none\n  * \"left\"\n  * \"middle\"\n  * \"right\"",
+            "itemtype": "property",
+            "name": "button",
+            "readonly": "",
+            "type": "String",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 315,
+            "description": "Previous state.",
+            "itemtype": "property",
+            "name": "__prevState",
+            "access": "private",
+            "tagname": "",
+            "type": "Object",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 324,
+            "description": "Last event object.",
+            "itemtype": "property",
+            "name": "__event",
+            "access": "private",
+            "tagname": "",
+            "type": "Object",
+            "default": "{}",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 340,
+            "description": "Bind events on the HTML Element.",
+            "itemtype": "method",
+            "name": "_updateEvents",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 365,
+            "description": "Take a snapshot of the MouseManager",
+            "itemtype": "method",
+            "name": "_dump",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 389,
+            "description": "Analyze and dispatche wEvents.",
+            "itemtype": "method",
+            "name": "_stateMachine",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "action",
+                    "description": "The action name (e.g. \"mouse-up\").",
+                    "type": "String"
+                },
+                {
+                    "name": "event",
+                    "description": "The js event.",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 490,
+            "itemtype": "method",
+            "name": "__onMouseDown",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 499,
+            "itemtype": "method",
+            "name": "__onMouseUp",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 508,
+            "itemtype": "method",
+            "name": "__onDoubleClick",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 517,
+            "itemtype": "method",
+            "name": "__onMouseMove",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 526,
+            "description": "Used to detect drag-end outside the element.",
+            "itemtype": "method",
+            "name": "__onDocumentMouseUp",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/mousemanager.js",
+            "line": 539,
+            "description": "Used to detect dragging outside the element.",
+            "itemtype": "method",
+            "name": "__onDocumentMouseMove",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.MouseManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
             "namespace": "photonui"
         },
         {
@@ -3213,7 +3661,20 @@
         },
         {
             "file": "photonui/visual/canvas.js",
-            "line": 245,
+            "line": 236,
+            "description": "The interactive HTML element (for event managers).",
+            "itemtype": "property",
+            "name": "interactiveNode",
+            "type": "HTMLElement",
+            "readonly": "",
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/canvas.js",
+            "line": 256,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -3488,6 +3949,206 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/base.js",
+            "line": 112,
+            "description": "Object containing references javascript events binding (for widget\ninternal use).",
+            "itemtype": "property",
+            "name": "__events",
+            "type": "Object",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Base",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/base.js",
+            "line": 122,
+            "description": "Object containing references to registered callbacks.",
+            "itemtype": "property",
+            "name": "__callbacks",
+            "type": "Object",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Base",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/base.js",
+            "line": 140,
+            "description": "Destroy the class.",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "photonui.Base",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/base.js",
+            "line": 152,
+            "description": "Register a callback for any PhotonUI/Widget event (called wEvent).\n\nCallback signature:\n\n    function(Object(Base/Widget) [, arg1 [, arg2 [, ...]]])",
+            "itemtype": "method",
+            "name": "registerCallback",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "An unique id for the callback.",
+                    "type": "String"
+                },
+                {
+                    "name": "wEvent",
+                    "description": "the PhotonUI/Widget event name.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback function.",
+                    "type": "Function"
+                },
+                {
+                    "name": "thisArg",
+                    "description": "The value of this (optionnal, default = current widget).",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.Base",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/base.js",
+            "line": 176,
+            "description": "Remove a registered callback.",
+            "itemtype": "method",
+            "name": "removeCallback",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The id of the callback.",
+                    "type": "String"
+                }
+            ],
+            "class": "photonui.Base",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/base.js",
+            "line": 194,
+            "description": "Force the update of the given properties.",
+            "itemtype": "method",
+            "name": "_updateProperties",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "properties",
+                    "description": "The properties to update.",
+                    "type": "Array"
+                }
+            ],
+            "class": "photonui.Base",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/base.js",
+            "line": 207,
+            "description": "Javascript event binding (for internal use).",
+            "itemtype": "method",
+            "name": "_bindEvent",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "An unique id for the event.",
+                    "type": "String"
+                },
+                {
+                    "name": "element",
+                    "description": "The element on which the event will be bind.",
+                    "type": "DOMElement"
+                },
+                {
+                    "name": "evName",
+                    "description": "The event name (e.g. \"mousemove\", \"click\",...).",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The function that will be called when the event occured.",
+                    "type": "Function"
+                }
+            ],
+            "class": "photonui.Base",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/base.js",
+            "line": 230,
+            "description": "Unbind javascript event.",
+            "itemtype": "method",
+            "name": "_unbindEvent",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The id of the event.",
+                    "type": "String"
+                }
+            ],
+            "class": "photonui.Base",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/base.js",
+            "line": 246,
+            "description": "Register available wEvent.",
+            "itemtype": "method",
+            "name": "_registerWidgetEvents",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "wEvents",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "class": "photonui.Base",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/base.js",
+            "line": 259,
+            "description": "Call all callbacks for the given wEvent.\n\nNOTE: the first argument passed to the callback is the current widget.\nNOTE²: if the thisArg of the callback is null, this will be binded to the current widget.",
+            "itemtype": "method",
+            "name": "_callCallbacks",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "wEvent",
+                    "description": "The widget event.",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "Parametters that will be sent to the callbacks.",
+                    "type": "Array"
+                }
+            ],
+            "class": "photonui.Base",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/helpers.js",
             "line": 53,
             "description": "Escape HTML.",
@@ -3570,7 +4231,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 161,
+            "line": 125,
             "description": "The unique name of the widget.",
             "itemtype": "property",
             "name": "name",
@@ -3582,7 +4243,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 183,
+            "line": 147,
             "description": "Is the widget visible or hidden.",
             "itemtype": "property",
             "name": "visible",
@@ -3594,7 +4255,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 211,
+            "line": 175,
             "description": "The name of the managed contextual menu (`photonui.PopupWindow().name`).",
             "itemtype": "property",
             "name": "contextMenuName",
@@ -3606,7 +4267,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 228,
+            "line": 192,
             "description": "The managed contextual menu.",
             "itemtype": "property",
             "name": "contextMenu",
@@ -3618,7 +4279,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 248,
+            "line": 212,
             "description": "Layout options.",
             "itemtype": "property",
             "name": "layoutOptions",
@@ -3630,7 +4291,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 267,
+            "line": 231,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -3643,7 +4304,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 280,
+            "line": 244,
             "description": "Absolute position of the widget on the page.\n\n`{x: Number, y: Number}`",
             "itemtype": "property",
             "name": "absolutePosition",
@@ -3655,7 +4316,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 296,
+            "line": 260,
             "description": "Widget width (outer HTML element).",
             "itemtype": "property",
             "name": "offsetWidth",
@@ -3667,7 +4328,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 310,
+            "line": 274,
             "description": "Widget height (outer HTML element).",
             "itemtype": "property",
             "name": "offsetHeight",
@@ -3679,7 +4340,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 328,
+            "line": 292,
             "description": "Object containing references to the widget HTML elements",
             "itemtype": "property",
             "name": "__html",
@@ -3692,33 +4353,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 337,
-            "description": "Object containing references javascript events binding (for widget\ninternal use).",
-            "itemtype": "property",
-            "name": "__events",
-            "type": "Object",
-            "access": "private",
-            "tagname": "",
-            "class": "photonui.Widget",
-            "module": "PhotonUI",
-            "namespace": "photonui"
-        },
-        {
-            "file": "photonui/widget.js",
-            "line": 347,
-            "description": "Object containing references to registered callbacks.",
-            "itemtype": "property",
-            "name": "__callbacks",
-            "type": "Object",
-            "access": "private",
-            "tagname": "",
-            "class": "photonui.Widget",
-            "module": "PhotonUI",
-            "namespace": "photonui"
-        },
-        {
-            "file": "photonui/widget.js",
-            "line": 365,
+            "line": 310,
             "description": "Display the widget (equivalent to widget.visible = true).",
             "itemtype": "method",
             "name": "show",
@@ -3728,7 +4363,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 374,
+            "line": 319,
             "description": "DHide the widget (equivalent to widget.visible = false).",
             "itemtype": "method",
             "name": "hide",
@@ -3738,7 +4373,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 383,
+            "line": 328,
             "description": "Destroy the widget.",
             "itemtype": "method",
             "name": "destroy",
@@ -3748,7 +4383,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 399,
+            "line": 341,
             "description": "Add a class to the outer HTML element of the widget.",
             "itemtype": "method",
             "name": "addClass",
@@ -3765,7 +4400,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 416,
+            "line": 358,
             "description": "Remove a class from the outer HTML element of the widget.",
             "itemtype": "method",
             "name": "removeClass",
@@ -3782,171 +4417,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 434,
-            "description": "Register a callback for any widget event (called wEvent).\n\nCallback signature:\n\n    function(widget [, arg1 [, arg2 [, ...]]])",
-            "itemtype": "method",
-            "name": "registerCallback",
-            "params": [
-                {
-                    "name": "id",
-                    "description": "An unique id for the callback.",
-                    "type": "String"
-                },
-                {
-                    "name": "wEvent",
-                    "description": "the widget event name.",
-                    "type": "String"
-                },
-                {
-                    "name": "callback",
-                    "description": "The callback function.",
-                    "type": "Function"
-                },
-                {
-                    "name": "thisArg",
-                    "description": "The value of this (optionnal, default = current widget).",
-                    "type": "Object"
-                }
-            ],
-            "class": "photonui.Widget",
-            "module": "PhotonUI",
-            "namespace": "photonui"
-        },
-        {
-            "file": "photonui/widget.js",
-            "line": 458,
-            "description": "Remove a registered callback.",
-            "itemtype": "method",
-            "name": "removeCallback",
-            "params": [
-                {
-                    "name": "id",
-                    "description": "The id of the callback.",
-                    "type": "String"
-                }
-            ],
-            "class": "photonui.Widget",
-            "module": "PhotonUI",
-            "namespace": "photonui"
-        },
-        {
-            "file": "photonui/widget.js",
-            "line": 476,
-            "description": "Force the update of the given properties.",
-            "itemtype": "method",
-            "name": "_updateProperties",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "properties",
-                    "description": "The properties to update.",
-                    "type": "Array"
-                }
-            ],
-            "class": "photonui.Widget",
-            "module": "PhotonUI",
-            "namespace": "photonui"
-        },
-        {
-            "file": "photonui/widget.js",
-            "line": 489,
-            "description": "Javascript event binding (for widget internal use).",
-            "itemtype": "method",
-            "name": "_bindEvent",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "id",
-                    "description": "An unique id for the event.",
-                    "type": "String"
-                },
-                {
-                    "name": "element",
-                    "description": "The element on which the event will be bind.",
-                    "type": "DOMElement"
-                },
-                {
-                    "name": "evName",
-                    "description": "The event name (e.g. \"mousemove\", \"click\",...).",
-                    "type": "String"
-                },
-                {
-                    "name": "callback",
-                    "description": "The function that will be called when the event occured.",
-                    "type": "Function"
-                }
-            ],
-            "class": "photonui.Widget",
-            "module": "PhotonUI",
-            "namespace": "photonui"
-        },
-        {
-            "file": "photonui/widget.js",
-            "line": 512,
-            "description": "Unbind javascript event.",
-            "itemtype": "method",
-            "name": "_unbindEvent",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "id",
-                    "description": "The id of the event.",
-                    "type": "String"
-                }
-            ],
-            "class": "photonui.Widget",
-            "module": "PhotonUI",
-            "namespace": "photonui"
-        },
-        {
-            "file": "photonui/widget.js",
-            "line": 528,
-            "description": "Register widgets available events (wEvent).",
-            "itemtype": "method",
-            "name": "_registerWidgetEvents",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "wEvents",
-                    "description": "",
-                    "type": "Array"
-                }
-            ],
-            "class": "photonui.Widget",
-            "module": "PhotonUI",
-            "namespace": "photonui"
-        },
-        {
-            "file": "photonui/widget.js",
-            "line": 541,
-            "description": "Call all callbacks for the given widget event (wEvent).\n\nNOTE: the first argument passed to the callback is the current widget.\nNOTE²: if the thisArg of the callback is null, this will be binded to the current widget.",
-            "itemtype": "method",
-            "name": "_callCallbacks",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "wEvent",
-                    "description": "The widget event.",
-                    "type": "String"
-                },
-                {
-                    "name": "params",
-                    "description": "Parametters that will be sent to the callbacks.",
-                    "type": "Array"
-                }
-            ],
-            "class": "photonui.Widget",
-            "module": "PhotonUI",
-            "namespace": "photonui"
-        },
-        {
-            "file": "photonui/widget.js",
-            "line": 562,
+            "line": 380,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -3958,7 +4429,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 578,
+            "line": 396,
             "description": "Called when the context menu should be displayed.",
             "itemtype": "method",
             "name": "__onContextMenu",

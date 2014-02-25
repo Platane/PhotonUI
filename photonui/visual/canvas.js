@@ -55,7 +55,7 @@ photonui.Canvas = photonui.Widget.$extend({
         this.$super(params);
         this._updateProperties(["width", "height"]);
 
-        // --- Canvas proxy methods ---
+        // --- Canvas methods proxies ---
 
         /**
          * Returns a drawing context on the canvas.
@@ -214,7 +214,7 @@ photonui.Canvas = photonui.Widget.$extend({
      * The Canvas HTML Element.
      *
      * @property canvas
-     * @readonly
+     * @readOnly
      * @type HTMLElement
      */
     getCanvas: function() {
@@ -231,6 +231,17 @@ photonui.Canvas = photonui.Widget.$extend({
      */
     getHtml: function() {
         return this.__html.outer;
+    },
+
+    /**
+     * The interactive HTML element (for event managers).
+     *
+     * @property interactiveNode
+     * @type HTMLElement
+     * @readOnly
+     */
+    getInteractiveNode: function() {
+        return this.__html.canvas;
     },
 
 

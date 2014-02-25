@@ -1,6 +1,7 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
+        "photonui.Base",
         "photonui.BaseIcon",
         "photonui.BaseWindow",
         "photonui.BoxLayout",
@@ -18,6 +19,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "photonui.Layout",
         "photonui.Menu",
         "photonui.MenuItem",
+        "photonui.MouseManager",
         "photonui.NumericField",
         "photonui.PopupMenu",
         "photonui.PopupWindow",
@@ -35,6 +37,7 @@ YUI.add("yuidoc-meta", function(Y) {
     "modules": [
         "Composite",
         "Container",
+        "Event",
         "Helpers",
         "Input",
         "PhotonUI",
@@ -49,6 +52,11 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "Container",
             "name": "Container",
+            "description": "PhotonUI - Javascript Web User Interface."
+        },
+        {
+            "displayName": "Event",
+            "name": "Event",
             "description": "PhotonUI - Javascript Web User Interface."
         },
         {

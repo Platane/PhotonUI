@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui.ProgressBar - PhotonUI</title>
+    <title>photonui.MouseManager - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -158,25 +158,25 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>photonui.ProgressBar Class</h1>
+                        <h1>photonui.MouseManager Class</h1>
 <div class="box meta">
     
 
     
         <div class="extends">
-            Extends <a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a>
+            Extends <a href="../classes/photonui.Base.html" class="crosslink">photonui.Base</a>
         </div>
     
 
     
         <div class="foundat">
-            Defined in: <a href="../files/photonui_visual_progressbar.js.html#l43"><code>photonui&#x2F;visual&#x2F;progressbar.js:43</code></a>
+            Defined in: <a href="../files/photonui_event_mousemanager.js.html#l43"><code>photonui&#x2F;event&#x2F;mousemanager.js:43</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/Visual.html">Visual</a><br>
+            Module: <a href="../modules/Event.html">Event</a><br>
             Parent Module: <a href="../modules/PhotonUI.html">PhotonUI</a>
         
     
@@ -187,18 +187,107 @@
 
 
 <div class="box intro">
-    <p>ProgressBar.</p>
+    <p>Manage advanced mouse events on Widgets or HTMLElements.</p>
+<p>wEvents:</p>
+<ul>
+<li><p>mouse-event:</p>
+<ul>
+<li>description: Called for <em>ALL</em> mouse events.</li>
+<li>callback:    function(manager, mstate)</li>
+</ul>
+</li>
+<li><p>mouse-down:</p>
+<ul>
+<li>description: Mouse button pressed.</li>
+<li>callback:    function(manager, mstate)</li>
+</ul>
+</li>
+<li><p>mouse-up:</p>
+<ul>
+<li>description: Mouse button released.</li>
+<li>callback:    function(manager, mstate)</li>
+</ul>
+</li>
+<li><p>click:</p>
+<ul>
+<li>description: Click...</li>
+<li>callback:    function(manager, mstate)</li>
+</ul>
+</li>
+<li><p>double-click:</p>
+<ul>
+<li>description: Double click...</li>
+<li>callback:    function(manager, mstate)</li>
+</ul>
+</li>
+<li><p>drag-start:</p>
+<ul>
+<li>description: Start dragging.</li>
+<li>callback:    function(manager, mstate)</li>
+</ul>
+</li>
+<li><p>dragging:</p>
+<ul>
+<li>description: dragging.</li>
+<li>callback:    function(manager, mstate)</li>
+</ul>
+</li>
+<li><p>drag-end:</p>
+<ul>
+<li>description: Stop dragging.</li>
+<li>callback:    function(manager, mstate)</li>
+</ul>
+</li>
+<li><p>mouse-move:</p>
+<ul>
+<li>description: Mouse move on the element.</li>
+<li>callback:    function(manager, mstate)</li>
+</ul>
+</li>
+</ul>
+<p>mstate:</p>
+<p>  A snapshot of the mouse state ath the moment when the event occured.</p>
+<pre class="code prettyprint"><code>{
+    event: &lt;Object&gt;,       // The original js event
+    action: &lt;String&gt;,      // The event name (mouse-down/up/move, click, double-click, drag-start/end, dragging, scroll-up/down)
+    pageX: &lt;Number&gt;,       // X position, relative to page top-left corner.
+    pageY: &lt;Number&gt;,       // Y position, relative to page top-left corner.
+    x: &lt;Number&gt;,           // X position, relative to the HTML element.
+    y: &lt;Number&gt;,           // Y position, relative to the HTML element.
+    deltaX: &lt;Number&gt;,      // Delta X (current_x - previous_x)
+    deltaY: &lt;Number&gt;,      // Delta Y (current_y - previous_y)
+    btnLeft: &lt;Boolean&gt;,    // Current state of the mouse left button.
+    btnMiddle: &lt;Boolean&gt;,  // Current state of the mouse middle button.
+    btnRight: &lt;Boolean&gt;,   // Current state of the mouse right button.
+    button: &lt;String&gt;       // The button that triggered the last event (none, &quot;left&quot;, &quot;middle&quot;, &quot;right&quot;).
+}</code></pre>
 
 </div>
 
 
     <div class="constructor">
         <h2>Constructor</h2>
-        <div id="method_photonui.ProgressBar" class="method item">
-    <h3 class="name"><code>photonui.ProgressBar</code></h3>
+        <div id="method_photonui.MouseManager" class="method item">
+    <h3 class="name"><code>photonui.MouseManager</code></h3>
 
     
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>element</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>element</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
     
 
     
@@ -226,7 +315,7 @@
             
         
         
-        <a href="../files/photonui_visual_progressbar.js.html#l43"><code>photonui&#x2F;visual&#x2F;progressbar.js:43</code></a>
+        <a href="../files/photonui_event_mousemanager.js.html#l43"><code>photonui&#x2F;event&#x2F;mousemanager.js:43</code></a>
         
         </p>
 
@@ -240,6 +329,46 @@
         
     </div>
 
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">element</code>
+                        <span class="type"><a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Any PhotonUI Widget (optional).</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">element</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Any HTML element (optional).</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
     
 
     
@@ -274,8 +403,43 @@
 
                     <ul class="index-list methods extends">
                         
-                            <li class="index-item method private inherited">
-                                <a href="#method___onContextMenu">__onContextMenu</a>
+                            <li class="index-item method private">
+                                <a href="#method___onDocumentMouseMove">__onDocumentMouseMove</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method___onDocumentMouseUp">__onDocumentMouseUp</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method___onDoubleClick">__onDoubleClick</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method___onMouseDown">__onMouseDown</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method___onMouseMove">__onMouseMove</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method___onMouseUp">__onMouseUp</a>
 
                                 
                                 
@@ -289,14 +453,14 @@
                             </li>
                         
                             <li class="index-item method private inherited">
-                                <a href="#method__buildHtml">_buildHtml</a>
+                                <a href="#method__callCallbacks">_callCallbacks</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item method private inherited">
-                                <a href="#method__callCallbacks">_callCallbacks</a>
+                            <li class="index-item method private">
+                                <a href="#method__dump">_dump</a>
 
                                 
                                 
@@ -309,8 +473,22 @@
                                 
                             </li>
                         
+                            <li class="index-item method private">
+                                <a href="#method__stateMachine">_stateMachine</a>
+
+                                
+                                
+                            </li>
+                        
                             <li class="index-item method private inherited">
                                 <a href="#method__unbindEvent">_unbindEvent</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method__updateEvents">_updateEvents</a>
 
                                 
                                 
@@ -324,21 +502,7 @@
                             </li>
                         
                             <li class="index-item method inherited">
-                                <a href="#method_addClass">addClass</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited inherited">
                                 <a href="#method_destroy">destroy</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited">
-                                <a href="#method_hide">hide</a>
 
                                 
                                 
@@ -353,20 +517,6 @@
                         
                             <li class="index-item method inherited">
                                 <a href="#method_removeCallback">removeCallback</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited">
-                                <a href="#method_removeClass">removeClass</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited">
-                                <a href="#method_show">show</a>
 
                                 
                                 
@@ -389,6 +539,13 @@
                                 
                             </li>
                         
+                            <li class="index-item property private">
+                                <a href="#property___event">__event</a>
+
+                                
+                                
+                            </li>
+                        
                             <li class="index-item property private inherited">
                                 <a href="#property___events">__events</a>
 
@@ -396,99 +553,92 @@
                                 
                             </li>
                         
-                            <li class="index-item property private inherited">
-                                <a href="#property___html">__html</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_absolutePosition">absolutePosition</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_contextMenu">contextMenu</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_contextMenuName">contextMenuName</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_html">html</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_layoutOptions">layoutOptions</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_name">name</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_offsetHeight">offsetHeight</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_offsetWidth">offsetWidth</a>
+                            <li class="index-item property private">
+                                <a href="#property___prevState">__prevState</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_orientation">orientation</a>
+                                <a href="#property_action">action</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_pulsate">pulsate</a>
+                                <a href="#property_btnLeft">btnLeft</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_textVisible">textVisible</a>
+                                <a href="#property_btnMiddle">btnMiddle</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_value">value</a>
+                                <a href="#property_btnRight">btnRight</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property inherited">
-                                <a href="#property_visible">visible</a>
+                            <li class="index-item property">
+                                <a href="#property_button">button</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_deltaX">deltaX</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_deltaY">deltaY</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_element">element</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_pageX">pageX</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_pageY">pageY</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_x">x</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_y">y</a>
 
                                 
                                 
@@ -508,8 +658,8 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method___onContextMenu" class="method item private inherited">
-    <h3 class="name"><code>__onContextMenu</code></h3>
+                    <div id="method___onDocumentMouseMove" class="method item private">
+    <h3 class="name"><code>__onDocumentMouseMove</code></h3>
 
     
         <div class="args">
@@ -544,12 +694,15 @@
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method___onContextMenu">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l396"><code>photonui&#x2F;widget.js:396</code></a>
+        <a href="../files/photonui_event_mousemanager.js.html#l539"><code>photonui&#x2F;event&#x2F;mousemanager.js:539</code></a>
         
         </p>
 
@@ -560,8 +713,454 @@
     </div>
 
     <div class="description">
-        <p>Called when the context menu should be displayed.</p>
+        <p>Used to detect dragging outside the element.</p>
 
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method___onDocumentMouseUp" class="method item private">
+    <h3 class="name"><code>__onDocumentMouseUp</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l526"><code>photonui&#x2F;event&#x2F;mousemanager.js:526</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Used to detect drag-end outside the element.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method___onDoubleClick" class="method item private">
+    <h3 class="name"><code>__onDoubleClick</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l508"><code>photonui&#x2F;event&#x2F;mousemanager.js:508</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method___onMouseDown" class="method item private">
+    <h3 class="name"><code>__onMouseDown</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l490"><code>photonui&#x2F;event&#x2F;mousemanager.js:490</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method___onMouseMove" class="method item private">
+    <h3 class="name"><code>__onMouseMove</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l517"><code>photonui&#x2F;event&#x2F;mousemanager.js:517</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method___onMouseUp" class="method item private">
+    <h3 class="name"><code>__onMouseUp</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l499"><code>photonui&#x2F;event&#x2F;mousemanager.js:499</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
     </div>
 
     
@@ -749,63 +1348,6 @@
 </div>
 
                 
-                    <div id="method__buildHtml" class="method item private">
-    <h3 class="name"><code>_buildHtml</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            <p>Inherited from
-            <a href="../classes/photonui.Widget.html#method__buildHtml">
-                photonui.Widget
-            </a>
-            
-            but overwritten in
-            
-        
-        
-        <a href="../files/photonui_visual_progressbar.js.html#l189"><code>photonui&#x2F;visual&#x2F;progressbar.js:189</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Build the widget HTML.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
                     <div id="method__callCallbacks" class="method item private inherited">
     <h3 class="name"><code>_callCallbacks</code></h3>
 
@@ -918,6 +1460,79 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
+                    <div id="method__dump" class="method item private">
+    <h3 class="name"><code>_dump</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+        </span>
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l365"><code>photonui&#x2F;event&#x2F;mousemanager.js:365</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Take a snapshot of the MouseManager</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
                     <div id="method__registerWidgetEvents" class="method item private inherited">
     <h3 class="name"><code>_registerWidgetEvents</code></h3>
 
@@ -989,7 +1604,120 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
                     
 
                     <div class="param-description">
-                        
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__stateMachine" class="method item private">
+    <h3 class="name"><code>_stateMachine</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>action</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l389"><code>photonui&#x2F;event&#x2F;mousemanager.js:389</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Analyze and dispatche wEvents.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">action</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The action name (e.g. &quot;mouse-up&quot;).</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The js event.</p>
+
                     </div>
 
                     
@@ -1093,6 +1821,63 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
+                    <div id="method__updateEvents" class="method item private">
+    <h3 class="name"><code>_updateEvents</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l340"><code>photonui&#x2F;event&#x2F;mousemanager.js:340</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Bind events on the HTML Element.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method__updateProperties" class="method item private inherited">
     <h3 class="name"><code>_updateProperties</code></h3>
 
@@ -1181,92 +1966,6 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
-                    <div id="method_addClass" class="method item inherited">
-    <h3 class="name"><code>addClass</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>className</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_addClass">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l341"><code>photonui&#x2F;widget.js:341</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Add a class to the outer HTML element of the widget.</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">className</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>The class to add.</p>
-
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
                     <div id="method_destroy" class="method item inherited">
     <h3 class="name"><code>destroy</code></h3>
 
@@ -1290,68 +1989,13 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 
     <div class="meta">
         
-            <p>Inherited from
-            <a href="../classes/photonui.Base.html#method_destroy">
-                photonui.Base
-            </a>
-            
-            but overwritten in
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l328"><code>photonui&#x2F;widget.js:328</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Destroy the widget.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_hide" class="method item inherited">
-    <h3 class="name"><code>hide</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
             
                 <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_hide">photonui.Widget</a>:
+                <a href="../classes/photonui.Base.html#method_destroy">photonui.Base</a>:
             
         
         
-        <a href="../files/photonui_widget.js.html#l319"><code>photonui&#x2F;widget.js:319</code></a>
+        <a href="../files/photonui_base.js.html#l140"><code>photonui&#x2F;base.js:140</code></a>
         
         </p>
 
@@ -1362,7 +2006,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     </div>
 
     <div class="description">
-        <p>DHide the widget (equivalent to widget.visible = false).</p>
+        <p>Destroy the class.</p>
 
     </div>
 
@@ -1614,144 +2258,6 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
-                    <div id="method_removeClass" class="method item inherited">
-    <h3 class="name"><code>removeClass</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>className</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_removeClass">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l358"><code>photonui&#x2F;widget.js:358</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Remove a class from the outer HTML element of the widget.</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">className</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>The class to remove.</p>
-
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_show" class="method item inherited">
-    <h3 class="name"><code>show</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_show">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l310"><code>photonui&#x2F;widget.js:310</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Display the widget (equivalent to widget.visible = true).</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
             </div>
         
 
@@ -1796,6 +2302,55 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 
     </div>
 
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property___event" class="property item private">
+    <h3 class="name"><code>__event</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l324"><code>photonui&#x2F;event&#x2F;mousemanager.js:324</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Last event object.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> {}</p>
     
 
     
@@ -1849,8 +2404,8 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property___html" class="property item private inherited">
-    <h3 class="name"><code>__html</code></h3>
+                    <div id="property___prevState" class="property item private">
+    <h3 class="name"><code>__prevState</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
 
     
@@ -1866,12 +2421,15 @@ internal use).</p>
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property___html">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l292"><code>photonui&#x2F;widget.js:292</code></a>
+        <a href="../files/photonui_event_mousemanager.js.html#l315"><code>photonui&#x2F;event&#x2F;mousemanager.js:315</code></a>
         
         </p>
 
@@ -1881,7 +2439,7 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>Object containing references to the widget HTML elements</p>
+        <p>Previous state.</p>
 
     </div>
 
@@ -1893,95 +2451,8 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_absolutePosition" class="property item inherited">
-    <h3 class="name"><code>absolutePosition</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_absolutePosition">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l244"><code>photonui&#x2F;widget.js:244</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Absolute position of the widget on the page.</p>
-<p><code>{x: Number, y: Number}</code></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_contextMenu" class="property item inherited">
-    <h3 class="name"><code>contextMenu</code></h3>
-    <span class="type"><a href="../classes/photonui.PopupWindow.html" class="crosslink">photonui.PopupWindow</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_contextMenu">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l192"><code>photonui&#x2F;widget.js:192</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The managed contextual menu.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null (= no context menu)</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_contextMenuName" class="property item inherited">
-    <h3 class="name"><code>contextMenuName</code></h3>
+                    <div id="property_action" class="property item">
+    <h3 class="name"><code>action</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
 
     
@@ -1995,12 +2466,15 @@ internal use).</p>
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_contextMenuName">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l175"><code>photonui&#x2F;widget.js:175</code></a>
+        <a href="../files/photonui_event_mousemanager.js.html#l230"><code>photonui&#x2F;event&#x2F;mousemanager.js:230</code></a>
         
         </p>
 
@@ -2010,12 +2484,22 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>The name of the managed contextual menu (<code>photonui.PopupWindow().name</code>).</p>
+        <p>The action:</p>
+<ul>
+<li>&quot;mouse-down&quot;</li>
+<li>&quot;moues-up&quot;</li>
+<li>&quot;click&quot;</li>
+<li>&quot;double-click&quot;</li>
+<li>&quot;drag-start&quot;</li>
+<li>&quot;dragging&quot;</li>
+<li>&quot;drag-end&quot;</li>
+<li>&quot;scroll-down&quot;</li>
+<li>&quot;scroll-up&quot;</li>
+<li>&quot;mouse-move&quot;</li>
+</ul>
 
     </div>
 
-    
-        <p><strong>Default:</strong> null (= no context menu)</p>
     
 
     
@@ -2024,8 +2508,284 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_html" class="property item">
-    <h3 class="name"><code>html</code></h3>
+                    <div id="property_btnLeft" class="property item">
+    <h3 class="name"><code>btnLeft</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l254"><code>photonui&#x2F;event&#x2F;mousemanager.js:254</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Current state of the mouse left button.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_btnMiddle" class="property item">
+    <h3 class="name"><code>btnMiddle</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l267"><code>photonui&#x2F;event&#x2F;mousemanager.js:267</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Current state of the mouse middle button.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_btnRight" class="property item">
+    <h3 class="name"><code>btnRight</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l280"><code>photonui&#x2F;event&#x2F;mousemanager.js:280</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Current state of the mouse right button.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_button" class="property item">
+    <h3 class="name"><code>button</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l293"><code>photonui&#x2F;event&#x2F;mousemanager.js:293</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The button that triggered the last event.</p>
+<ul>
+<li>none</li>
+<li>&quot;left&quot;</li>
+<li>&quot;middle&quot;</li>
+<li>&quot;right&quot;</li>
+</ul>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_deltaX" class="property item">
+    <h3 class="name"><code>deltaX</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l208"><code>photonui&#x2F;event&#x2F;mousemanager.js:208</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Delta X (current_x - previous_x).</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_deltaY" class="property item">
+    <h3 class="name"><code>deltaY</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l219"><code>photonui&#x2F;event&#x2F;mousemanager.js:219</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Delta Y (current_y - previous_y).</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_element" class="property item">
+    <h3 class="name"><code>element</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
 
     
@@ -2038,16 +2798,16 @@ internal use).</p>
 
     <div class="meta">
         
-            <p>Inherited from
-            <a href="../classes/photonui.Widget.html#property_html">
-                photonui.Widget
-            </a>
             
-            but overwritten in
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_visual_progressbar.js.html#l67"><code>photonui&#x2F;visual&#x2F;progressbar.js:67</code></a>
+        <a href="../files/photonui_event_mousemanager.js.html#l131"><code>photonui&#x2F;event&#x2F;mousemanager.js:131</code></a>
         
         </p>
 
@@ -2057,7 +2817,9 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>Html outer element of the widget (if any).</p>
+        <p>The HTML Element on which the events are binded.</p>
+<p>NOTE: If a photonui.Widget object is assigned to this property,
+      its HTML Element will be automatically assigned to the property instead.</p>
 
     </div>
 
@@ -2071,321 +2833,8 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_layoutOptions" class="property item inherited">
-    <h3 class="name"><code>layoutOptions</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_layoutOptions">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l212"><code>photonui&#x2F;widget.js:212</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Layout options.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> {}</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_name" class="property item inherited">
-    <h3 class="name"><code>name</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_name">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l125"><code>photonui&#x2F;widget.js:125</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The unique name of the widget.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> &quot;widget-&quot; + photonui.Helpers.uuid4()</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_offsetHeight" class="property item inherited">
-    <h3 class="name"><code>offsetHeight</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_offsetHeight">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l274"><code>photonui&#x2F;widget.js:274</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Widget height (outer HTML element).</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_offsetWidth" class="property item inherited">
-    <h3 class="name"><code>offsetWidth</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_offsetWidth">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l260"><code>photonui&#x2F;widget.js:260</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Widget width (outer HTML element).</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_orientation" class="property item">
-    <h3 class="name"><code>orientation</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_visual_progressbar.js.html#l112"><code>photonui&#x2F;visual&#x2F;progressbar.js:112</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The progressbar orientation (&quot;vertical&quot; or &quot;horizontal&quot;).</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> &quot;horizontal&quot;</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_pulsate" class="property item">
-    <h3 class="name"><code>pulsate</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_visual_progressbar.js.html#l136"><code>photonui&#x2F;visual&#x2F;progressbar.js:136</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Enable or disable the progressbar pulsate mode.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> false</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_textVisible" class="property item">
-    <h3 class="name"><code>textVisible</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_visual_progressbar.js.html#l166"><code>photonui&#x2F;visual&#x2F;progressbar.js:166</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Display/hide the progression text.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> true</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_value" class="property item">
-    <h3 class="name"><code>value</code></h3>
+                    <div id="property_pageX" class="property item">
+    <h3 class="name"><code>pageX</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
 
     
@@ -2407,7 +2856,7 @@ internal use).</p>
             
         
         
-        <a href="../files/photonui_visual_progressbar.js.html#l88"><code>photonui&#x2F;visual&#x2F;progressbar.js:88</code></a>
+        <a href="../files/photonui_event_mousemanager.js.html#l160"><code>photonui&#x2F;event&#x2F;mousemanager.js:160</code></a>
         
         </p>
 
@@ -2417,7 +2866,7 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>The progression (form 0.00 to 1.00).</p>
+        <p>X position, relative to page top-left corner.</p>
 
     </div>
 
@@ -2431,9 +2880,9 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_visible" class="property item inherited">
-    <h3 class="name"><code>visible</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    <div id="property_pageY" class="property item">
+    <h3 class="name"><code>pageY</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
 
     
 
@@ -2446,12 +2895,15 @@ internal use).</p>
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_visible">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l147"><code>photonui&#x2F;widget.js:147</code></a>
+        <a href="../files/photonui_event_mousemanager.js.html#l172"><code>photonui&#x2F;event&#x2F;mousemanager.js:172</code></a>
         
         </p>
 
@@ -2461,12 +2913,102 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>Is the widget visible or hidden.</p>
+        <p>Y position, relative to page top-left corner.</p>
 
     </div>
 
     
-        <p><strong>Default:</strong> true</p>
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_x" class="property item">
+    <h3 class="name"><code>x</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l184"><code>photonui&#x2F;event&#x2F;mousemanager.js:184</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>X position, relative to the HTML element.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_y" class="property item">
+    <h3 class="name"><code>y</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_event_mousemanager.js.html#l196"><code>photonui&#x2F;event&#x2F;mousemanager.js:196</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Y position, relative to the HTML element.</p>
+
+    </div>
+
     
 
     
