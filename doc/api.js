@@ -11,6 +11,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "photonui.ColorButton",
         "photonui.ColorPalette",
         "photonui.Container",
+        "photonui.Dialog",
         "photonui.FAIcon",
         "photonui.Field",
         "photonui.GridLayout",

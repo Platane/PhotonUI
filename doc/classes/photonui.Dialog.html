@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui.PopupWindow - PhotonUI</title>
+    <title>photonui.Dialog - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -160,19 +160,19 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>photonui.PopupWindow Class</h1>
+                        <h1>photonui.Dialog Class</h1>
 <div class="box meta">
     
 
     
         <div class="extends">
-            Extends <a href="../classes/photonui.BaseWindow.html" class="crosslink">photonui.BaseWindow</a>
+            Extends <a href="../classes/photonui.Window.html" class="crosslink">photonui.Window</a>
         </div>
     
 
     
         <div class="foundat">
-            Defined in: <a href="../files/photonui_container_window_popupwindow.js.html#l43"><code>photonui&#x2F;container&#x2F;window&#x2F;popupwindow.js:43</code></a>
+            Defined in: <a href="../files/photonui_container_window_dialog.js.html#l44"><code>photonui&#x2F;container&#x2F;window&#x2F;dialog.js:44</code></a>
         </div>
     
 
@@ -189,15 +189,15 @@
 
 
 <div class="box intro">
-    <p>Popup Window.</p>
+    <p>Dialog Window.</p>
 
 </div>
 
 
     <div class="constructor">
         <h2>Constructor</h2>
-        <div id="method_photonui.PopupWindow" class="method item">
-    <h3 class="name"><code>photonui.PopupWindow</code></h3>
+        <div id="method_photonui.Dialog" class="method item">
+    <h3 class="name"><code>photonui.Dialog</code></h3>
 
     
         <span class="paren">()</span>
@@ -228,7 +228,7 @@
             
         
         
-        <a href="../files/photonui_container_window_popupwindow.js.html#l43"><code>photonui&#x2F;container&#x2F;window&#x2F;popupwindow.js:43</code></a>
+        <a href="../files/photonui_container_window_dialog.js.html#l44"><code>photonui&#x2F;container&#x2F;window&#x2F;dialog.js:44</code></a>
         
         </p>
 
@@ -305,6 +305,34 @@
                             </li>
                         
                             <li class="index-item method private inherited">
+                                <a href="#method__closeButtonClicked">_closeButtonClicked</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method__moveDragEnd">_moveDragEnd</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method__moveDragging">_moveDragging</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method__moveDragStart">_moveDragStart</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
                                 <a href="#method__registerWidgetEvents">_registerWidgetEvents</a>
 
                                 
@@ -318,8 +346,29 @@
                                 
                             </li>
                         
+                            <li class="index-item method private">
+                                <a href="#method__updateButtons">_updateButtons</a>
+
+                                
+                                
+                            </li>
+                        
                             <li class="index-item method private inherited">
                                 <a href="#method__updateProperties">_updateProperties</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method__updateWindowList">_updateWindowList</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_addButton">addButton</a>
 
                                 
                                 
@@ -353,15 +402,15 @@
                                 
                             </li>
                         
-                            <li class="index-item method">
-                                <a href="#method_popupWidget">popupWidget</a>
+                            <li class="index-item method inherited">
+                                <a href="#method_moveToBack">moveToBack</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item method">
-                                <a href="#method_popupXY">popupXY</a>
+                            <li class="index-item method inherited">
+                                <a href="#method_moveToFront">moveToFront</a>
 
                                 
                                 
@@ -369,6 +418,13 @@
                         
                             <li class="index-item method inherited">
                                 <a href="#method_registerCallback">registerCallback</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_removeButton">removeButton</a>
 
                                 
                                 
@@ -433,6 +489,20 @@
                                 
                             </li>
                         
+                            <li class="index-item property">
+                                <a href="#property_buttons">buttons</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_buttonsNames">buttonsNames</a>
+
+                                
+                                
+                            </li>
+                        
                             <li class="index-item property inherited">
                                 <a href="#property_child">child</a>
 
@@ -448,6 +518,13 @@
                             </li>
                         
                             <li class="index-item property inherited">
+                                <a href="#property_closeButtonVisible">closeButtonVisible</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited inherited">
                                 <a href="#property_containerNode">containerNode</a>
 
                                 
@@ -518,6 +595,13 @@
                             </li>
                         
                             <li class="index-item property inherited">
+                                <a href="#property_movable">movable</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
                                 <a href="#property_name">name</a>
 
                                 
@@ -547,6 +631,13 @@
                         
                             <li class="index-item property inherited">
                                 <a href="#property_position">position</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_title">title</a>
 
                                 
                                 
@@ -665,7 +756,7 @@
                     
 
                     <div class="param-description">
-                         
+                        
                     </div>
 
                     
@@ -869,7 +960,7 @@
             
         
         
-        <a href="../files/photonui_container_window_popupwindow.js.html#l163"><code>photonui&#x2F;container&#x2F;window&#x2F;popupwindow.js:163</code></a>
+        <a href="../files/photonui_container_window_dialog.js.html#l164"><code>photonui&#x2F;container&#x2F;window&#x2F;dialog.js:164</code></a>
         
         </p>
 
@@ -1004,6 +1095,396 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
+                    <div id="method__closeButtonClicked" class="method item private inherited">
+    <h3 class="name"><code>_closeButtonClicked</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Window.html#method__closeButtonClicked">photonui.Window</a>:
+            
+        
+        
+        <a href="../files/photonui_container_window_window.js.html#l325"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:325</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Close button clicked.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__moveDragEnd" class="method item private inherited">
+    <h3 class="name"><code>_moveDragEnd</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Window.html#method__moveDragEnd">photonui.Window</a>:
+            
+        
+        
+        <a href="../files/photonui_container_window_window.js.html#l312"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:312</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Stop moving the window.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__moveDragging" class="method item private inherited">
+    <h3 class="name"><code>_moveDragging</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>offsetX</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>offsetY</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Window.html#method__moveDragging">photonui.Window</a>:
+            
+        
+        
+        <a href="../files/photonui_container_window_window.js.html#l293"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:293</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Move the window.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">offsetX</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">offsetY</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__moveDragStart" class="method item private inherited">
+    <h3 class="name"><code>_moveDragStart</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Window.html#method__moveDragStart">photonui.Window</a>:
+            
+        
+        
+        <a href="../files/photonui_container_window_window.js.html#l275"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:275</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Start moving the window.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method__registerWidgetEvents" class="method item private inherited">
     <h3 class="name"><code>_registerWidgetEvents</code></h3>
 
@@ -1075,7 +1556,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
                     
 
                     <div class="param-description">
-                         
+                        
                     </div>
 
                     
@@ -1179,6 +1660,63 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
+                    <div id="method__updateButtons" class="method item private">
+    <h3 class="name"><code>_updateButtons</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_container_window_dialog.js.html#l150"><code>photonui&#x2F;container&#x2F;window&#x2F;dialog.js:150</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Update dialog buttons.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method__updateProperties" class="method item private inherited">
     <h3 class="name"><code>_updateProperties</code></h3>
 
@@ -1251,6 +1789,149 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 
                     <div class="param-description">
                         <p>The properties to update.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__updateWindowList" class="method item private inherited">
+    <h3 class="name"><code>_updateWindowList</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Window.html#method__updateWindowList">photonui.Window</a>:
+            
+        
+        
+        <a href="../files/photonui_container_window_window.js.html#l250"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:250</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Update all the windows.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_addButton" class="method item">
+    <h3 class="name"><code>addButton</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>widget</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_container_window_dialog.js.html#l121"><code>photonui&#x2F;container&#x2F;window&#x2F;dialog.js:121</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Add a button to the dialog.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">widget</code>
+                        <span class="type"><a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The button to add.</p>
 
                     </div>
 
@@ -1437,7 +2118,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
             
         
         
-        <a href="../files/photonui_container_container.js.html#l123"><code>photonui&#x2F;container&#x2F;container.js:123</code></a>
+        <a href="../files/photonui_container_window_window.js.html#l205"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:205</code></a>
         
         </p>
 
@@ -1512,21 +2193,11 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
-                    <div id="method_popupWidget" class="method item">
-    <h3 class="name"><code>popupWidget</code></h3>
+                    <div id="method_moveToBack" class="method item inherited">
+    <h3 class="name"><code>moveToBack</code></h3>
 
     
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>widget</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
+        <span class="paren">()</span>
     
 
     
@@ -1546,15 +2217,12 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     <div class="meta">
         
             
-                
-                <p>
-                
-                Defined in
-                
+                <p>Inherited from
+                <a href="../classes/photonui.Window.html#method_moveToBack">photonui.Window</a>:
             
         
         
-        <a href="../files/photonui_container_window_popupwindow.js.html#l117"><code>photonui&#x2F;container&#x2F;window&#x2F;popupwindow.js:117</code></a>
+        <a href="../files/photonui_container_window_window.js.html#l191"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:191</code></a>
         
         </p>
 
@@ -1565,33 +2233,10 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     </div>
 
     <div class="description">
-        <p>Pop the window at the best position for the given widget.</p>
+        <p>Bring the window to the back.</p>
 
     </div>
 
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">widget</code>
-                        <span class="type"><a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
     
 
     
@@ -1600,27 +2245,11 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
-                    <div id="method_popupXY" class="method item">
-    <h3 class="name"><code>popupXY</code></h3>
+                    <div id="method_moveToFront" class="method item inherited">
+    <h3 class="name"><code>moveToFront</code></h3>
 
     
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>x</code>
-                    
-                </li>
-            
-                <li class="arg">
-                    
-                        <code>y</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
+        <span class="paren">()</span>
     
 
     
@@ -1640,15 +2269,12 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     <div class="meta">
         
             
-                
-                <p>
-                
-                Defined in
-                
+                <p>Inherited from
+                <a href="../classes/photonui.Window.html#method_moveToFront">photonui.Window</a>:
             
         
         
-        <a href="../files/photonui_container_window_popupwindow.js.html#l83"><code>photonui&#x2F;container&#x2F;window&#x2F;popupwindow.js:83</code></a>
+        <a href="../files/photonui_container_window_window.js.html#l177"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:177</code></a>
         
         </p>
 
@@ -1659,48 +2285,10 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     </div>
 
     <div class="description">
-        <p>Pop the window at the given position.</p>
+        <p>Bring the window to front.</p>
 
     </div>
 
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">x</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        
-                    </div>
-
-                    
-                </li>
-            
-                <li class="param">
-                    
-                        <code class="param-name">y</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
     
 
     
@@ -1847,6 +2435,95 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 
                     <div class="param-description">
                         <p>The value of this (optionnal, default = current widget).</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_removeButton" class="method item">
+    <h3 class="name"><code>removeButton</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>widget</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_container_window_dialog.js.html#l132"><code>photonui&#x2F;container&#x2F;window&#x2F;dialog.js:132</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Remove a button from the dialog.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">widget</code>
+                        <span class="type"><a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The button to remove.</p>
 
                     </div>
 
@@ -2271,6 +2948,100 @@ internal use).</p>
 </div>
 
                 
+                    <div id="property_buttons" class="property item">
+    <h3 class="name"><code>buttons</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_container_window_dialog.js.html#l87"><code>photonui&#x2F;container&#x2F;window&#x2F;dialog.js:87</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Dialog buttons widgets.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> []</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_buttonsNames" class="property item">
+    <h3 class="name"><code>buttonsNames</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_container_window_dialog.js.html#l69"><code>photonui&#x2F;container&#x2F;window&#x2F;dialog.js:69</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Dialog button widgets name.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> []</p>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="property_child" class="property item inherited">
     <h3 class="name"><code>child</code></h3>
     <span class="type"><a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a></span>
@@ -2359,7 +3130,50 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_containerNode" class="property item">
+                    <div id="property_closeButtonVisible" class="property item inherited">
+    <h3 class="name"><code>closeButtonVisible</code></h3>
+    <span class="type">Boolean
+default: true</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Window.html#property_closeButtonVisible">photonui.Window</a>:
+            
+        
+        
+        <a href="../files/photonui_container_window_window.js.html#l120"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:120</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Determine if the close button in the title bar is displayed or not.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_containerNode" class="property item inherited">
     <h3 class="name"><code>containerNode</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
 
@@ -2382,7 +3196,7 @@ internal use).</p>
             
         
         
-        <a href="../files/photonui_container_window_popupwindow.js.html#l63"><code>photonui&#x2F;container&#x2F;window&#x2F;popupwindow.js:63</code></a>
+        <a href="../files/photonui_container_window_window.js.html#l146"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:146</code></a>
         
         </p>
 
@@ -2803,6 +3617,50 @@ internal use).</p>
 </div>
 
                 
+                    <div id="property_movable" class="property item inherited">
+    <h3 class="name"><code>movable</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Window.html#property_movable">photonui.Window</a>:
+            
+        
+        
+        <a href="../files/photonui_container_window_window.js.html#l103"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:103</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Determine if the window can be moved (drag &amp; drop) by the user.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="property_name" class="property item inherited">
     <h3 class="name"><code>name</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
@@ -3012,6 +3870,50 @@ internal use).</p>
 
     
         <p><strong>Default:</strong> {x: 0, y: 0}</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_title" class="property item inherited">
+    <h3 class="name"><code>title</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Window.html#property_title">photonui.Window</a>:
+            
+        
+        
+        <a href="../files/photonui_container_window_window.js.html#l85"><code>photonui&#x2F;container&#x2F;window&#x2F;window.js:85</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The window title.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> &quot;Window&quot;</p>
     
 
     

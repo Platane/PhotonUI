@@ -109,6 +109,17 @@
                 "photonui": 1
             }
         },
+        "photonui/container/window/dialog.js": {
+            "name": "photonui/container/window/dialog.js",
+            "modules": {},
+            "classes": {
+                "photonui.Dialog": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/container/window/popupwindow.js": {
             "name": "photonui/container/window/popupwindow.js",
             "modules": {},
@@ -403,6 +414,7 @@
                 "photonui.SubMenuItem": 1,
                 "photonui.Viewport": 1,
                 "photonui.BaseWindow": 1,
+                "photonui.Dialog": 1,
                 "photonui.PopupWindow": 1,
                 "photonui.Window": 1,
                 "photonui.Container": 1,
@@ -466,6 +478,7 @@
                 "photonui.SubMenuItem": 1,
                 "photonui.Viewport": 1,
                 "photonui.BaseWindow": 1,
+                "photonui.Dialog": 1,
                 "photonui.PopupWindow": 1,
                 "photonui.Window": 1,
                 "photonui.Container": 1
@@ -727,6 +740,23 @@
             "description": "Windows base class.\n\nwEvents:\n\n  * position-changed:\n     - description: called when the widows is moved.\n     - callback:    function(widget, x, y)",
             "is_constructor": 1,
             "extends": "photonui.Container"
+        },
+        "photonui.Dialog": {
+            "name": "photonui.Dialog",
+            "shortname": "Dialog",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/window/dialog.js",
+            "line": 44,
+            "description": "Dialog Window.",
+            "is_constructor": 1,
+            "extends": "photonui.Window"
         },
         "photonui.PopupWindow": {
             "name": "photonui.PopupWindow",
@@ -1824,6 +1854,94 @@
             "access": "private",
             "tagname": "",
             "class": "photonui.BaseWindow",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/dialog.js",
+            "line": 69,
+            "description": "Dialog button widgets name.",
+            "itemtype": "property",
+            "name": "buttonsNames",
+            "type": "Array",
+            "default": "[]",
+            "class": "photonui.Dialog",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/dialog.js",
+            "line": 87,
+            "description": "Dialog buttons widgets.",
+            "itemtype": "property",
+            "name": "buttons",
+            "type": "Array",
+            "default": "[]",
+            "class": "photonui.Dialog",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/dialog.js",
+            "line": 121,
+            "description": "Add a button to the dialog.",
+            "itemtype": "method",
+            "name": "addButton",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "The button to add.",
+                    "type": "photonui.Widget"
+                }
+            ],
+            "class": "photonui.Dialog",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/dialog.js",
+            "line": 132,
+            "description": "Remove a button from the dialog.",
+            "itemtype": "method",
+            "name": "removeButton",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "The button to remove.",
+                    "type": "photonui.Widget"
+                }
+            ],
+            "class": "photonui.Dialog",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/dialog.js",
+            "line": 150,
+            "description": "Update dialog buttons.",
+            "itemtype": "method",
+            "name": "_updateButtons",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Dialog",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/dialog.js",
+            "line": 164,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Dialog",
             "module": "PhotonUI",
             "submodule": "Container",
             "namespace": "photonui"

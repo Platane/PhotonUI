@@ -61,6 +61,8 @@
             
                 <li><a href="../classes/photonui.Container.html">photonui.Container</a></li>
             
+                <li><a href="../classes/photonui.Dialog.html">photonui.Dialog</a></li>
+            
                 <li><a href="../classes/photonui.FAIcon.html">photonui.FAIcon</a></li>
             
                 <li><a href="../classes/photonui.Field.html">photonui.Field</a></li>
@@ -322,9 +324,9 @@ photonui.Layout = photonui.Container.$extend({
      * @param {photonui.Widget} widget The widget to remove.
      */
     removeChild: function(widget) {
-        var index = this.childrenWidgets.indexOf(widget.name);
+        var index = this._childrenNames.indexOf(widget.name);
         if (index &gt;= 0) {
-            this.childrenWidgets.splice(widget.name, 1);
+            this._childrenNames.splice(widget.name, 1);
         }
         this._updateLayout();
     },

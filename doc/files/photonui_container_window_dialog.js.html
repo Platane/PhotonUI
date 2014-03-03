@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui/container/layout/gridlayout.js - PhotonUI</title>
+    <title>photonui/container/window/dialog.js - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -160,7 +160,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: photonui/container/layout/gridlayout.js</h1>
+                        <h1 class="file-heading">File: photonui/container/window/dialog.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -204,39 +204,23 @@
 
 
 var photonui = photonui || {};
+var _windowList = [];
 
 
 /**
- * Grid layout.
+ * Dialog Window.
  *
- * Layout Options:
- *
- *     {
- *          verticalExpansion: &lt;Boolean, default: true&gt;,
- *          horizontalExpansion: &lt;Boolean, default: true&gt;,
- *          width: &lt;Number, default: undefined&gt;,
- *          height: &lt;Number, default: undefined&gt;,
- *          minWidth: &lt;Number, default: undefined&gt;,
- *          minHeight: &lt;Number, default: undefined&gt;,
- *          maxWidth: &lt;Number, default: undefined&gt;,
- *          maxHeight: &lt;Number, default: undefined&gt;,
- *          horizontalAlign: &lt;String (left, center, right), default: center&gt;,
- *          gridX: &lt;Number, default: 0&gt;,
- *          gridY: &lt;Number, default: 0&gt;,
- *          gridWidth: &lt;Number, default: 1&gt;,
- *          gridHeight: &lt;Number, default: 1&gt;,
- *     }
- *
- * @class GridLayout
+ * @class Dialog
  * @constructor
- * @extends photonui.Layout
+ * @extends photonui.Window
  */
-photonui.GridLayout = photonui.Layout.$extend({
+photonui.Dialog = photonui.Window.$extend({
 
     // Constructor
     __init__: function(params) {
+        this._buttonsNames = [];
         this.$super(params);
-        this._updateProperties([&quot;verticalSpacing&quot;]);
+        // TODO
     },
 
 
@@ -249,60 +233,99 @@ photonui.GridLayout = photonui.Layout.$extend({
 
 
     /**
-     * The vertical spacing between children widgets.
+     * Dialog button widgets name.
      *
-     * @property verticalSpacing
-     * @type Number
-     * @default 5
+     * @property buttonsNames
+     * @type Array
+     * @default []
      */
-    _verticalSpacing: 5,
+    _buttonsNames: [],
 
-    getVerticalSpacing: function() {
-        return this._verticalSpacing;
+    getButtonsNames: function() {
+        return this._buttonsNames;
     },
 
-    setVerticalSpacing: function(verticalSpacing) {
-        this._verticalSpacing = verticalSpacing;
-        this.__html.grid.style.borderSpacing = this.verticalSpacing + &quot;px &quot; + this.horizontalSpacing + &quot;px&quot;;
+    setButtonsNames: function(buttonsNames) {
+        this._buttonsNames = buttonsNames;
+        this._updateButtons();
     },
 
     /**
-     * The horizontal spacing between children widgets.
+     * Dialog buttons widgets.
      *
-     * @property horizontalSpacing
-     * @type Number
-     * @default 5
+     * @property buttons
+     * @type Array
+     * @default []
      */
-    _horizontalSpacing: 5,
-
-    getHorizontalSpacing: function() {
-        return this._horizontalSpacing;
+    getButtons: function() {
+        var buttons = [];
+        for (var i=0 ; i&lt;this._buttonsNames.length ; i++) {
+            buttons.push(photonui.getWidget(this._buttonsNames[i]));
+        }
+        return buttons;
     },
 
-    setHorizontalSpacing: function(horizontalSpacing) {
-        this._horizontalSpacing = horizontalSpacing;
-        this.__html.grid.style.borderSpacing = this.verticalSpacing + &quot;px &quot; + this.horizontalSpacing + &quot;px&quot;;
+    setButtons: function(buttons) {
+        var buttonsNames = [];
+        for (var i=0 ; i&lt;buttons.length ; i++) {
+            if (buttons[i] instanceof photonui.Widget) {
+                buttonsNames.push(buttons[i].name);
+            }
+        }
+        this.buttonsNames = buttonsNames;
     },
 
-    /**
-     * Html outer element of the widget (if any).
-     *
-     * @property html
-     * @type HTMLElement
-     * @default null
-     * @readOnly
-     */
-    getHtml: function() {
-        return this.__html.outerbox;
-    },
 
     //////////////////////////////////////////
     // Methods                              //
     //////////////////////////////////////////
 
 
+    // ====== Public methods ======
+
+
+    /**
+     * Add a button to the dialog.
+     *
+     * @method addButton
+     * @param {photonui.Widget} widget The button to add.
+     */
+    addButton: function(widget) {
+        this._childrenNames.push(widget.name);
+        this._updateButtons();
+    },
+
+    /**
+     * Remove a button from the dialog.
+     *
+     * @method removeButton
+     * @param {photonui.Widget} widget The button to remove.
+     */
+    removeButton: function(widget) {
+        var index = this._buttonsNames.indexOf(widget.name);
+        if (index &gt;= 0) {
+            this._buttonsNames.splice(widget.name, 1);
+        }
+        this._updateButtons();
+    },
+
+
     // ====== Private methods ======
 
+
+    /**
+     * Update dialog buttons.
+     *
+     * @method _updateButtons
+     * @private
+     */
+    _updateButtons: function() {
+        photonui.Helpers.cleanNode(this.__html.buttons);
+        var buttons = this.buttons;
+        for (var i=buttons.length-1 ; i&gt;=0 ; i--) {
+            this.__html.buttons.appendChild(buttons[i].html);
+        }
+    },
 
     /**
      * Build the widget HTML.
@@ -311,143 +334,12 @@ photonui.GridLayout = photonui.Layout.$extend({
      * @private
      */
     _buildHtml: function() {
-        this.__html.outerbox = document.createElement(&quot;div&quot;);
-        this.__html.outerbox.className = &quot;photonui-widget photonui-gridlayout&quot;;
+        this.$super();
+        this.addClass(&quot;photonui-dialog&quot;);
 
-        this.__html.grid = document.createElement(&quot;table&quot;);
-        this.__html.outerbox.appendChild(this.__html.grid);
-
-        this.__html.gridBody = document.createElement(&quot;tbody&quot;);
-        this.__html.grid.appendChild(this.__html.gridBody);
-    },
-
-    /**
-     * Update the layout.
-     *
-     * @method _updateLayout
-     * @private
-     */
-    _updateLayout: function() {
-        // Calculate geometry
-        var ox = Infinity;  // Offset X
-        var oy = Infinity;  // Offset Y
-        var nc = 0;  // Number of columns
-        var nr = 0;  // Number of rows
-        var children = this.children;
-        for (var i=0 ; i&lt;children.length ; i++) {
-            children[i].layoutOptions.gridX = (children[i].layoutOptions.gridX != undefined) ? children[i].layoutOptions.gridX : 0;
-            children[i].layoutOptions.gridY = (children[i].layoutOptions.gridY != undefined) ? children[i].layoutOptions.gridY : 0;
-            children[i].layoutOptions.gridWidth = Math.max(children[i].layoutOptions.gridWidth, 1) || 1;
-            children[i].layoutOptions.gridHeight = Math.max(children[i].layoutOptions.gridHeight, 1) || 1;
-            ox = Math.min(ox, children[i].layoutOptions.gridX);
-            oy = Math.min(oy, children[i].layoutOptions.gridY);
-            nc = Math.max(nc, children[i].layoutOptions.gridX + children[i].layoutOptions.gridWidth);
-            nr = Math.max(nr, children[i].layoutOptions.gridY + children[i].layoutOptions.gridHeight);
-        }
-        nc -= ox;
-        nr -= oy;
-
-        // Find and fix conflicts
-        // TODO
-
-        // Build
-        photonui.Helpers.cleanNode(this.__html.gridBody);
-        var map = [];
-        for (var y=0 ; y&lt;nr ; y++) {
-            var row = [];
-            for (var x=0 ; x&lt;nc ; x++) {
-                row.push(false);
-            }
-            map.push(row);
-        }
-        for (var y=0 ; y&lt;nr ; y++) {
-            var e_tr = document.createElement(&quot;tr&quot;);
-            this.__html.gridBody.appendChild(e_tr);
-            for (var x=0 ; x&lt;nc ; x++) {
-                if (map[y][x]) {
-                    continue;
-                }
-                var widget = false;
-                var e_td = document.createElement(&quot;td&quot;);
-                e_td.className = &quot;photonui-container photonui-gridlayout-cell&quot;;
-                e_tr.appendChild(e_td);
-                for (var i=0 ; i&lt;children.length ; i++) {
-                    if (children[i].layoutOptions.gridX - ox == x &amp;&amp; children[i].layoutOptions.gridY - oy == y) {
-                        widget = true;
-                        var cs = children[i].layoutOptions.gridWidth;
-                        var rs = children[i].layoutOptions.gridHeight;
-                        e_td.colSpan = cs;
-                        e_td.rowSpan = rs;
-                        e_td.appendChild(children[i].html);
-
-                        if (children[i].layoutOptions.horizontalExpansion == undefined
-                        ||  children[i].layoutOptions.horizontalExpansion) {
-                            e_td.className += &quot; photonui-container-expand-child-horizontal&quot;
-                        }
-                        if (children[i].layoutOptions.verticalExpansion == undefined
-                        ||  children[i].layoutOptions.verticalExpansion) {
-                            e_td.className += &quot; photonui-container-expand-child-vertical&quot;
-                        }
-
-                        // Layout Options: width
-                        if (children[i].layoutOptions.width != undefined) {
-                            e_td.style.height = children[i].layoutOptions.width + &quot;px&quot;;
-                        }
-                        // Layout Options: height
-                        if (children[i].layoutOptions.height != undefined) {
-                            e_td.style.height = children[i].layoutOptions.height + &quot;px&quot;;
-                        }
-                        // Layout Options: minWidth
-                        if (children[i].layoutOptions.minWidth != undefined) {
-                            e_td.style.minWidth = children[i].layoutOptions.minWidth + &quot;px&quot;;
-                        }
-                        // Layout Options: minHeight
-                        if (children[i].layoutOptions.minHeight != undefined) {
-                            e_td.style.minHeight = children[i].layoutOptions.minHeight + &quot;px&quot;;
-                        }
-                        // Layout Options: maxWidth
-                        if (children[i].layoutOptions.maxWidth != undefined) {
-                            e_td.style.maxWidth = children[i].layoutOptions.maxWidth + &quot;px&quot;;
-                        }
-                        // Layout Options: maxHeight
-                        if (children[i].layoutOptions.maxHeight != undefined) {
-                            e_td.style.maxHeight = children[i].layoutOptions.maxHeight + &quot;px&quot;;
-                        }
-                        // Layout Options: horizontalAlign
-                        if (children[i].layoutOptions.horizontalAlign != undefined) {
-                            e_td.style.textAlign = children[i].layoutOptions.horizontalAlign;
-                        }
-
-                        if (cs &gt; 1 || rs &gt; 1) {
-                            for (var r=y ; r&lt;y+rs ; r++) {
-                                for (var c=x ; c&lt;x+cs ; c++) {
-                                    map[r][c] = true;
-                                }
-                            }
-                        }
-                        break;
-                    }
-                }
-                if (!widget) {
-                    e_td.innerHTML = &quot;&amp;nbsp;&quot;;
-                }
-            }
-        }
-
-        // Hack for Gecko and Trident
-        //var cells = document.querySelectorAll(&quot;#&quot; + this.name + &quot; td&quot;);
-        //var heights = [];
-        //var padding = 0;
-        //for (var i=0 ; i&lt;cells.length ; i++) {
-            //if (cells[i].childNodes.length == 1 &amp;&amp; cells[i].childNodes[0] instanceof HTMLElement) {
-                //padding = parseInt(getComputedStyle(cells[i].childNodes[0]).paddingTop);
-                //padding += parseInt(getComputedStyle(cells[i].childNodes[0]).paddingBottom);
-            //}
-            //heights[i] = (cells[i].offsetHeight - padding) + &quot;px&quot;;
-        //}
-        //for (var i=0 ; i&lt;cells.length ; i++) {
-            //cells[i].style.height = heights[i];
-        //}
+        this.__html.buttons = document.createElement(&quot;div&quot;);
+        this.__html.buttons.className = &quot;photonui-dialog-buttons&quot;;
+        this.__html[&quot;window&quot;].appendChild(this.__html.buttons);
     }
 });
 
