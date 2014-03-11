@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui/input/field/textfield.js - PhotonUI</title>
+    <title>photonui/visual/spriteicon.js - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -164,7 +164,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: photonui/input/field/textfield.js</h1>
+                        <h1 class="file-heading">File: photonui/visual/spriteicon.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -198,11 +198,12 @@
  * Authored by: Fabien LOISON &lt;http://flozz.fr/&gt;
  */
 
+
 /**
  * PhotonUI - Javascript Web User Interface.
  *
  * @module PhotonUI
- * @submodule Input
+ * @submodule Visual
  * @namespace photonui
  */
 
@@ -210,19 +211,221 @@
 var photonui = photonui || {};
 
 
-/**
- * Text, Password, Email, Search, Tel, URL Fields.
+var _spritesheets = {};
+
+/*
+ * Get a sprite sheet.
  *
- * @class TextField
- * @constructor
- * @extends photonui.Field
+ * @method getSpriteSheet
+ * @param {String} name The sprite sheet name.
+ *
+ * @return {photonui.SpriteSheet} The sprite sheet or null.
  */
-photonui.TextField = photonui.Field.$extend({
+photonui.getSpriteSheet = function(name) {
+    if (_spritesheets[name] !== undefined) {
+        return _spritesheets[name];
+    }
+    return null;
+}
+
+
+/**
+ * Sprite sheet (to use with SpriteIcon).
+ *
+ * @class SpriteSheet
+ * @constructor
+ * @extends photonui.Base
+ */
+photonui.SpriteSheet = photonui.Base.$extend({
 
     // Constructor
     __init__: function(params) {
+        this._icons = {};
         this.$super(params);
-        this._bindFieldEvents();
+        this._updateProperties([&quot;name&quot;]);
+    },
+
+    //////////////////////////////////////////
+    // Properties and Accessors             //
+    //////////////////////////////////////////
+
+
+    // ====== Public properties ======
+
+
+    /**
+     * The sprit sheet name.
+     *
+     * @property name
+     * @type String
+     * @default &quot;default&quot;
+     */
+    _name: &quot;default&quot;,
+
+    getName: function() {
+        return this._name;
+    },
+
+    setName: function(name) {
+        if (_spritesheets[this.name] == this) {
+            delete _spritesheets[this.name];
+        }
+        this._name = name;
+        _spritesheets[this.name] = this;
+    },
+
+    /**
+     * The spritesheet image URL.
+     *
+     * @property imageUrl
+     * @type String
+     * @default null
+     */
+    _imageUrl: null,
+
+    getImageUrl: function() {
+        return this._imageUrl;
+    },
+
+    setImageUrl: function(url) {
+        if (!url) {
+            this._imageUrl = null;
+            return;
+        }
+        if (this._imageUrl != url) {
+            this._imageUrl = url;
+            // Preload
+            var img = new Image();
+            img.src = url;
+        }
+    },
+
+    /**
+     * Icon size (width = height).
+     *
+     * @property size
+     * @type Number
+     * @default 16
+     */
+    _size: 16,
+
+    getSize: function() {
+        return this._size;
+    },
+
+    setSize: function(size) {
+        this._size = size;
+    },
+
+    /**
+     * Icons.
+     *
+     *     {
+     *          &quot;iconName&quot;: [x, y],
+     *          &quot;icon2: [x2, y2],
+     *          ...
+     *     }
+     *
+     * @property icons
+     * @type Object
+     * @default: {}
+     */
+    _icons: {},
+
+    getIcons: function() {
+        return this._icons;
+    },
+
+    setIcons: function(icons) {
+        for (icon in icons) {
+            this._icons[icon] = icons[icon];
+        }
+    },
+
+
+    //////////////////////////////////////////
+    // Methods                              //
+    //////////////////////////////////////////
+
+
+    // ====== Public methods ======
+
+
+    /**
+     * Get icon position.
+     *
+     * @method getIconPosition
+     * @param {String} iconName
+     * @return {Object} &#x60;{x: Number, y: Number}&#x60;
+     */
+    getIconPosition: function(iconName) {
+        return {x: this.icons[iconName][0], y: this.icons[iconName][1]};
+    },
+
+    /**
+     * Get the right CSS for the given icon.
+     *
+     * @method getIconCss
+     * @param {String} iconName
+     * @return {String} the CSS.
+     */
+    getIconCss: function(iconName) {
+        return &quot;width: &quot;      + this.size + &quot;px; &quot; +
+               &quot;height: &quot;     + this.size + &quot;px; &quot; +
+               &quot;background: &quot; + &quot;url(&quot; + this.imageUrl + &quot;) &quot; +
+                                &quot;-&quot; + this.getIconPosition(iconName).x + &quot;px &quot; +
+                                &quot;-&quot; + this.getIconPosition(iconName).y + &quot;px;&quot; ;
+    },
+
+    /**
+     * Add an icon (set its position).
+     *
+     * @method addIcon
+     * @param {String} iconName
+     * @param {Number} x
+     * @param {Number} y
+     */
+    addIcon: function(iconName, x ,y) {
+        this.icons = {iconName: [x, y]};
+    },
+
+    /**
+     * Remove an icon.
+     *
+     * @method removeIcon
+     * @param {String} iconName
+     */
+    removeIcon: function(iconName) {
+        delete this._icons[iconName];
+    }
+});
+
+
+
+/**
+ * Sprite sheet based icons.
+ *
+ * @class SpriteIcon
+ * @constructor
+ * @extends photonui.BaseIcon
+ */
+photonui.SpriteIcon = photonui.BaseIcon.$extend({
+
+    // Constructor
+    __init__: function(params1, params2) {
+        var params = {};
+        if (params1 &amp;&amp; typeof(params1) == &quot;string&quot;) {
+            params.icon = params1;
+            if (params2 &amp;&amp; typeof(params2) == &quot;object&quot;) {
+                for (var i in params2) {
+                    params[i] = params2[i];
+                }
+            }
+        }
+        else if (params1) {
+            params = params1;
+        }
+        this.$super(params);
     },
 
 
@@ -235,29 +438,70 @@ photonui.TextField = photonui.Field.$extend({
 
 
     /**
-     * Type of the field.
+     * The sprite sheet name.
      *
-     *   * text
-     *   * password
-     *   * email
-     *   * search
-     *   * tel
-     *   * url
-     *
-     * @property type
+     * @property spriteSheetName
      * @type String
-     * @default text
+     * @default &quot;&quot;
      */
-    getType: function() {
-        return this.__html.field.type;
+    _spriteSheetName: &quot;&quot;,
+
+    getSpriteSheetName: function() {
+        return this._spriteSheetName;
     },
 
-    setType: function(type) {
-        if (type != &quot;text&quot; &amp;&amp; type != &quot;password&quot; &amp;&amp; type != &quot;email&quot; &amp;&amp; type != &quot;search&quot; &amp;&amp; type != &quot;tel&quot; &amp;&amp; type != &quot;url&quot;) {
-            throw &#x27;Error: The type should be &quot;text&quot;, &quot;password&quot;, &quot;email&quot;, &quot;search&quot;, &quot;tel&quot; or &quot;url&quot;.&#x27;;
-            return;
-        }
-        this.__html.field.type = type;
+    setSpriteSheetName: function(spriteSheetName) {
+        this._spriteSheetName = spriteSheetName || &quot;&quot;;
+        this._update();
+    },
+
+    /**
+     * The icon name.
+     *
+     * @property iconName
+     * @type String
+     * @default &quot;&quot;
+     */
+    _iconName: &quot;&quot;,
+
+    getIconName: function() {
+        return this._iconName;
+    },
+
+    setIconName: function(iconName) {
+        this._iconName = iconName || &quot;&quot;;
+        this._update();
+    },
+
+    /**
+     * The icon id.
+     *
+     *     &quot;spriteSheetName/iconName&quot;
+     *
+     * @property icon
+     * @type String
+     * @default &quot;/&quot;
+     */
+    getIcon: function() {
+        return this.spriteSheetName + &quot;/&quot; + this.iconName;
+    },
+
+    setIcon: function(icon) {
+        var names = icon.split(&quot;/&quot;);
+        this.spriteSheetName = names[0];
+        this.iconName = names[1];
+    },
+
+    /**
+     * Html outer element of the widget (if any).
+     *
+     * @property html
+     * @type HTMLElement
+     * @default null
+     * @readOnly
+     */
+    getHtml: function() {
+        return this.__html.outer;
     },
 
 
@@ -268,6 +512,19 @@ photonui.TextField = photonui.Field.$extend({
 
     // ====== Private methods ======
 
+    /**
+     * Update the icon.
+     *
+     * @method _update
+     * @private
+     */
+    _update: function() {
+        var style = &quot;&quot;;
+        if (this.spriteSheetName &amp;&amp; this.iconName) {
+            style = photonui.getSpriteSheet(this.spriteSheetName).getIconCss(this.iconName)
+        }
+        this.__html.icon.setAttribute(&quot;style&quot;, style);
+    },
 
     /**
      * Build the widget HTML.
@@ -276,9 +533,11 @@ photonui.TextField = photonui.Field.$extend({
      * @private
      */
     _buildHtml: function() {
-        this.__html.field = document.createElement(&quot;input&quot;);
-        this.__html.field.className = &quot;photonui-widget photonui-field photonui-field-text&quot;;
-        this.__html.field.type = &quot;text&quot;;
+        this.__html.outer = document.createElement(&quot;span&quot;);
+        this.__html.outer.className = &quot;photonui-widget photonui-icon photonui-spriteicon&quot;;
+
+        this.__html.icon = document.createElement(&quot;span&quot;);
+        this.__html.outer.appendChild(this.__html.icon);
     }
 });
 

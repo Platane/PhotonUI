@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui.ProgressBar - PhotonUI</title>
+    <title>photonui.SpriteSheet - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -164,19 +164,19 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>photonui.ProgressBar Class</h1>
+                        <h1>photonui.SpriteSheet Class</h1>
 <div class="box meta">
     
 
     
         <div class="extends">
-            Extends <a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a>
+            Extends <a href="../classes/photonui.Base.html" class="crosslink">photonui.Base</a>
         </div>
     
 
     
         <div class="foundat">
-            Defined in: <a href="../files/photonui_visual_progressbar.js.html#l43"><code>photonui&#x2F;visual&#x2F;progressbar.js:43</code></a>
+            Defined in: <a href="../files/photonui_visual_spriteicon.js.html#l62"><code>photonui&#x2F;visual&#x2F;spriteicon.js:62</code></a>
         </div>
     
 
@@ -193,15 +193,15 @@
 
 
 <div class="box intro">
-    <p>ProgressBar.</p>
+    <p>Sprite sheet (to use with SpriteIcon).</p>
 
 </div>
 
 
     <div class="constructor">
         <h2>Constructor</h2>
-        <div id="method_photonui.ProgressBar" class="method item">
-    <h3 class="name"><code>photonui.ProgressBar</code></h3>
+        <div id="method_photonui.SpriteSheet" class="method item">
+    <h3 class="name"><code>photonui.SpriteSheet</code></h3>
 
     
         <span class="paren">()</span>
@@ -232,7 +232,7 @@
             
         
         
-        <a href="../files/photonui_visual_progressbar.js.html#l43"><code>photonui&#x2F;visual&#x2F;progressbar.js:43</code></a>
+        <a href="../files/photonui_visual_spriteicon.js.html#l62"><code>photonui&#x2F;visual&#x2F;spriteicon.js:62</code></a>
         
         </p>
 
@@ -281,21 +281,7 @@
                     <ul class="index-list methods extends">
                         
                             <li class="index-item method private inherited">
-                                <a href="#method___onContextMenu">__onContextMenu</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method private inherited">
                                 <a href="#method__bindEvent">_bindEvent</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method private inherited">
-                                <a href="#method__buildHtml">_buildHtml</a>
 
                                 
                                 
@@ -329,22 +315,29 @@
                                 
                             </li>
                         
-                            <li class="index-item method inherited">
-                                <a href="#method_addClass">addClass</a>
+                            <li class="index-item method">
+                                <a href="#method_addIcon">addIcon</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item method inherited inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_destroy">destroy</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item method inherited">
-                                <a href="#method_hide">hide</a>
+                            <li class="index-item method">
+                                <a href="#method_getIconCss">getIconCss</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getIconPosition">getIconPosition</a>
 
                                 
                                 
@@ -364,15 +357,8 @@
                                 
                             </li>
                         
-                            <li class="index-item method inherited">
-                                <a href="#method_removeClass">removeClass</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited">
-                                <a href="#method_show">show</a>
+                            <li class="index-item method">
+                                <a href="#method_removeIcon">removeIcon</a>
 
                                 
                                 
@@ -402,106 +388,29 @@
                                 
                             </li>
                         
-                            <li class="index-item property private inherited">
-                                <a href="#property___html">__html</a>
+                            <li class="index-item property">
+                                <a href="#property_icons">icons</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property inherited">
-                                <a href="#property_absolutePosition">absolutePosition</a>
+                            <li class="index-item property">
+                                <a href="#property_imageUrl">imageUrl</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property inherited">
-                                <a href="#property_contextMenu">contextMenu</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_contextMenuName">contextMenuName</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_html">html</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_layoutOptions">layoutOptions</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
+                            <li class="index-item property">
                                 <a href="#property_name">name</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property inherited">
-                                <a href="#property_offsetHeight">offsetHeight</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_offsetWidth">offsetWidth</a>
-
-                                
-                                
-                            </li>
-                        
                             <li class="index-item property">
-                                <a href="#property_orientation">orientation</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_pulsate">pulsate</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_textVisible">textVisible</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_tooltip.">tooltip.</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_value">value</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_visible">visible</a>
+                                <a href="#property_size">size</a>
 
                                 
                                 
@@ -519,93 +428,6 @@
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
-
-                
-                    <div id="method___onContextMenu" class="method item private inherited">
-    <h3 class="name"><code>__onContextMenu</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>event</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method___onContextMenu">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l419"><code>photonui&#x2F;widget.js:419</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Called when the context menu should be displayed.</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">event</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
 
                 
                     <div id="method__bindEvent" class="method item private inherited">
@@ -754,63 +576,6 @@
             
             </ul>
         </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method__buildHtml" class="method item private">
-    <h3 class="name"><code>_buildHtml</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            <p>Inherited from
-            <a href="../classes/photonui.Widget.html#method__buildHtml">
-                photonui.Widget
-            </a>
-            
-            but overwritten in
-            
-        
-        
-        <a href="../files/photonui_visual_progressbar.js.html#l189"><code>photonui&#x2F;visual&#x2F;progressbar.js:189</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Build the widget HTML.</p>
-
-    </div>
-
     
 
     
@@ -1194,8 +959,8 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
-                    <div id="method_addClass" class="method item inherited">
-    <h3 class="name"><code>addClass</code></h3>
+                    <div id="method_addIcon" class="method item">
+    <h3 class="name"><code>addIcon</code></h3>
 
     
         <div class="args">
@@ -1203,7 +968,19 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
             
                 <li class="arg">
                     
-                        <code>className</code>
+                        <code>iconName</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
                     
                 </li>
             
@@ -1228,12 +1005,15 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_addClass">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l364"><code>photonui&#x2F;widget.js:364</code></a>
+        <a href="../files/photonui_visual_spriteicon.js.html#l210"><code>photonui&#x2F;visual&#x2F;spriteicon.js:210</code></a>
         
         </p>
 
@@ -1244,7 +1024,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     </div>
 
     <div class="description">
-        <p>Add a class to the outer HTML element of the widget.</p>
+        <p>Add an icon (set its position).</p>
 
     </div>
 
@@ -1256,15 +1036,44 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
             
                 <li class="param">
                     
-                        <code class="param-name">className</code>
+                        <code class="param-name">iconName</code>
                         <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>The class to add.</p>
+                         
+                    </div>
 
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
                     </div>
 
                     
@@ -1303,16 +1112,13 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 
     <div class="meta">
         
-            <p>Inherited from
-            <a href="../classes/photonui.Base.html#method_destroy">
-                photonui.Base
-            </a>
             
-            but overwritten in
+                <p>Inherited from
+                <a href="../classes/photonui.Base.html#method_destroy">photonui.Base</a>:
             
         
         
-        <a href="../files/photonui_widget.js.html#l351"><code>photonui&#x2F;widget.js:351</code></a>
+        <a href="../files/photonui_base.js.html#l140"><code>photonui&#x2F;base.js:140</code></a>
         
         </p>
 
@@ -1323,7 +1129,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     </div>
 
     <div class="description">
-        <p>Destroy the widget.</p>
+        <p>Destroy the class.</p>
 
     </div>
 
@@ -1335,13 +1141,27 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
-                    <div id="method_hide" class="method item inherited">
-    <h3 class="name"><code>hide</code></h3>
+                    <div id="method_getIconCss" class="method item">
+    <h3 class="name"><code>getIconCss</code></h3>
 
     
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>iconName</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
     
 
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+        </span>
     
 
     
@@ -1359,12 +1179,15 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_hide">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l342"><code>photonui&#x2F;widget.js:342</code></a>
+        <a href="../files/photonui_visual_spriteicon.js.html#l195"><code>photonui&#x2F;visual&#x2F;spriteicon.js:195</code></a>
         
         </p>
 
@@ -1375,12 +1198,155 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     </div>
 
     <div class="description">
-        <p>DHide the widget (equivalent to widget.visible = false).</p>
+        <p>Get the right CSS for the given icon.</p>
 
     </div>
 
     
+        <div class="params">
+            <h4>Parameters:</h4>
 
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">iconName</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>:
+                    
+                    <p>the CSS.</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getIconPosition" class="method item">
+    <h3 class="name"><code>getIconPosition</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>iconName</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_visual_spriteicon.js.html#l184"><code>photonui&#x2F;visual&#x2F;spriteicon.js:184</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Get icon position.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">iconName</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                    
+                    <p><code>{x: Number, y: Number}</code></p>
+
+                
+            </div>
+        </div>
     
 
     
@@ -1627,8 +1593,8 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
-                    <div id="method_removeClass" class="method item inherited">
-    <h3 class="name"><code>removeClass</code></h3>
+                    <div id="method_removeIcon" class="method item">
+    <h3 class="name"><code>removeIcon</code></h3>
 
     
         <div class="args">
@@ -1636,7 +1602,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
             
                 <li class="arg">
                     
-                        <code>className</code>
+                        <code>iconName</code>
                     
                 </li>
             
@@ -1661,12 +1627,15 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_removeClass">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l381"><code>photonui&#x2F;widget.js:381</code></a>
+        <a href="../files/photonui_visual_spriteicon.js.html#l222"><code>photonui&#x2F;visual&#x2F;spriteicon.js:222</code></a>
         
         </p>
 
@@ -1677,7 +1646,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     </div>
 
     <div class="description">
-        <p>Remove a class from the outer HTML element of the widget.</p>
+        <p>Remove an icon.</p>
 
     </div>
 
@@ -1689,15 +1658,14 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
             
                 <li class="param">
                     
-                        <code class="param-name">className</code>
+                        <code class="param-name">iconName</code>
                         <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>The class to remove.</p>
-
+                         
                     </div>
 
                     
@@ -1705,58 +1673,6 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
             
             </ul>
         </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_show" class="method item inherited">
-    <h3 class="name"><code>show</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_show">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l333"><code>photonui&#x2F;widget.js:333</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Display the widget (equivalent to widget.visible = true).</p>
-
-    </div>
-
     
 
     
@@ -1862,52 +1778,8 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property___html" class="property item private inherited">
-    <h3 class="name"><code>__html</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property___html">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l315"><code>photonui&#x2F;widget.js:315</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Object containing references to the widget HTML elements</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_absolutePosition" class="property item inherited">
-    <h3 class="name"><code>absolutePosition</code></h3>
+                    <div id="property_icons" class="property item">
+    <h3 class="name"><code>icons</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
 
     
@@ -1921,12 +1793,15 @@ internal use).</p>
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_absolutePosition">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l267"><code>photonui&#x2F;widget.js:267</code></a>
+        <a href="../files/photonui_visual_spriteicon.js.html#l150"><code>photonui&#x2F;visual&#x2F;spriteicon.js:150</code></a>
         
         </p>
 
@@ -1936,11 +1811,17 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>Absolute position of the widget on the page.</p>
-<p><code>{x: Number, y: Number}</code></p>
+        <p>Icons.</p>
+<pre class="code prettyprint"><code>{
+     &quot;iconName&quot;: [x, y],
+     &quot;icon2: [x2, y2],
+     ...
+}</code></pre>
 
     </div>
 
+    
+        <p><strong>Default:</strong> : {}</p>
     
 
     
@@ -1949,52 +1830,8 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_contextMenu" class="property item inherited">
-    <h3 class="name"><code>contextMenu</code></h3>
-    <span class="type"><a href="../classes/photonui.PopupWindow.html" class="crosslink">photonui.PopupWindow</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_contextMenu">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l215"><code>photonui&#x2F;widget.js:215</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The managed contextual menu.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null (= no context menu)</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_contextMenuName" class="property item inherited">
-    <h3 class="name"><code>contextMenuName</code></h3>
+                    <div id="property_imageUrl" class="property item">
+    <h3 class="name"><code>imageUrl</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
 
     
@@ -2008,59 +1845,15 @@ internal use).</p>
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_contextMenuName">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l198"><code>photonui&#x2F;widget.js:198</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The name of the managed contextual menu (<code>photonui.PopupWindow().name</code>).</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null (= no context menu)</p>
-    
-
-    
-
-    
-</div>
-
                 
-                    <div id="property_html" class="property item">
-    <h3 class="name"><code>html</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            <p>Inherited from
-            <a href="../classes/photonui.Widget.html#property_html">
-                photonui.Widget
-            </a>
-            
-            but overwritten in
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_visual_progressbar.js.html#l67"><code>photonui&#x2F;visual&#x2F;progressbar.js:67</code></a>
+        <a href="../files/photonui_visual_spriteicon.js.html#l107"><code>photonui&#x2F;visual&#x2F;spriteicon.js:107</code></a>
         
         </p>
 
@@ -2070,7 +1863,7 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>Html outer element of the widget (if any).</p>
+        <p>The spritesheet image URL.</p>
 
     </div>
 
@@ -2084,51 +1877,7 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_layoutOptions" class="property item inherited">
-    <h3 class="name"><code>layoutOptions</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_layoutOptions">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l235"><code>photonui&#x2F;widget.js:235</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Layout options.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> {}</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_name" class="property item inherited">
+                    <div id="property_name" class="property item">
     <h3 class="name"><code>name</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
 
@@ -2143,134 +1892,6 @@ internal use).</p>
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_name">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l125"><code>photonui&#x2F;widget.js:125</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The unique name of the widget.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> &quot;widget-&quot; + photonui.Helpers.uuid4()</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_offsetHeight" class="property item inherited">
-    <h3 class="name"><code>offsetHeight</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_offsetHeight">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l297"><code>photonui&#x2F;widget.js:297</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Widget height (outer HTML element).</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_offsetWidth" class="property item inherited">
-    <h3 class="name"><code>offsetWidth</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_offsetWidth">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l283"><code>photonui&#x2F;widget.js:283</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Widget width (outer HTML element).</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_orientation" class="property item">
-    <h3 class="name"><code>orientation</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
                 
                 <p>
                 
@@ -2279,7 +1900,7 @@ internal use).</p>
             
         
         
-        <a href="../files/photonui_visual_progressbar.js.html#l112"><code>photonui&#x2F;visual&#x2F;progressbar.js:112</code></a>
+        <a href="../files/photonui_visual_spriteicon.js.html#l86"><code>photonui&#x2F;visual&#x2F;spriteicon.js:86</code></a>
         
         </p>
 
@@ -2289,12 +1910,12 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>The progressbar orientation (&quot;vertical&quot; or &quot;horizontal&quot;).</p>
+        <p>The sprit sheet name.</p>
 
     </div>
 
     
-        <p><strong>Default:</strong> &quot;horizontal&quot;</p>
+        <p><strong>Default:</strong> &quot;default&quot;</p>
     
 
     
@@ -2303,146 +1924,8 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_pulsate" class="property item">
-    <h3 class="name"><code>pulsate</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_visual_progressbar.js.html#l136"><code>photonui&#x2F;visual&#x2F;progressbar.js:136</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Enable or disable the progressbar pulsate mode.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> false</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_textVisible" class="property item">
-    <h3 class="name"><code>textVisible</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_visual_progressbar.js.html#l166"><code>photonui&#x2F;visual&#x2F;progressbar.js:166</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Display/hide the progression text.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> true</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_tooltip." class="property item inherited">
-    <h3 class="name"><code>tooltip.</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_tooltip.">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l175"><code>photonui&#x2F;widget.js:175</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Tooltip.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_value" class="property item">
-    <h3 class="name"><code>value</code></h3>
+                    <div id="property_size" class="property item">
+    <h3 class="name"><code>size</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
 
     
@@ -2464,7 +1947,7 @@ internal use).</p>
             
         
         
-        <a href="../files/photonui_visual_progressbar.js.html#l88"><code>photonui&#x2F;visual&#x2F;progressbar.js:88</code></a>
+        <a href="../files/photonui_visual_spriteicon.js.html#l133"><code>photonui&#x2F;visual&#x2F;spriteicon.js:133</code></a>
         
         </p>
 
@@ -2474,56 +1957,12 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>The progression (form 0.00 to 1.00).</p>
+        <p>Icon size (width = height).</p>
 
     </div>
 
     
-        <p><strong>Default:</strong> 0</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_visible" class="property item inherited">
-    <h3 class="name"><code>visible</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_visible">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l147"><code>photonui&#x2F;widget.js:147</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Is the widget visible or hidden.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> true</p>
+        <p><strong>Default:</strong> 16</p>
     
 
     

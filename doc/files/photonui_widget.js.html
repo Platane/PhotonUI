@@ -93,6 +93,10 @@
             
                 <li><a href="../classes/photonui.Slider.html">photonui.Slider</a></li>
             
+                <li><a href="../classes/photonui.SpriteIcon.html">photonui.SpriteIcon</a></li>
+            
+                <li><a href="../classes/photonui.SpriteSheet.html">photonui.SpriteSheet</a></li>
+            
                 <li><a href="../classes/photonui.SubMenuItem.html">photonui.SubMenuItem</a></li>
             
                 <li><a href="../classes/photonui.Switch.html">photonui.Switch</a></li>
@@ -218,7 +222,7 @@ photonui.getWidget = function(name) {
     if (_widgets[name] !== undefined) {
         return _widgets[name];
     }
-    return null
+    return null;
 }
 
 
@@ -335,6 +339,29 @@ photonui.Widget = photonui.Base.$extend({
         else {
             this.html.style.display = &quot;none&quot;;
             this._callCallbacks(&quot;hide&quot;);
+        }
+    },
+
+    /**
+     * Tooltip.
+     *
+     * @property tooltip.
+     * @type String
+     * @default null
+     */
+    _tooltip: null,
+
+    getTooltip: function() {
+        return this._tooltip;
+    },
+
+    setTooltip: function(tooltip) {
+        this._tooltip = tooltip;
+        if (tooltip) {
+            this.html.title = tooltip;
+        }
+        else {
+            delete this.html.removeAttribute(&quot;title&quot;);
         }
     },
 

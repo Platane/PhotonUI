@@ -52,7 +52,7 @@ photonui.getWidget = function(name) {
     if (_widgets[name] !== undefined) {
         return _widgets[name];
     }
-    return null
+    return null;
 }
 
 
@@ -169,6 +169,29 @@ photonui.Widget = photonui.Base.$extend({
         else {
             this.html.style.display = "none";
             this._callCallbacks("hide");
+        }
+    },
+
+    /**
+     * Tooltip.
+     *
+     * @property tooltip.
+     * @type String
+     * @default null
+     */
+    _tooltip: null,
+
+    getTooltip: function() {
+        return this._tooltip;
+    },
+
+    setTooltip: function(tooltip) {
+        this._tooltip = tooltip;
+        if (tooltip) {
+            this.html.title = tooltip;
+        }
+        else {
+            delete this.html.removeAttribute("title");
         }
     },
 

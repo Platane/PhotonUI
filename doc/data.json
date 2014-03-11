@@ -346,6 +346,18 @@
                 "photonui": 1
             }
         },
+        "photonui/visual/spriteicon.js": {
+            "name": "photonui/visual/spriteicon.js",
+            "modules": {},
+            "classes": {
+                "photonui.SpriteSheet": 1,
+                "photonui.SpriteIcon": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/base.js": {
             "name": "photonui/base.js",
             "modules": {},
@@ -435,6 +447,8 @@
                 "photonui.Label": 1,
                 "photonui.ProgressBar": 1,
                 "photonui.Separator": 1,
+                "photonui.SpriteSheet": 1,
+                "photonui.SpriteIcon": 1,
                 "photonui.Base": 1,
                 "photonui.Helpers": 1,
                 "photonui.Widget": 1
@@ -546,7 +560,9 @@
                 "photonui.FAIcon": 1,
                 "photonui.Label": 1,
                 "photonui.ProgressBar": 1,
-                "photonui.Separator": 1
+                "photonui.Separator": 1,
+                "photonui.SpriteSheet": 1,
+                "photonui.SpriteIcon": 1
             },
             "fors": {},
             "is_submodule": 1,
@@ -555,8 +571,8 @@
             },
             "module": "PhotonUI",
             "namespace": "",
-            "file": "photonui/visual/separator.js",
-            "line": 43,
+            "file": "photonui/visual/spriteicon.js",
+            "line": 235,
             "description": "PhotonUI - Javascript Web User Interface."
         },
         "Helpers": {
@@ -1130,6 +1146,40 @@
             "description": "Separator.",
             "is_constructor": 1,
             "extends": "photonui.Widget"
+        },
+        "photonui.SpriteSheet": {
+            "name": "photonui.SpriteSheet",
+            "shortname": "SpriteSheet",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui",
+            "file": "photonui/visual/spriteicon.js",
+            "line": 62,
+            "description": "Sprite sheet (to use with SpriteIcon).",
+            "is_constructor": 1,
+            "extends": "photonui.Base"
+        },
+        "photonui.SpriteIcon": {
+            "name": "photonui.SpriteIcon",
+            "shortname": "SpriteIcon",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui",
+            "file": "photonui/visual/spriteicon.js",
+            "line": 235,
+            "description": "Sprite sheet based icons.",
+            "is_constructor": 1,
+            "extends": "photonui.BaseIcon"
         },
         "photonui.Base": {
             "name": "photonui.Base",
@@ -4112,6 +4162,227 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 86,
+            "description": "The sprit sheet name.",
+            "itemtype": "property",
+            "name": "name",
+            "type": "String",
+            "default": "\"default\"",
+            "class": "photonui.SpriteSheet",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 107,
+            "description": "The spritesheet image URL.",
+            "itemtype": "property",
+            "name": "imageUrl",
+            "type": "String",
+            "default": "null",
+            "class": "photonui.SpriteSheet",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 133,
+            "description": "Icon size (width = height).",
+            "itemtype": "property",
+            "name": "size",
+            "type": "Number",
+            "default": "16",
+            "class": "photonui.SpriteSheet",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 150,
+            "description": "Icons.\n\n    {\n         \"iconName\": [x, y],\n         \"icon2: [x2, y2],\n         ...\n    }",
+            "itemtype": "property",
+            "name": "icons",
+            "type": "Object",
+            "default": ": {}",
+            "class": "photonui.SpriteSheet",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 184,
+            "description": "Get icon position.",
+            "itemtype": "method",
+            "name": "getIconPosition",
+            "params": [
+                {
+                    "name": "iconName",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "`{x: Number, y: Number}`",
+                "type": "Object"
+            },
+            "class": "photonui.SpriteSheet",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 195,
+            "description": "Get the right CSS for the given icon.",
+            "itemtype": "method",
+            "name": "getIconCss",
+            "params": [
+                {
+                    "name": "iconName",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "the CSS.",
+                "type": "String"
+            },
+            "class": "photonui.SpriteSheet",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 210,
+            "description": "Add an icon (set its position).",
+            "itemtype": "method",
+            "name": "addIcon",
+            "params": [
+                {
+                    "name": "iconName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "class": "photonui.SpriteSheet",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 222,
+            "description": "Remove an icon.",
+            "itemtype": "method",
+            "name": "removeIcon",
+            "params": [
+                {
+                    "name": "iconName",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "photonui.SpriteSheet",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 270,
+            "description": "The sprite sheet name.",
+            "itemtype": "property",
+            "name": "spriteSheetName",
+            "type": "String",
+            "default": "\"\"",
+            "class": "photonui.SpriteIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 288,
+            "description": "The icon name.",
+            "itemtype": "property",
+            "name": "iconName",
+            "type": "String",
+            "default": "\"\"",
+            "class": "photonui.SpriteIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 306,
+            "description": "The icon id.\n\n    \"spriteSheetName/iconName\"",
+            "itemtype": "property",
+            "name": "icon",
+            "type": "String",
+            "default": "\"/\"",
+            "class": "photonui.SpriteIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 325,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.SpriteIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 345,
+            "description": "Update the icon.",
+            "itemtype": "method",
+            "name": "_update",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.SpriteIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/spriteicon.js",
+            "line": 359,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.SpriteIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/base.js",
             "line": 112,
             "description": "Object containing references javascript events binding (for widget\ninternal use).",
@@ -4419,6 +4690,18 @@
         {
             "file": "photonui/widget.js",
             "line": 175,
+            "description": "Tooltip.",
+            "itemtype": "property",
+            "name": "tooltip.",
+            "type": "String",
+            "default": "null",
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 198,
             "description": "The name of the managed contextual menu (`photonui.PopupWindow().name`).",
             "itemtype": "property",
             "name": "contextMenuName",
@@ -4430,7 +4713,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 192,
+            "line": 215,
             "description": "The managed contextual menu.",
             "itemtype": "property",
             "name": "contextMenu",
@@ -4442,7 +4725,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 212,
+            "line": 235,
             "description": "Layout options.",
             "itemtype": "property",
             "name": "layoutOptions",
@@ -4454,7 +4737,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 231,
+            "line": 254,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -4467,7 +4750,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 244,
+            "line": 267,
             "description": "Absolute position of the widget on the page.\n\n`{x: Number, y: Number}`",
             "itemtype": "property",
             "name": "absolutePosition",
@@ -4479,7 +4762,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 260,
+            "line": 283,
             "description": "Widget width (outer HTML element).",
             "itemtype": "property",
             "name": "offsetWidth",
@@ -4491,7 +4774,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 274,
+            "line": 297,
             "description": "Widget height (outer HTML element).",
             "itemtype": "property",
             "name": "offsetHeight",
@@ -4503,7 +4786,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 292,
+            "line": 315,
             "description": "Object containing references to the widget HTML elements",
             "itemtype": "property",
             "name": "__html",
@@ -4516,7 +4799,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 310,
+            "line": 333,
             "description": "Display the widget (equivalent to widget.visible = true).",
             "itemtype": "method",
             "name": "show",
@@ -4526,7 +4809,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 319,
+            "line": 342,
             "description": "DHide the widget (equivalent to widget.visible = false).",
             "itemtype": "method",
             "name": "hide",
@@ -4536,7 +4819,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 328,
+            "line": 351,
             "description": "Destroy the widget.",
             "itemtype": "method",
             "name": "destroy",
@@ -4546,7 +4829,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 341,
+            "line": 364,
             "description": "Add a class to the outer HTML element of the widget.",
             "itemtype": "method",
             "name": "addClass",
@@ -4563,7 +4846,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 358,
+            "line": 381,
             "description": "Remove a class from the outer HTML element of the widget.",
             "itemtype": "method",
             "name": "removeClass",
@@ -4580,7 +4863,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 380,
+            "line": 403,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -4592,7 +4875,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 396,
+            "line": 419,
             "description": "Called when the context menu should be displayed.",
             "itemtype": "method",
             "name": "__onContextMenu",

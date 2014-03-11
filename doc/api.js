@@ -27,6 +27,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "photonui.ProgressBar",
         "photonui.Separator",
         "photonui.Slider",
+        "photonui.SpriteIcon",
+        "photonui.SpriteSheet",
         "photonui.SubMenuItem",
         "photonui.Switch",
         "photonui.TextAreaField",
