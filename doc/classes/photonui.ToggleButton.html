@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui.MenuItem - PhotonUI</title>
+    <title>photonui.ToggleButton - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -166,25 +166,34 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>photonui.MenuItem Class</h1>
+                        <h1>photonui.ToggleButton Class</h1>
 <div class="box meta">
+    
+        <div class="uses">
+            Uses
+            <ul class="inline commas">
+                
+                    <li><a href="photonui.Button.html">photonui.Button</a></li>
+                
+            </ul>
+        </div>
     
 
     
         <div class="extends">
-            Extends <a href="../classes/photonui.Container.html" class="crosslink">photonui.Container</a>
+            Extends <a href="../classes/photonui.CheckBox.html" class="crosslink">photonui.CheckBox</a>
         </div>
     
 
     
         <div class="foundat">
-            Defined in: <a href="../files/photonui_container_menu_menuitem.js.html#l43"><code>photonui&#x2F;container&#x2F;menu&#x2F;menuitem.js:43</code></a>
+            Defined in: <a href="../files/photonui_input_checkbox_togglebutton.js.html#l43"><code>photonui&#x2F;input&#x2F;checkbox&#x2F;togglebutton.js:43</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/Container.html">Container</a><br>
+            Module: <a href="../modules/Input.html">Input</a><br>
             Parent Module: <a href="../modules/PhotonUI.html">PhotonUI</a>
         
     
@@ -195,15 +204,15 @@
 
 
 <div class="box intro">
-    <p>Menu item.</p>
+    <p>Switch.</p>
 
 </div>
 
 
     <div class="constructor">
         <h2>Constructor</h2>
-        <div id="method_photonui.MenuItem" class="method item">
-    <h3 class="name"><code>photonui.MenuItem</code></h3>
+        <div id="method_photonui.ToggleButton" class="method item">
+    <h3 class="name"><code>photonui.ToggleButton</code></h3>
 
     
         <span class="paren">()</span>
@@ -234,7 +243,7 @@
             
         
         
-        <a href="../files/photonui_container_menu_menuitem.js.html#l43"><code>photonui&#x2F;container&#x2F;menu&#x2F;menuitem.js:43</code></a>
+        <a href="../files/photonui_input_checkbox_togglebutton.js.html#l43"><code>photonui&#x2F;input&#x2F;checkbox&#x2F;togglebutton.js:43</code></a>
         
         </p>
 
@@ -283,7 +292,42 @@
                     <ul class="index-list methods extends">
                         
                             <li class="index-item method private inherited">
+                                <a href="#method___onButtonClicked">__onButtonClicked</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method___onChange">__onChange</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method___onCheckboxClick">__onCheckboxClick</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
                                 <a href="#method___onContextMenu">__onContextMenu</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method___onSpanClick">__onSpanClick</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method___onSpanKeyPress">__onSpanKeyPress</a>
 
                                 
                                 
@@ -319,6 +363,13 @@
                         
                             <li class="index-item method private inherited">
                                 <a href="#method__unbindEvent">_unbindEvent</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
+                                <a href="#method__update">_update</a>
 
                                 
                                 
@@ -418,34 +469,6 @@
                                 
                             </li>
                         
-                            <li class="index-item property">
-                                <a href="#property_active">active</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_child">child</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_childName">childName</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_containerNode">containerNode</a>
-
-                                
-                                
-                            </li>
-                        
                             <li class="index-item property inherited">
                                 <a href="#property_contextMenu">contextMenu</a>
 
@@ -460,22 +483,8 @@
                                 
                             </li>
                         
-                            <li class="index-item property inherited">
+                            <li class="index-item property inherited inherited">
                                 <a href="#property_html">html</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_icon">icon</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_iconName">iconName</a>
 
                                 
                                 
@@ -483,6 +492,27 @@
                         
                             <li class="index-item property inherited">
                                 <a href="#property_layoutOptions">layoutOptions</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_leftIcon">leftIcon</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_leftIconName">leftIconName</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_leftIconVisible">leftIconVisible</a>
 
                                 
                                 
@@ -509,7 +539,28 @@
                                 
                             </li>
                         
-                            <li class="index-item property">
+                            <li class="index-item property inherited">
+                                <a href="#property_rightIcon">rightIcon</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_rightIconName">rightIconName</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_rightIconVisible">rightIconVisible</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
                                 <a href="#property_text">text</a>
 
                                 
@@ -517,7 +568,21 @@
                             </li>
                         
                             <li class="index-item property inherited">
+                                <a href="#property_textVisible">textVisible</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
                                 <a href="#property_tooltip">tooltip</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_value">value</a>
 
                                 
                                 
@@ -542,6 +607,265 @@
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method___onButtonClicked" class="method item private inherited">
+    <h3 class="name"><code>__onButtonClicked</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Button.html#method___onButtonClicked">photonui.Button</a>:
+            
+        
+        
+        <a href="../files/photonui_input_button_button.js.html#l314"><code>photonui&#x2F;input&#x2F;button&#x2F;button.js:314</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Called when the button is clicked.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method___onChange" class="method item private inherited">
+    <h3 class="name"><code>__onChange</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.CheckBox.html#method___onChange">photonui.CheckBox</a>:
+            
+        
+        
+        <a href="../files/photonui_input_checkbox_checkbox.js.html#l141"><code>photonui&#x2F;input&#x2F;checkbox&#x2F;checkbox.js:141</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method___onCheckboxClick" class="method item private inherited">
+    <h3 class="name"><code>__onCheckboxClick</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.CheckBox.html#method___onCheckboxClick">photonui.CheckBox</a>:
+            
+        
+        
+        <a href="../files/photonui_input_checkbox_checkbox.js.html#l165"><code>photonui&#x2F;input&#x2F;checkbox&#x2F;checkbox.js:165</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
 
                 
                     <div id="method___onContextMenu" class="method item private inherited">
@@ -616,6 +940,178 @@
 
                     <div class="param-description">
                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method___onSpanClick" class="method item private inherited">
+    <h3 class="name"><code>__onSpanClick</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.CheckBox.html#method___onSpanClick">photonui.CheckBox</a>:
+            
+        
+        
+        <a href="../files/photonui_input_checkbox_checkbox.js.html#l154"><code>photonui&#x2F;input&#x2F;checkbox&#x2F;checkbox.js:154</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method___onSpanKeyPress" class="method item private inherited">
+    <h3 class="name"><code>__onSpanKeyPress</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.CheckBox.html#method___onSpanKeyPress">photonui.CheckBox</a>:
+            
+        
+        
+        <a href="../files/photonui_input_checkbox_checkbox.js.html#l174"><code>photonui&#x2F;input&#x2F;checkbox&#x2F;checkbox.js:174</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
                     </div>
 
                     
@@ -819,7 +1315,7 @@
             
         
         
-        <a href="../files/photonui_container_menu_menuitem.js.html#l186"><code>photonui&#x2F;container&#x2F;menu&#x2F;menuitem.js:186</code></a>
+        <a href="../files/photonui_input_checkbox_togglebutton.js.html#l86"><code>photonui&#x2F;input&#x2F;checkbox&#x2F;togglebutton.js:86</code></a>
         
         </p>
 
@@ -1025,7 +1521,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
                     
 
                     <div class="param-description">
-                        
+                         
                     </div>
 
                     
@@ -1121,6 +1617,60 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
             
             </ul>
         </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method__update" class="method item private inherited">
+    <h3 class="name"><code>_update</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Button.html#method__update">photonui.Button</a>:
+            
+        
+        
+        <a href="../files/photonui_input_button_button.js.html#l255"><code>photonui&#x2F;input&#x2F;button&#x2F;button.js:255</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Update the button content</p>
+
+    </div>
+
     
 
     
@@ -1335,7 +1885,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
             
         
         
-        <a href="../files/photonui_container_container.js.html#l123"><code>photonui&#x2F;container&#x2F;container.js:123</code></a>
+        <a href="../files/photonui_widget.js.html#l351"><code>photonui&#x2F;widget.js:351</code></a>
         
         </p>
 
@@ -1972,186 +2522,6 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_active" class="property item">
-    <h3 class="name"><code>active</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_container_menu_menuitem.js.html#l130"><code>photonui&#x2F;container&#x2F;menu&#x2F;menuitem.js:130</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Determine if the item is active (highlighted).</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> false</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_child" class="property item inherited">
-    <h3 class="name"><code>child</code></h3>
-    <span class="type"><a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Container.html#property_child">photonui.Container</a>:
-            
-        
-        
-        <a href="../files/photonui_container_container.js.html#l83"><code>photonui&#x2F;container&#x2F;container.js:83</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The child widget.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null (no child)</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_childName" class="property item inherited">
-    <h3 class="name"><code>childName</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Container.html#property_childName">photonui.Container</a>:
-            
-        
-        
-        <a href="../files/photonui_container_container.js.html#l60"><code>photonui&#x2F;container&#x2F;container.js:60</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The child widget name.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null (no child)</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_containerNode" class="property item">
-    <h3 class="name"><code>containerNode</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            <p>Inherited from
-            <a href="../classes/photonui.Container.html#property_containerNode">
-                photonui.Container
-            </a>
-            
-            but overwritten in
-            
-        
-        
-        <a href="../files/photonui_container_menu_menuitem.js.html#l166"><code>photonui&#x2F;container&#x2F;menu&#x2F;menuitem.js:166</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>HTML Element that contain the child widget HTML.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
                     <div id="property_contextMenu" class="property item inherited">
     <h3 class="name"><code>contextMenu</code></h3>
     <span class="type"><a href="../classes/photonui.PopupWindow.html" class="crosslink">photonui.PopupWindow</a></span>
@@ -2240,7 +2610,7 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_html" class="property item">
+                    <div id="property_html" class="property item inherited">
     <h3 class="name"><code>html</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
 
@@ -2263,7 +2633,7 @@ internal use).</p>
             
         
         
-        <a href="../files/photonui_container_menu_menuitem.js.html#l154"><code>photonui&#x2F;container&#x2F;menu&#x2F;menuitem.js:154</code></a>
+        <a href="../files/photonui_input_button_button.js.html#l234"><code>photonui&#x2F;input&#x2F;button&#x2F;button.js:234</code></a>
         
         </p>
 
@@ -2279,100 +2649,6 @@ internal use).</p>
 
     
         <p><strong>Default:</strong> null</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_icon" class="property item">
-    <h3 class="name"><code>icon</code></h3>
-    <span class="type"><a href="../classes/photonui.BaseIcon.html" class="crosslink">photonui.BaseIcon</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_container_menu_menuitem.js.html#l111"><code>photonui&#x2F;container&#x2F;menu&#x2F;menuitem.js:111</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Right icon widget.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> : null</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_iconName" class="property item">
-    <h3 class="name"><code>iconName</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_container_menu_menuitem.js.html#l90"><code>photonui&#x2F;container&#x2F;menu&#x2F;menuitem.js:90</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Right icon widget name.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> : null</p>
     
 
     
@@ -2417,6 +2693,138 @@ internal use).</p>
 
     
         <p><strong>Default:</strong> {}</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_leftIcon" class="property item inherited">
+    <h3 class="name"><code>leftIcon</code></h3>
+    <span class="type"><a href="../classes/photonui.BaseIcon.html" class="crosslink">photonui.BaseIcon</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Button.html#property_leftIcon">photonui.Button</a>:
+            
+        
+        
+        <a href="../files/photonui_input_button_button.js.html#l139"><code>photonui&#x2F;input&#x2F;button&#x2F;button.js:139</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Left icon widget.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> : null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_leftIconName" class="property item inherited">
+    <h3 class="name"><code>leftIconName</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Button.html#property_leftIconName">photonui.Button</a>:
+            
+        
+        
+        <a href="../files/photonui_input_button_button.js.html#l118"><code>photonui&#x2F;input&#x2F;button&#x2F;button.js:118</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Left icon widget name.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> : null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_leftIconVisible" class="property item inherited">
+    <h3 class="name"><code>leftIconVisible</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Button.html#property_leftIconVisible">photonui.Button</a>:
+            
+        
+        
+        <a href="../files/photonui_input_button_button.js.html#l158"><code>photonui&#x2F;input&#x2F;button&#x2F;button.js:158</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Define if the left icon is displayed or hidden.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
     
 
     
@@ -2553,7 +2961,139 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_text" class="property item">
+                    <div id="property_rightIcon" class="property item inherited">
+    <h3 class="name"><code>rightIcon</code></h3>
+    <span class="type"><a href="../classes/photonui.BaseIcon.html" class="crosslink">photonui.BaseIcon</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Button.html#property_rightIcon">photonui.Button</a>:
+            
+        
+        
+        <a href="../files/photonui_input_button_button.js.html#l197"><code>photonui&#x2F;input&#x2F;button&#x2F;button.js:197</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Right icon widget.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> : null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_rightIconName" class="property item inherited">
+    <h3 class="name"><code>rightIconName</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Button.html#property_rightIconName">photonui.Button</a>:
+            
+        
+        
+        <a href="../files/photonui_input_button_button.js.html#l176"><code>photonui&#x2F;input&#x2F;button&#x2F;button.js:176</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Right icon widget name.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> : null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_rightIconVisible" class="property item inherited">
+    <h3 class="name"><code>rightIconVisible</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Button.html#property_rightIconVisible">photonui.Button</a>:
+            
+        
+        
+        <a href="../files/photonui_input_button_button.js.html#l216"><code>photonui&#x2F;input&#x2F;button&#x2F;button.js:216</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Define if the right icon is displayed or hidden.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_text" class="property item inherited">
     <h3 class="name"><code>text</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
 
@@ -2568,15 +3108,12 @@ internal use).</p>
     <div class="meta">
         
             
-                
-                <p>
-                
-                Defined in
-                
+                <p>Inherited from
+                <a href="../classes/photonui.Button.html#property_text">photonui.Button</a>:
             
         
         
-        <a href="../files/photonui_container_menu_menuitem.js.html#l72"><code>photonui&#x2F;container&#x2F;menu&#x2F;menuitem.js:72</code></a>
+        <a href="../files/photonui_input_button_button.js.html#l82"><code>photonui&#x2F;input&#x2F;button&#x2F;button.js:82</code></a>
         
         </p>
 
@@ -2586,12 +3123,56 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>The item text.</p>
+        <p>The button text.</p>
 
     </div>
 
     
-        <p><strong>Default:</strong> &quot;Menu Item&quot;</p>
+        <p><strong>Default:</strong> &quot;Button&quot;</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_textVisible" class="property item inherited">
+    <h3 class="name"><code>textVisible</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Button.html#property_textVisible">photonui.Button</a>:
+            
+        
+        
+        <a href="../files/photonui_input_button_button.js.html#l100"><code>photonui&#x2F;input&#x2F;button&#x2F;button.js:100</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Define if the button text is displayed or hidden.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
     
 
     
@@ -2636,6 +3217,50 @@ internal use).</p>
 
     
         <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_value" class="property item inherited">
+    <h3 class="name"><code>value</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.CheckBox.html#property_value">photonui.CheckBox</a>:
+            
+        
+        
+        <a href="../files/photonui_input_checkbox_checkbox.js.html#l80"><code>photonui&#x2F;input&#x2F;checkbox&#x2F;checkbox.js:80</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The input value.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> false</p>
     
 
     

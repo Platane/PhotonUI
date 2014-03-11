@@ -212,6 +212,17 @@
                 "photonui": 1
             }
         },
+        "photonui/input/checkbox/togglebutton.js": {
+            "name": "photonui/input/checkbox/togglebutton.js",
+            "modules": {},
+            "classes": {
+                "photonui.ToggleButton": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/input/color/colorpalette.js": {
             "name": "photonui/input/color/colorpalette.js",
             "modules": {},
@@ -435,6 +446,7 @@
                 "photonui.ColorButton": 1,
                 "photonui.CheckBox": 1,
                 "photonui.Switch": 1,
+                "photonui.ToggleButton": 1,
                 "photonui.ColorPalette": 1,
                 "photonui.Field": 1,
                 "photonui.NumericField": 1,
@@ -533,6 +545,7 @@
                 "photonui.ColorButton": 1,
                 "photonui.CheckBox": 1,
                 "photonui.Switch": 1,
+                "photonui.ToggleButton": 1,
                 "photonui.ColorPalette": 1,
                 "photonui.Field": 1,
                 "photonui.NumericField": 1,
@@ -861,7 +874,9 @@
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
-            "extension_for": [],
+            "extension_for": [
+                "photonui.ToggleButton"
+            ],
             "module": "PhotonUI",
             "submodule": "Input",
             "namespace": "photonui",
@@ -921,6 +936,26 @@
             "description": "Switch.",
             "is_constructor": 1,
             "extends": "photonui.CheckBox"
+        },
+        "photonui.ToggleButton": {
+            "name": "photonui.ToggleButton",
+            "shortname": "ToggleButton",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/checkbox/togglebutton.js",
+            "line": 43,
+            "description": "Switch.",
+            "is_constructor": 1,
+            "extends": "photonui.CheckBox",
+            "uses": [
+                "photonui.Button"
+            ]
         },
         "photonui.ColorPalette": {
             "name": "photonui.ColorPalette",
@@ -3069,6 +3104,19 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/input/checkbox/togglebutton.js",
+            "line": 86,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.ToggleButton",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/input/color/colorpalette.js",
             "line": 86,
             "description": "The value (color).",
@@ -4692,7 +4740,7 @@
             "line": 175,
             "description": "Tooltip.",
             "itemtype": "property",
-            "name": "tooltip.",
+            "name": "tooltip",
             "type": "String",
             "default": "null",
             "class": "photonui.Widget",

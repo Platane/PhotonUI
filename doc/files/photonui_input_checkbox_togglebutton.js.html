@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui/input/field/numericfield.js - PhotonUI</title>
+    <title>photonui/input/checkbox/togglebutton.js - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -166,7 +166,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: photonui/input/field/numericfield.js</h1>
+                        <h1 class="file-heading">File: photonui/input/checkbox/togglebutton.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -213,138 +213,38 @@ var photonui = photonui || {};
 
 
 /**
- * Numeric field.
+ * Switch.
  *
- * @class NumericField
+ * @class ToggleButton
  * @constructor
- * @extends photonui.Field
+ * @extends photonui.CheckBox
+ * @uses photonui.Button
  */
-photonui.NumericField = photonui.Field.$extend({
+photonui.ToggleButton = photonui.CheckBox.$extend({
 
     // Constructor
     __init__: function(params) {
         this.$super(params);
-        this._updateProperties([&quot;value&quot;]);
-        this._bindFieldEvents();
-        this._bindEvent(&quot;keypress&quot;, this.__html.field, &quot;keypress&quot;, this.__onKeypress.bind(this));
-        this._bindEvent(&quot;keyup&quot;, this.__html.field, &quot;keyup&quot;, this.__onKeyup.bind(this));
-        this._bindEvent(&quot;keydown&quot;, this.__html.field, &quot;keydown&quot;, this.__onKeydown.bind(this));
-        this._bindEvent(&quot;change&quot;, this.__html.field, &quot;change&quot;, this.__onChange.bind(this));
-        this._bindEvent(&quot;mousewheel&quot;, this.__html.field, &quot;mousewheel&quot;, this.__onMouseWheel.bind(this));
-        this._bindEvent(&quot;mousewheel-firefox&quot;, this.__html.field, &quot;DOMMouseScroll&quot;, this.__onMouseWheel.bind(this));
+        this.__buttonInit();
+        this.removeClass(&quot;photonui-checkbox&quot;);
+        this.addClass(&quot;photonui-togglebutton&quot;);
     },
 
+    // photonui.Button constructor (without the call to $super)
+    __buttonInit: function() {
+        // wEvents
+        this._registerWEvents([&quot;click&quot;]);
 
-    //////////////////////////////////////////
-    // Properties and Accessors             //
-    //////////////////////////////////////////
+        // Bind js events
+        this._bindEvent(&quot;click&quot;, this.__html.button, &quot;click&quot;, this.__onButtonClicked.bind(this));
 
-
-    // ====== Public properties ======
-
-
-    /**
-     * The minimum value of the field.
-     *
-     * @property min
-     * @type Number
-     * default null (no minimum);
-     */
-    _min: null,
-
-    getMin: function() {
-        return this._min;
+        // Update properties
+        this._updateProperties([&quot;text&quot;, &quot;leftIconName&quot;, &quot;rightIconName&quot;]);
+        this._update();
     },
 
-    setMin: function(min) {
-        this._min = min;
-    },
-
-    /**
-     * The maximum value of the field.
-     *
-     * @property max
-     * @type Number
-     * default null (no maximum);
-     */
-    _max: null,
-
-    getMax: function() {
-        return this._max;
-    },
-
-    setMax: function(max) {
-        this._max = max;
-    },
-
-    /**
-     * The incrementation step of the field.
-     *
-     * @property step
-     * @type Number
-     * default 1
-     */
-    _step: 1,
-
-    getStep: function() {
-        return this._step;
-    },
-
-    setStep: function(step) {
-        this._step = Math.abs(step);
-    },
-
-    /**
-     * The number of digit after the decimal dot.
-     *
-     * @property decimalDigits
-     * @type Number
-     * @default null (no limite)
-     */
-    _decimalDigits: null,
-
-    getDecimalDigits: function() {
-        return this._decimalDigits;
-    },
-
-    setDecimalDigits: function(decimalDigits) {
-        this._decimalDigits = decimalDigits;
-    },
-
-    /**
-     * The decimal symbol (&quot;.&quot; or &quot;,&quot;).
-     *
-     * @property decimalSymbol
-     * @type String
-     * @default: &quot;.&quot;
-     */
-    _decimalSymbol: &quot;.&quot;,
-
-    getDecimalSymbol: function() {
-        return this._decimalSymbol;
-    },
-
-    setDecimalSymbol: function(decimalSymbol) {
-        this._decimalSymbol = decimalSymbol;
-    },
-
-    /**
-     * The field value.
-     *
-     * @property value
-     * @type Number
-     * @default 0
-     */
-    _value: 0,
-
-    getValue: function() {
-        return parseFloat(this._value);
-    },
-
-    setValue: function(value) {
-        this._updateValue(value);
-        this._updateFieldValue();
-    },
+    // Mixin
+    __include__: [_buttonMixin],
 
 
     //////////////////////////////////////////
@@ -356,188 +256,17 @@ photonui.NumericField = photonui.Field.$extend({
 
 
     /**
-     * Update the value (in the widget).
-     *
-     * @method _updateValue
-     * @private
-     * @param {String|Number} value The raw value.
-     */
-    _updateValue: function(value) {
-        value = (&quot;&quot; + value).replace(&quot;,&quot;, &quot;.&quot;); // &quot;,&quot;
-        value = value.replace(/ /g, &quot;&quot;);  // remove spaces
-        value = parseFloat(value);
-        if (isNaN(value)) {
-            value = 0;
-        }
-
-        if (this.min != null) {
-            value = Math.max(this.min, value);
-        }
-
-        if (this.max != null) {
-            value = Math.min(this.max, value);
-        }
-
-        if (this.decimalDigits != null) {
-            value = value.toFixed(this.decimalDigits);
-        }
-
-        this._value = value;
-    },
-
-    /**
-     * Update the value in the html field.
-     *
-     * @method _updateFieldValue
-     * @private
-     */
-    _updateFieldValue: function() {
-        this.__html.field.value = (&quot;&quot; + this._value).replace(&quot;.&quot;, this.decimalSymbol);
-    },
-
-    /**
-     * Validate the user inputs.
-     *
-     * @method _validateInput
-     * @private
-     * @param {String} value
-     * @return {Boolean}
-     */
-    _validateInput: function(value) {
-        var value = &quot;&quot; + value;
-        value = value.replace(/ /g, &quot;&quot;);  // remove spaces
-        if (/^-?[0-9]*(\.|,)?[0-9]*$/.test(value)) {
-            if (this.decimalDigits == 0 &amp;&amp; !/^-?[0-9]*$/.test(value)) {
-                return false;
-            }
-            if (this.min !== null &amp;&amp; this.min &gt;= 0 &amp;&amp; value[0] == &quot;-&quot;) {
-                return false;
-            }
-            return true;
-        }
-        return false;
-    },
-
-    /**
      * Build the widget HTML.
      *
      * @method _buildHtml
      * @private
      */
     _buildHtml: function() {
-        this.__html.field = document.createElement(&quot;input&quot;);
-        this.__html.field.className = &quot;photonui-widget photonui-field photonui-field-numeric&quot;;
-        this.__html.field.type = &quot;text&quot;;
-    },
-
-
-    //////////////////////////////////////////
-    // Internal Events Callbacks            //
-    //////////////////////////////////////////
-
-
-    /**
-     * @method __onKeypress
-     * @private
-     * @param event
-     */
-    __onKeypress: function(event) {
-        if (event.ctrlKey) {
-            return;
-        }
-        else if (event.keyCode == 13) {  // Enter
-            this._updateFieldValue();
-            this._callCallbacks(&quot;value-changed&quot;, [this.value]);
-        }
-        else {
-            var field = this.__html.field;
-            var value = field.value.slice(0, field.selectionStart)
-                        + String.fromCharCode(event.charCode)
-                        + field.value.slice(field.selectionEnd);
-            if (!this._validateInput(value)) {
-                event.preventDefault();
-            }
-        }
-    },
-
-    /**
-     * @method __onKeyup
-     * @private
-     * @param event
-     */
-    __onKeyup: function(event) {
-        var value = this.__html.field.value.replace(/[^0-9.,-]*/g, &quot;&quot;);
-        if (value != this.__html.field.value) {
-            this.__html.field.value = value;
-        }
-        this._updateValue(this.__html.field.value);
-    },
-
-    /**
-     * @method __onChange
-     * @private
-     * @param event
-     */
-    __onChange: function(event) {
-        this._updateFieldValue();
-        this._callCallbacks(&quot;value-changed&quot;, [this.value]);
-    },
-
-    /**
-     * @method __onMouseWheel
-     * @private
-     * @param event
-     */
-    __onMouseWheel: function(event) {
-        if (document.activeElement != this.__html.field) {
-            return;
-        }
-
-        var wheelDelta = null;
-
-        // Webkit
-        if (event.wheelDeltaY != undefined) {
-            wheelDelta = event.wheelDeltaY;
-        }
-        // MSIE
-        if (event.wheelDelta != undefined) {
-            wheelDelta = event.wheelDelta;
-        }
-        // Firefox
-        if (event.axis != undefined &amp;&amp; event.detail != undefined) {
-            if (event.axis == 2) { // Y
-                wheelDelta = - event.detail;
-            }
-        }
-
-        if (wheelDelta != null) {
-           if (wheelDelta &gt;= 0) {
-                this.value += this.step;
-            }
-            else {
-                this.value -= this.step;
-            }
-            event.preventDefault();
-        }
-        this._callCallbacks(&quot;value-changed&quot;, [this.value]);
-    },
-
-    /**
-     * @method __onKeydown
-     * @private
-     * @param event
-     */
-    __onKeydown: function(event) {
-        if (event.keyCode == 38) {
-            this.setValue(this.getValue() + this.step);
-            event.preventDefault();
-            this._callCallbacks(&quot;value-changed&quot;, [this.value]);
-        }
-        else if (event.keyCode == 40) {
-            this.setValue(this.getValue() - this.step);
-            event.preventDefault();
-            this._callCallbacks(&quot;value-changed&quot;, [this.value]);
-        }
+        this.$super();
+        this._buildButtonHtml();
+        this.__html.outer.appendChild(this.__html.button);
+        this.__html.outer.removeChild(this.__html.span);
+        this.__html.span = this.__html.button;
     }
 });
 

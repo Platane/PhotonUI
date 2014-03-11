@@ -33,6 +33,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "photonui.Switch",
         "photonui.TextAreaField",
         "photonui.TextField",
+        "photonui.ToggleButton",
         "photonui.Viewport",
         "photonui.Widget",
         "photonui.Window"
