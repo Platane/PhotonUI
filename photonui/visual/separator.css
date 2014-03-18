@@ -40,4 +40,5 @@
 
 .photonui-separator.photonui-separator-vertical hr {
     height: 100%;
+    min-height: 20px;
 }

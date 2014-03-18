@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui/container/window/basewindow.js - PhotonUI</title>
+    <title>photonui/container/layout/fluidlayout.js - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -168,7 +168,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: photonui/container/window/basewindow.js</h1>
+                        <h1 class="file-heading">File: photonui/container/layout/fluidlayout.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -215,41 +215,17 @@ var photonui = photonui || {};
 
 
 /**
- * Windows base class.
+ * Fluid Layout.
  *
- * wEvents:
- *
- *   * position-changed:
- *      - description: called when the widows is moved.
- *      - callback:    function(widget, x, y)
- *
- * @class BaseWindow
+ * @class FluidLayout
  * @constructor
- * @extends photonui.Container
+ * @extends photonui.Layout
  */
-photonui.BaseWindow = photonui.Container.$extend({
+photonui.FluidLayout = photonui.Layout.$extend({
 
     // Constructor
     __init__: function(params) {
         this.$super(params);
-
-        // Windows are hidden by default
-        var params = params || {};
-        if (params.visible === undefined) {
-            this.visible = false;
-        }
-
-        // wEvents
-        this._registerWEvents([&quot;position-changed&quot;]);
-
-        // Insert the window in the DOM tree
-        photonui.domInsert(this);
-
-        // Update properties
-        this._updateProperties([
-            &quot;position&quot;, &quot;width&quot;, &quot;height&quot;, &quot;minWidth&quot;, &quot;minHeight&quot;,
-            &quot;maxWidth&quot;, &quot;maxHeight&quot;, &quot;padding&quot;
-        ]);
     },
 
 
@@ -262,235 +238,39 @@ photonui.BaseWindow = photonui.Container.$extend({
 
 
     /**
-     * Window position.
+     * The vertical spacing between children widgets.
      *
-     *     {x: Number, y: Number}
-     *
-     * @property position
-     * @type Object
-     * @default {x: 0, y: 0}
-     */
-    getPosition: function() {
-        if (this.visible &amp;&amp; this.html.parentNode) {
-            return this.absolutePosition;
-        }
-        return {x: this._x, y: this._y};
-    },
-
-    setPosition: function(x, y) {
-        if (typeof(x) == &quot;object&quot; &amp;&amp; y == undefined) {
-            this.html.style.left = x.x + &quot;px&quot;;
-            this.html.style.top = x.y + &quot;px&quot;;
-            this._x = x.x;
-            this._y = x.y;
-        }
-        else {
-            if (typeof(x) == &quot;number&quot;) {
-                this.html.style.left = x + &quot;px&quot;;
-                this._x = x;
-            }
-            if (typeof(y) == &quot;number&quot;) {
-                this.html.style.top = y + &quot;px&quot;;
-                this._y = y;
-            }
-        }
-        this._callCallbacks(&quot;position-changed&quot;, [this.x, this.y]);
-    },
-
-    /**
-     * The X position of the Window.
-     *
-     * @property x
+     * @property verticalSpacing
      * @type Number
      * @default 0
      */
-    _x: 0,
+    _verticalSpacing: 0,
 
-    getX: function() {
-        return this.position.x;
+    getVerticalSpacing: function() {
+        return this._verticalSpacing;
     },
 
-    setX: function(x) {
-        this.setPosition(x, null);
-    },
-
-    /**
-     * The Y position of the Window.
-     *
-     * @property y
-     * @type Number
-     * @default 0
-     */
-    _y: 0,
-
-    getY: function() {
-        return this.position.y;
-    },
-
-    setY: function(y) {
-        this.setPosition(null, y);
+    setVerticalSpacing: function(verticalSpacing) {
+        this._verticalSpacing = verticalSpacing;
+        this._updateLayout();
     },
 
     /**
-     * Width of the container node.
+     * The horizontal spacing between children widgets.
      *
-     * @property width
+     * @property horizontalSpacing
      * @type Number
-     * @default: null (auto)
+     * @default 2
      */
-    _width: null,
+    _horizontalSpacing: 2,
 
-    getWidth: function() {
-        if (this.visible &amp;&amp; this.html.parenNode) {
-            return this.containerNode.offsetWidth;
-        }
-        return this._width || 0;
+    getHorizontalSpacing: function() {
+        return this._horizontalSpacing;
     },
 
-    setWidth: function(width) {
-        this._width = width || null;
-        if (this._width) {
-            this.containerNode.style.width = width + &quot;px&quot;;
-        }
-        else {
-            this.containerNode.style.width = &quot;auto&quot;;
-        }
-    },
-
-    /**
-     * Height of the container node.
-     *
-     * @property height
-     * @type Number
-     * @default: null (auto)
-     */
-    _height: null,
-
-    getHeight: function() {
-        if (this.visible &amp;&amp; this.html.parenNode) {
-            return this.containerNode.offsetHeight;
-        }
-        return this._height || 0;
-    },
-
-    setHeight: function(height) {
-        this._height = height || null;
-        if (this._height) {
-            this.containerNode.style.height = height + &quot;px&quot;;
-        }
-        else {
-            this.containerNode.style.height = &quot;auto&quot;;
-        }
-    },
-
-    /**
-     * Minimum width of the container node.
-     *
-     * @property minWidth
-     * @type Number
-     * @default: null (no minimum)
-     */
-    _minWidth: null,
-
-    getMinWidth: function() {
-        return this._minWidth;
-    },
-
-    setMinWidth: function(minWidth) {
-        this._minWidth = minWidth || null;
-        if (this._minWidth) {
-            this.containerNode.style.minWidth = minWidth + &quot;px&quot;;
-        }
-        else {
-            this.containerNode.style.minWidth = &quot;0&quot;;
-        }
-    },
-
-    /**
-     * Minimum height of the container node.
-     *
-     * @property minHeight
-     * @type Number
-     * @default: null (no minimum)
-     */
-    _minHeight: null,
-
-    getMinHeight: function() {
-        return this._minHeight;
-    },
-
-    setMinHeight: function(minHeight) {
-        this._minHeight = minHeight || null;
-        if (this._minHeight) {
-            this.containerNode.style.minHeight = minHeight + &quot;px&quot;;
-        }
-        else {
-            this.containerNode.style.minHeight = &quot;0&quot;;
-        }
-    },
-
-    /**
-     * Maximum width of the container node.
-     *
-     * @property maxWidth
-     * @type Number
-     * @default: null (no maximum)
-     */
-    _maxWidth: null,
-
-    getMaxWidth: function() {
-        return this._maxWidth;
-    },
-
-    setMaxWidth: function(maxWidth) {
-        this._maxWidth = maxWidth || null;
-        if (this._maxWidth) {
-            this.containerNode.style.maxWidth = maxWidth + &quot;px&quot;;
-        }
-        else {
-            this.containerNode.style.maxWidth = &quot;auto&quot;;
-        }
-    },
-
-    /**
-     * Maximum height of the container node.
-     *
-     * @property maxHeight
-     * @type Number
-     * @default: null (no maximum)
-     */
-    _maxHeight: null,
-
-    getMaxHeight: function() {
-        return this._maxHeight;
-    },
-
-    setMaxHeight: function(maxHeight) {
-        this._maxHeight = maxHeight || null;
-        if (this._maxHeight) {
-            this.containerNode.style.maxHeight = maxHeight + &quot;px&quot;;
-        }
-        else {
-            this.containerNode.style.maxHeight = &quot;auto&quot;;
-        }
-    },
-
-    /**
-     * Window container node padding.
-     *
-     * @property padding
-     * @type Number
-     * @default 0
-     */
-    _padding: 0,
-
-    getPadding: function() {
-        return this._padding;
-    },
-
-    setPadding: function(padding) {
-        this._padding = padding;
-        this.containerNode.style.padding = padding + &quot;px&quot;;
+    setHorizontalSpacing: function(horizontalSpacing) {
+        this._horizontalSpacing = horizontalSpacing;
+        this._updateLayout();
     },
 
     /**
@@ -502,18 +282,7 @@ photonui.BaseWindow = photonui.Container.$extend({
      * @readOnly
      */
     getHtml: function() {
-        return this.__html[&quot;window&quot;];
-    },
-
-    /**
-     * HTML Element that contain the child widget HTML.
-     *
-     * @property containerNode
-     * @type HTMLElement
-     * @readOnly
-     */
-    getContainerNode: function() {
-        return this.html;
+        return this.__html.outerbox;
     },
 
 
@@ -524,18 +293,6 @@ photonui.BaseWindow = photonui.Container.$extend({
 
     // ====== Public methods ======
 
-
-    /**
-     * Center the window.
-     *
-     * @method center
-     */
-    center: function() {
-        this.setPosition(
-                Math.round((photonui.e_parent.offsetWidth - this.offsetWidth) / 2),
-                Math.round((photonui.e_parent.offsetHeight - this.offsetHeight) / 2)
-        );
-    },
 
 
     // ====== Private methods ======
@@ -548,8 +305,31 @@ photonui.BaseWindow = photonui.Container.$extend({
      * @private
      */
     _buildHtml: function() {
-        this.__html[&quot;window&quot;] = document.createElement(&quot;div&quot;);
-        this.__html[&quot;window&quot;].className = &quot;photonui-widget photonui-basewindow&quot;;
+        this.__html.outerbox = document.createElement(&quot;div&quot;);
+        this.__html.outerbox.className = &quot;photonui-widget photonui-fluidlayout&quot;;
+    },
+
+    /**
+     * Update the layout.
+     *
+     * @method _updateLayout
+     * @private
+     */
+    _updateLayout: function() {
+        var children = this.children
+        var fragment = document.createDocumentFragment();
+
+        var div = null;
+        for (var i=0 ; i&lt;children.length ; i++) {
+            div = document.createElement(&quot;div&quot;);
+            div.className = &quot;photonui-container&quot;;
+            div.style.padding = &quot;0 &quot; + this.horizontalSpacing + &quot;px &quot; + this.verticalSpacing + &quot;px 0&quot;;
+            div.appendChild(children[i].html);
+            fragment.appendChild(div);
+        }
+
+        photonui.Helpers.cleanNode(this.__html.outerbox);
+        this.__html.outerbox.appendChild(fragment);
     }
 });
 

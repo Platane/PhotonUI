@@ -32,6 +32,17 @@
                 "photonui": 1
             }
         },
+        "photonui/container/layout/fluidlayout.js": {
+            "name": "photonui/container/layout/fluidlayout.js",
+            "modules": {},
+            "classes": {
+                "photonui.FluidLayout": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/container/layout/gridlayout.js": {
             "name": "photonui/container/layout/gridlayout.js",
             "modules": {},
@@ -430,6 +441,7 @@
             "classes": {
                 "photonui.PopupMenu": 1,
                 "photonui.BoxLayout": 1,
+                "photonui.FluidLayout": 1,
                 "photonui.GridLayout": 1,
                 "photonui.Layout": 1,
                 "photonui.Menu": 1,
@@ -497,6 +509,7 @@
             "submodules": {},
             "classes": {
                 "photonui.BoxLayout": 1,
+                "photonui.FluidLayout": 1,
                 "photonui.GridLayout": 1,
                 "photonui.Layout": 1,
                 "photonui.Menu": 1,
@@ -646,6 +659,23 @@
             "description": "Vertical and horizontal box layout.\n\nLayout Options:\n\n    {\n         verticalExpansion: <Boolean, default: true>,\n         horizontalExpansion: <Boolean, default: true>,\n         width: <Number, default: undefined>,\n         height: <Number, default: undefined>,\n         minWidth: <Number, default: undefined>,\n         minHeight: <Number, default: undefined>,\n         maxWidth: <Number, default: undefined>,\n         maxHeight: <Number, default: undefined>,\n         horizontalAlign: <String (left, center, right), default: undefined>\n    }",
             "is_constructor": 1,
             "extends": "photonui.GridLayout"
+        },
+        "photonui.FluidLayout": {
+            "name": "photonui.FluidLayout",
+            "shortname": "FluidLayout",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui",
+            "file": "photonui/container/layout/fluidlayout.js",
+            "line": 43,
+            "description": "Fluid Layout.",
+            "is_constructor": 1,
+            "extends": "photonui.Layout"
         },
         "photonui.GridLayout": {
             "name": "photonui.GridLayout",
@@ -950,7 +980,7 @@
             "namespace": "photonui",
             "file": "photonui/input/checkbox/togglebutton.js",
             "line": 43,
-            "description": "Switch.",
+            "description": "Toogle Button.",
             "is_constructor": 1,
             "extends": "photonui.CheckBox",
             "uses": [
@@ -1212,7 +1242,7 @@
             "namespace": "photonui",
             "file": "photonui/visual/spriteicon.js",
             "line": 235,
-            "description": "Sprite sheet based icons.",
+            "description": "Sprite sheet based icons.\n\nSpecial contructor params:\n\n     new photonui.SpriteIcon( {optional params...} )\n     new photonui.SpriteIcon( \"spriteSheetName/iconName\", {optional params...} )",
             "is_constructor": 1,
             "extends": "photonui.BaseIcon"
         },
@@ -1327,6 +1357,72 @@
             "access": "private",
             "tagname": "",
             "class": "photonui.BoxLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/fluidlayout.js",
+            "line": 66,
+            "description": "The vertical spacing between children widgets.",
+            "itemtype": "property",
+            "name": "verticalSpacing",
+            "type": "Number",
+            "default": "0",
+            "class": "photonui.FluidLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/fluidlayout.js",
+            "line": 84,
+            "description": "The horizontal spacing between children widgets.",
+            "itemtype": "property",
+            "name": "horizontalSpacing",
+            "type": "Number",
+            "default": "2",
+            "class": "photonui.FluidLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/fluidlayout.js",
+            "line": 102,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.FluidLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/fluidlayout.js",
+            "line": 127,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.FluidLayout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/layout/fluidlayout.js",
+            "line": 138,
+            "description": "Update the layout.",
+            "itemtype": "method",
+            "name": "_updateLayout",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.FluidLayout",
             "module": "PhotonUI",
             "submodule": "Container",
             "namespace": "photonui"
@@ -2852,6 +2948,19 @@
         {
             "file": "photonui/input/button/button.js",
             "line": 234,
+            "description": "Define the button appearance.\n\n  * `normal`\n  * `flat`",
+            "itemtype": "property",
+            "name": "appearance",
+            "type": "String",
+            "default": "\"normal\"",
+            "class": "photonui.Button",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/button.js",
+            "line": 261,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -2865,7 +2974,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 255,
+            "line": 282,
             "description": "Update the button content",
             "itemtype": "method",
             "name": "_update",
@@ -2878,7 +2987,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 285,
+            "line": 312,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -2891,7 +3000,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 314,
+            "line": 341,
             "description": "Called when the button is clicked.",
             "itemtype": "method",
             "name": "__onButtonClicked",
@@ -4251,7 +4360,7 @@
         {
             "file": "photonui/visual/spriteicon.js",
             "line": 150,
-            "description": "Icons.\n\n    {\n         \"iconName\": [x, y],\n         \"icon2: [x2, y2],\n         ...\n    }",
+            "description": "Icons.\n\n    {\n         \"iconName\": [x, y],\n         \"icon2\": [x2, y2],\n         ...\n    }",
             "itemtype": "property",
             "name": "icons",
             "type": "Object",
@@ -4353,7 +4462,7 @@
         },
         {
             "file": "photonui/visual/spriteicon.js",
-            "line": 270,
+            "line": 275,
             "description": "The sprite sheet name.",
             "itemtype": "property",
             "name": "spriteSheetName",
@@ -4366,7 +4475,7 @@
         },
         {
             "file": "photonui/visual/spriteicon.js",
-            "line": 288,
+            "line": 293,
             "description": "The icon name.",
             "itemtype": "property",
             "name": "iconName",
@@ -4379,7 +4488,7 @@
         },
         {
             "file": "photonui/visual/spriteicon.js",
-            "line": 306,
+            "line": 311,
             "description": "The icon id.\n\n    \"spriteSheetName/iconName\"",
             "itemtype": "property",
             "name": "icon",
@@ -4392,7 +4501,7 @@
         },
         {
             "file": "photonui/visual/spriteicon.js",
-            "line": 325,
+            "line": 330,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -4406,7 +4515,7 @@
         },
         {
             "file": "photonui/visual/spriteicon.js",
-            "line": 345,
+            "line": 350,
             "description": "Update the icon.",
             "itemtype": "method",
             "name": "_update",
@@ -4419,7 +4528,7 @@
         },
         {
             "file": "photonui/visual/spriteicon.js",
-            "line": 359,
+            "line": 364,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",

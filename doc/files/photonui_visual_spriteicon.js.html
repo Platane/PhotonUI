@@ -67,6 +67,8 @@
             
                 <li><a href="../classes/photonui.Field.html">photonui.Field</a></li>
             
+                <li><a href="../classes/photonui.FluidLayout.html">photonui.FluidLayout</a></li>
+            
                 <li><a href="../classes/photonui.GridLayout.html">photonui.GridLayout</a></li>
             
                 <li><a href="../classes/photonui.Helpers.html">photonui.Helpers</a></li>
@@ -324,7 +326,7 @@ photonui.SpriteSheet = photonui.Base.$extend({
      *
      *     {
      *          &quot;iconName&quot;: [x, y],
-     *          &quot;icon2: [x2, y2],
+     *          &quot;icon2&quot;: [x2, y2],
      *          ...
      *     }
      *
@@ -406,6 +408,11 @@ photonui.SpriteSheet = photonui.Base.$extend({
 
 /**
  * Sprite sheet based icons.
+ *
+ * Special contructor params:
+ *
+ *      new photonui.SpriteIcon( {optional params...} )
+ *      new photonui.SpriteIcon( &quot;spriteSheetName/iconName&quot;, {optional params...} )
  *
  * @class SpriteIcon
  * @constructor

@@ -67,6 +67,8 @@
             
                 <li><a href="../classes/photonui.Field.html">photonui.Field</a></li>
             
+                <li><a href="../classes/photonui.FluidLayout.html">photonui.FluidLayout</a></li>
+            
                 <li><a href="../classes/photonui.GridLayout.html">photonui.GridLayout</a></li>
             
                 <li><a href="../classes/photonui.Helpers.html">photonui.Helpers</a></li>
@@ -404,6 +406,33 @@ photonui.Button = photonui.Widget.$extend({
     },
 
     /**
+     * Define the button appearance.
+     *
+     *   * &#x60;normal&#x60;
+     *   * &#x60;flat&#x60;
+     *
+     * @property appearance
+     * @type String
+     * @default &quot;normal&quot;
+     */
+    _appearance: &quot;normal&quot;,
+
+    getAppearance: function() {
+        return this._appearance;
+    },
+
+    setAppearance: function(appearance) {
+        this._appearance = appearance;
+
+        if (appearance == &quot;flat&quot;) {
+            this.addClass(&quot;photonui-button-appearance-flat&quot;);
+        }
+        else {
+            this.removeClass(&quot;photonui-button-appearance-flat&quot;);
+        }
+    },
+
+    /**
      * Html outer element of the widget (if any).
      *
      * @property html
@@ -521,6 +550,9 @@ var _buttonMixin = {
     _rightIconVisible:   photonui.Button.prototype._rightIconVisible,
     isRightIconVisible:  photonui.Button.prototype.isRightIconVisible,
     setRightIconVisible: photonui.Button.prototype.setRightIconVisible,
+    _appearance:         photonui.Button.prototype._appearance,
+    getAppearance:       photonui.Button.prototype.getAppearance,
+    setAppearance:       photonui.Button.prototype.setAppearance,
     // Private methods
     _update:             photonui.Button.prototype._update,
     _buildButtonHtml:    photonui.Button.prototype._buildHtml,

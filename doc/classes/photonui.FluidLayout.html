@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui.Field - PhotonUI</title>
+    <title>photonui.FluidLayout - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -168,25 +168,25 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>photonui.Field Class</h1>
+                        <h1>photonui.FluidLayout Class</h1>
 <div class="box meta">
     
 
     
         <div class="extends">
-            Extends <a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a>
+            Extends <a href="../classes/photonui.Layout.html" class="crosslink">photonui.Layout</a>
         </div>
     
 
     
         <div class="foundat">
-            Defined in: <a href="../files/photonui_input_field_field.js.html#l43"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:43</code></a>
+            Defined in: <a href="../files/photonui_container_layout_fluidlayout.js.html#l43"><code>photonui&#x2F;container&#x2F;layout&#x2F;fluidlayout.js:43</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/Input.html">Input</a><br>
+            Module: <a href="../modules/Container.html">Container</a><br>
             Parent Module: <a href="../modules/PhotonUI.html">PhotonUI</a>
         
     
@@ -197,48 +197,15 @@
 
 
 <div class="box intro">
-    <p>Base class for fields.</p>
-<p>wEvents:</p>
-<ul>
-<li><p>value-changed:</p>
-<ul>
-<li>description: called when the value was modified.</li>
-<li>callback:    function(widget, value)</li>
-</ul>
-</li>
-<li><p>keydown:</p>
-<ul>
-<li>description: called when a key is pressed.</li>
-<li>callback:    function(widget, event)</li>
-</ul>
-</li>
-<li><p>keyup:</p>
-<ul>
-<li>description: called when a key is released.</li>
-<li>callback:    function(widget, event)</li>
-</ul>
-</li>
-<li><p>keypress:</p>
-<ul>
-<li>description: called just before the insertion of a char.</li>
-<li>callback:    function(widget, event)</li>
-</ul>
-</li>
-<li><p>selection-changed:</p>
-<ul>
-<li>description: called when the selection was changed.</li>
-<li>callback:    function(widget, selectionStart, selectionEnd, selectedText, event)</li>
-</ul>
-</li>
-</ul>
+    <p>Fluid Layout.</p>
 
 </div>
 
 
     <div class="constructor">
         <h2>Constructor</h2>
-        <div id="method_photonui.Field" class="method item">
-    <h3 class="name"><code>photonui.Field</code></h3>
+        <div id="method_photonui.FluidLayout" class="method item">
+    <h3 class="name"><code>photonui.FluidLayout</code></h3>
 
     
         <span class="paren">()</span>
@@ -269,7 +236,7 @@
             
         
         
-        <a href="../files/photonui_input_field_field.js.html#l43"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:43</code></a>
+        <a href="../files/photonui_container_layout_fluidlayout.js.html#l43"><code>photonui&#x2F;container&#x2F;layout&#x2F;fluidlayout.js:43</code></a>
         
         </p>
 
@@ -331,13 +298,6 @@
                                 
                             </li>
                         
-                            <li class="index-item method private">
-                                <a href="#method__bindFieldEvents">_bindFieldEvents</a>
-
-                                
-                                
-                            </li>
-                        
                             <li class="index-item method private inherited">
                                 <a href="#method__buildHtml">_buildHtml</a>
 
@@ -367,7 +327,21 @@
                             </li>
                         
                             <li class="index-item method private inherited">
+                                <a href="#method__updateLayout">_updateLayout</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private inherited">
                                 <a href="#method__updateProperties">_updateProperties</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_addChild">addChild</a>
 
                                 
                                 
@@ -403,6 +377,13 @@
                         
                             <li class="index-item method inherited">
                                 <a href="#method_removeCallback">removeCallback</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method inherited">
+                                <a href="#method_removeChild">removeChild</a>
 
                                 
                                 
@@ -461,6 +442,41 @@
                             </li>
                         
                             <li class="index-item property inherited">
+                                <a href="#property_child">child</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_childName">childName</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_children">children</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_childrenNames">childrenNames</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
+                                <a href="#property_containerNode">containerNode</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property inherited">
                                 <a href="#property_contextMenu">contextMenu</a>
 
                                 
@@ -469,6 +485,13 @@
                         
                             <li class="index-item property inherited">
                                 <a href="#property_contextMenuName">contextMenuName</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_horizontalSpacing">horizontalSpacing</a>
 
                                 
                                 
@@ -509,13 +532,6 @@
                                 
                             </li>
                         
-                            <li class="index-item property">
-                                <a href="#property_Placeholder">Placeholder</a>
-
-                                
-                                
-                            </li>
-                        
                             <li class="index-item property inherited">
                                 <a href="#property_tooltip">tooltip</a>
 
@@ -524,7 +540,7 @@
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_value">value</a>
+                                <a href="#property_verticalSpacing">verticalSpacing</a>
 
                                 
                                 
@@ -551,7 +567,7 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method___onContextMenu" class="method item private">
+                    <div id="method___onContextMenu" class="method item private inherited">
     <h3 class="name"><code>__onContextMenu</code></h3>
 
     
@@ -586,16 +602,13 @@
 
     <div class="meta">
         
-            <p>Inherited from
-            <a href="../classes/photonui.Widget.html#method___onContextMenu">
-                photonui.Widget
-            </a>
             
-            but overwritten in
+                <p>Inherited from
+                <a href="../classes/photonui.Widget.html#method___onContextMenu">photonui.Widget</a>:
             
         
         
-        <a href="../files/photonui_input_field_field.js.html#l183"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:183</code></a>
+        <a href="../files/photonui_widget.js.html#l419"><code>photonui&#x2F;widget.js:419</code></a>
         
         </p>
 
@@ -795,64 +808,7 @@
 </div>
 
                 
-                    <div id="method__bindFieldEvents" class="method item private">
-    <h3 class="name"><code>_bindFieldEvents</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_input_field_field.js.html#l145"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:145</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Bind Field events.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method__buildHtml" class="method item private inherited">
+                    <div id="method__buildHtml" class="method item private">
     <h3 class="name"><code>_buildHtml</code></h3>
 
     
@@ -877,13 +833,16 @@
 
     <div class="meta">
         
+            <p>Inherited from
+            <a href="../classes/photonui.Widget.html#method__buildHtml">
+                photonui.Widget
+            </a>
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method__buildHtml">photonui.Widget</a>:
+            but overwritten in
             
         
         
-        <a href="../files/photonui_widget.js.html#l403"><code>photonui&#x2F;widget.js:403</code></a>
+        <a href="../files/photonui_container_layout_fluidlayout.js.html#l127"><code>photonui&#x2F;container&#x2F;layout&#x2F;fluidlayout.js:127</code></a>
         
         </p>
 
@@ -1089,7 +1048,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
                     
 
                     <div class="param-description">
-                        
+                         
                     </div>
 
                     
@@ -1193,6 +1152,63 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
+                    <div id="method__updateLayout" class="method item private">
+    <h3 class="name"><code>_updateLayout</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            <p>Inherited from
+            <a href="../classes/photonui.Layout.html#method__updateLayout">
+                photonui.Layout
+            </a>
+            
+            but overwritten in
+            
+        
+        
+        <a href="../files/photonui_container_layout_fluidlayout.js.html#l138"><code>photonui&#x2F;container&#x2F;layout&#x2F;fluidlayout.js:138</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Update the layout.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method__updateProperties" class="method item private inherited">
     <h3 class="name"><code>_updateProperties</code></h3>
 
@@ -1265,6 +1281,114 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 
                     <div class="param-description">
                         <p>The properties to update.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_addChild" class="method item inherited">
+    <h3 class="name"><code>addChild</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>widget</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>layoutOption</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Layout.html#method_addChild">photonui.Layout</a>:
+            
+        
+        
+        <a href="../files/photonui_container_layout_layout.js.html#l139"><code>photonui&#x2F;container&#x2F;layout&#x2F;layout.js:139</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Add a widget to the layout.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">widget</code>
+                        <span class="type"><a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The widget to add.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">layoutOption</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Specific option for the layout (optional).</p>
 
                     </div>
 
@@ -1399,7 +1523,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
             
         
         
-        <a href="../files/photonui_widget.js.html#l351"><code>photonui&#x2F;widget.js:351</code></a>
+        <a href="../files/photonui_container_layout_layout.js.html#l168"><code>photonui&#x2F;container&#x2F;layout&#x2F;layout.js:168</code></a>
         
         </p>
 
@@ -1698,6 +1822,92 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 
                     <div class="param-description">
                         <p>The id of the callback.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_removeChild" class="method item inherited">
+    <h3 class="name"><code>removeChild</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>widget</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Layout.html#method_removeChild">photonui.Layout</a>:
+            
+        
+        
+        <a href="../files/photonui_container_layout_layout.js.html#l154"><code>photonui&#x2F;container&#x2F;layout&#x2F;layout.js:154</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Remove a widget from the layout.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">widget</code>
+                        <span class="type"><a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The widget to remove.</p>
 
                     </div>
 
@@ -2036,6 +2246,224 @@ internal use).</p>
 </div>
 
                 
+                    <div id="property_child" class="property item inherited">
+    <h3 class="name"><code>child</code></h3>
+    <span class="type"><a href="../classes/photonui.Widget.html" class="crosslink">photonui.Widget</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Container.html#property_child">photonui.Container</a>:
+            
+        
+        
+        <a href="../files/photonui_container_container.js.html#l83"><code>photonui&#x2F;container&#x2F;container.js:83</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The child widget.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> null (no child)</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_childName" class="property item inherited">
+    <h3 class="name"><code>childName</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Container.html#property_childName">photonui.Container</a>:
+            
+        
+        
+        <a href="../files/photonui_container_container.js.html#l60"><code>photonui&#x2F;container&#x2F;container.js:60</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The child widget name.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> null (no child)</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_children" class="property item inherited">
+    <h3 class="name"><code>children</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Layout.html#property_children">photonui.Layout</a>:
+            
+        
+        
+        <a href="../files/photonui_container_layout_layout.js.html#l85"><code>photonui&#x2F;container&#x2F;layout&#x2F;layout.js:85</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Layout children widgets.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> []</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_childrenNames" class="property item inherited">
+    <h3 class="name"><code>childrenNames</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Layout.html#property_childrenNames">photonui.Layout</a>:
+            
+        
+        
+        <a href="../files/photonui_container_layout_layout.js.html#l67"><code>photonui&#x2F;container&#x2F;layout&#x2F;layout.js:67</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Layout children widgets name.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> []</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_containerNode" class="property item inherited">
+    <h3 class="name"><code>containerNode</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                <p>Inherited from
+                <a href="../classes/photonui.Container.html#property_containerNode">photonui.Container</a>:
+            
+        
+        
+        <a href="../files/photonui_container_container.js.html#l102"><code>photonui&#x2F;container&#x2F;container.js:102</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>HTML Element that contain the child widget HTML.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="property_contextMenu" class="property item inherited">
     <h3 class="name"><code>contextMenu</code></h3>
     <span class="type"><a href="../classes/photonui.PopupWindow.html" class="crosslink">photonui.PopupWindow</a></span>
@@ -2124,6 +2552,53 @@ internal use).</p>
 </div>
 
                 
+                    <div id="property_horizontalSpacing" class="property item">
+    <h3 class="name"><code>horizontalSpacing</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_container_layout_fluidlayout.js.html#l84"><code>photonui&#x2F;container&#x2F;layout&#x2F;fluidlayout.js:84</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The horizontal spacing between children widgets.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 2</p>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="property_html" class="property item">
     <h3 class="name"><code>html</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
@@ -2147,7 +2622,7 @@ internal use).</p>
             
         
         
-        <a href="../files/photonui_input_field_field.js.html#l124"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:124</code></a>
+        <a href="../files/photonui_container_layout_fluidlayout.js.html#l102"><code>photonui&#x2F;container&#x2F;layout&#x2F;fluidlayout.js:102</code></a>
         
         </p>
 
@@ -2343,53 +2818,6 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_Placeholder" class="property item">
-    <h3 class="name"><code>Placeholder</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_input_field_field.js.html#l109"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:109</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The placeholder displayed if the field is empty.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> &quot;&quot;</p>
-    
-
-    
-
-    
-</div>
-
-                
                     <div id="property_tooltip" class="property item inherited">
     <h3 class="name"><code>tooltip</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
@@ -2434,9 +2862,9 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_value" class="property item">
-    <h3 class="name"><code>value</code></h3>
-    <span class="type">String (maybe)</span>
+                    <div id="property_verticalSpacing" class="property item">
+    <h3 class="name"><code>verticalSpacing</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
 
     
 
@@ -2457,7 +2885,7 @@ internal use).</p>
             
         
         
-        <a href="../files/photonui_input_field_field.js.html#l94"><code>photonui&#x2F;input&#x2F;field&#x2F;field.js:94</code></a>
+        <a href="../files/photonui_container_layout_fluidlayout.js.html#l66"><code>photonui&#x2F;container&#x2F;layout&#x2F;fluidlayout.js:66</code></a>
         
         </p>
 
@@ -2467,12 +2895,12 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>The field value.</p>
+        <p>The vertical spacing between children widgets.</p>
 
     </div>
 
     
-        <p><strong>Default:</strong> &quot;&quot;</p>
+        <p><strong>Default:</strong> 0</p>
     
 
     

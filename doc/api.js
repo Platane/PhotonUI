@@ -14,6 +14,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "photonui.Dialog",
         "photonui.FAIcon",
         "photonui.Field",
+        "photonui.FluidLayout",
         "photonui.GridLayout",
         "photonui.Helpers",
         "photonui.Label",
