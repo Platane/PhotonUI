@@ -14,6 +14,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "photonui.Dialog",
         "photonui.FAIcon",
         "photonui.Field",
+        "photonui.FileManager",
         "photonui.FluidLayout",
         "photonui.GridLayout",
         "photonui.Helpers",
@@ -45,6 +46,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Event",
         "Helpers",
         "Input",
+        "Misc",
         "PhotonUI",
         "Visual"
     ],
@@ -72,6 +74,11 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "Input",
             "name": "Input",
+            "description": "PhotonUI - Javascript Web User Interface."
+        },
+        {
+            "displayName": "Misc",
+            "name": "Misc",
             "description": "PhotonUI - Javascript Web User Interface."
         },
         {

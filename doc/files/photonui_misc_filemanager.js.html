@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui/input/field/field.js - PhotonUI</title>
+    <title>photonui/misc/filemanager.js - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -172,7 +172,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: photonui/input/field/field.js</h1>
+                        <h1 class="file-heading">File: photonui/misc/filemanager.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -210,7 +210,7 @@
  * PhotonUI - Javascript Web User Interface.
  *
  * @module PhotonUI
- * @submodule Input
+ * @submodule Misc
  * @namespace photonui
  */
 
@@ -219,45 +219,30 @@ var photonui = photonui || {};
 
 
 /**
- * Base class for fields.
+ * Open files from the standard &quot;FileOpen&quot; dialog and drag &amp; drop.
  *
  * wEvents:
  *
- *   * value-changed:
- *     - description: called when the value was modified.
- *     - callback:    function(widget, value)
+ *   * file-open:
+ *      - description: File selected or dropped.
+ *      - callback:    function(widget, fileBlob, x, y)  //(x=y=undefined if using a dialog)
  *
- *   * keydown:
- *     - description: called when a key is pressed.
- *     - callback:    function(widget, event)
- *
- *   * keyup:
- *     - description: called when a key is released.
- *     - callback:    function(widget, event)
- *
- *   * keypress:
- *     - description: called just before the insertion of a char.
- *     - callback:    function(widget, event)
- *
- *   * selection-changed:
- *     - description: called when the selection was changed.
- *     - callback:    function(widget, selectionStart, selectionEnd, selectedText, event)
- *
- * @class Field
+ * @class FileManager
  * @constructor
- * @extends photonui.Widget
+ * @extends photonui.Base
+ * @param {Object} params An object that can contain any property of the widget (optional).
  */
-photonui.Field = photonui.Widget.$extend({
+photonui.FileManager = photonui.Base.$extend({
 
     // Constructor
     __init__: function(params) {
+        this.__fileField = document.createElement(&quot;input&quot;);
+        this.__fileField.type = &quot;file&quot;;
+        this.__fileField.addEventListener(&quot;change&quot;, this.__onFileSelected.bind(this), false);
+        this._acceptedMimes = [],
+        this._acceptedExts = [],
         this.$super(params);
-        this._registerWEvents([
-            &quot;value-changed&quot;, &quot;keydown&quot;, &quot;keyup&quot;, &quot;keypress&quot;,
-            &quot;selection-changed&quot;
-        ]);
-        this._updateProperties([&quot;value&quot;, &quot;placeholder&quot;]);
-        this.__html.field.name = this.name;
+        this._registerWEvents([&quot;file-open&quot;]);
     },
 
 
@@ -270,46 +255,114 @@ photonui.Field = photonui.Widget.$extend({
 
 
     /**
-     * The field value.
+     * List of the accepted mime types.
      *
-     * @property value
-     * @type String (maybe)
-     * @default &quot;&quot;
+     * @property acceptedMimes
+     * @type Array
+     * @default []
      */
-    getValue: function() {
-        return this.__html.field.value;
+    _acceptedMimes: [],
+
+    getAcceptedMimes: function() {
+        return this._acceptedMimes;
     },
 
-    setValue: function(value) {
-        this.__html.field.value = value;
+    setAcceptedMimes: function(mimes) {
+        this._acceptedMimes = mimes;
+        this._updateAccepted();
     },
 
     /**
-     * The placeholder displayed if the field is empty.
+     * List of the accepted file extentions.
      *
-     * @property Placeholder
-     * @type String
-     * @default &quot;&quot;
+     * @property acceptedExts
+     * @type Array
+     * @default []
      */
-    getPlaceholder: function() {
-        return this.__html.field.placeholder;
+    _acceptedExts: [],
+
+    getAcceptedExts: function() {
+        return this._acceptedExts;
     },
 
-    setPlaceholder: function(placeholder) {
-        this.__html.field.placeholder = placeholder;
+    setAcceptedExts: function(exts) {
+        this._acceptedExts = exts;
+        this._updateAccepted();
     },
 
     /**
-     * Html outer element of the widget (if any).
+     * Element that accepts file drop (&#x60;null&#x60; disable d&amp;d support).
      *
-     * @property html
+     * @property dropZone
      * @type HTMLElement
      * @default null
-     * @readOnly
      */
-    getHtml: function() {
-        return this.__html.field;
+    _dropZone: null,
+
+    getDropZone: function() {
+        return this._dropZone;
     },
+
+    setDropZone: function(element) {
+        // Unbind
+        if (this._dropZone) {
+            this._unbindEvent(&quot;document-dragover&quot;);
+            this._unbindEvent(&quot;document-drop&quot;);
+            this._unbindEvent(&quot;element-dragover&quot;);
+            this._unbindEvent(&quot;element-drop&quot;);
+        }
+
+        this._dropZone = element;
+
+        // Bind
+        if (element) {
+            this._bindEvent(&quot;document-dragover&quot;, document, &quot;dragover&quot;, function(event) {
+                event.preventDefault();
+            });
+            this._bindEvent(&quot;document-drop&quot;, document, &quot;drop&quot;, function(event) {
+                event.preventDefault();
+            });
+            this._bindEvent(&quot;element-dragover&quot;, document, &quot;dragover&quot;, function(event) {});
+            this._bindEvent(&quot;element-drop&quot;, document, &quot;drop&quot;, this.__onFileDropped.bind(this));
+        }
+    },
+
+    /**
+     * Allow multiselect in FileOpen dialog.
+     *
+     * @property multiselect
+     * @type Boolean
+     * @default false
+     */
+    _multiselect: false,
+
+    getMultiselect: function() {
+        return this._multiselect;
+    },
+
+    setMultiselect: function(multiselect) {
+        this._multiselect = multiselect;
+
+        if (multiselect) {
+            this.__fileField.multiple = &quot;true&quot;;
+        }
+        else {
+            delete this.__fileField.multiple;
+        }
+    },
+
+
+    // ====== Private properties ======
+
+
+    /**
+     * The file field for opening the file dialog.
+     *
+     * @property __fileField
+     * @private
+     * @type HTMLElement
+     */
+    __fileField: null,
 
 
     //////////////////////////////////////////
@@ -317,39 +370,74 @@ photonui.Field = photonui.Widget.$extend({
     //////////////////////////////////////////
 
 
+    // ====== Public methods ======
+
+
+    /**
+     * Open the FileOpen dialog to allow user to browse its HDD for a file.
+     *
+     * @method open
+     */
+    open: function() {
+        this.__fileField.click();
+    },
+
+
     // ====== Private methods ======
 
 
     /**
-     * Bind Field events.
+     * Update accepted mimes/extentions.
      *
-     * @method _bindFieldEvents
+     * @method _updateAccepted
      * @private
      */
-    _bindFieldEvents: function() {
-        this._bindEvent(&quot;value-changed&quot;, this.__html.field, &quot;change&quot;, function(event) {
-            this._callCallbacks(&quot;value-changed&quot;, [this.getValue()]);
-        }.bind(this));
+    _updateAccepted: function() {
+        var result = [];
 
-        this._bindEvent(&quot;keydown&quot;, this.__html.field, &quot;keydown&quot;, function(event) {
-            this._callCallbacks(&quot;keydown&quot;, [event]);
-        }.bind(this));
+        for (var i=0 ; i&lt;this.acceptedExts.length ; i++) {
+            result.push(&quot;.&quot; + this.acceptedExts[i].toLocaleLowerCase());
+        }
 
-        this._bindEvent(&quot;keyup&quot;, this.__html.field, &quot;keyup&quot;, function(event) {
-            this._callCallbacks(&quot;keyup&quot;, [event]);
-        }.bind(this));
+        result = result.concat(this.acceptedMimes);
 
-        this._bindEvent(&quot;keypress&quot;, this.__html.field, &quot;keypress&quot;, function(event) {
-            this._callCallbacks(&quot;keypress&quot;, [event]);
-        }.bind(this));
+        this.__fileField.accept = result.join(&quot;,&quot;);
+    },
 
-        this._bindEvent(&quot;selection-changed&quot;, this.__html.field, &quot;select&quot;, function(event) {
-            this._callCallbacks(&quot;selection-changed&quot;, [
-                this.__html.field.selectionStart,
-                this.__html.field.selectionEnd,
-                (&quot;&quot; + this.getValue()).substring(this.__html.field.selectionStart, this.__html.field.selectionEnd),
-                event]);
-        }.bind(this));
+    /**
+     * Check file and call callbacks.
+     *
+     * @method _openFile
+     * @private
+     * @param {File} file
+     * @param {Number} x The x postition of the mouse (d&amp;d only).
+     * @param {Number} y The y postition of the mouse (d&amp;d only).
+     */
+    _openFile: function(file, x, y) {
+        var match = false;
+
+        // Validate mime
+        for (var m=0 ; m&lt;this.acceptedMimes.length ; m++) {
+            if (file.type == this.acceptedMimes[m]) {
+                match = true;
+                break;
+            }
+        }
+
+        // Validate ext
+        if (!match) {
+            var ext = file.name.split(&quot;.&quot;).splice(-1)
+            for (var e=0 ; e&lt;this.acceptedExts.length ; e++) {
+                if (ext == this.acceptedExts[e]) {
+                    match = true;
+                    break;
+                }
+            }
+        }
+
+        if (match) {
+            this._callCallbacks(&quot;file-open&quot;, [file, x, y]);
+        }
     },
 
 
@@ -359,14 +447,31 @@ photonui.Field = photonui.Widget.$extend({
 
 
     /**
-     * Called when the context menu should be displayed.
-     *
-     * @method __onContextMenu
+     * @method __onFileDropped
      * @private
      * @param event
      */
-    __onContextMenu: function(event) {
-        event.stopPropagation();  // Enable context menu on fields
+    __onFileDropped: function(event) {
+        for (var i in event.dataTransfer.files) {
+            var file = event.dataTransfer.files[i];
+            if(file instanceof File) {
+                this._openFile(file, event.pageX, event.pageY);
+            }
+        }
+    },
+
+    /**
+     * @method __onFileSelected
+     * @private
+     * @param event
+     */
+    __onFileSelected: function(event) {
+        for (var i in this.__fileField.files) {
+            var file = this.__fileField.files[i];
+            if(file instanceof File) {
+                this._openFile(file);
+            }
+        }
     }
 });
 

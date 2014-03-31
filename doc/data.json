@@ -300,6 +300,19 @@
                 "photonui": 1
             }
         },
+        "photonui/misc/filemanager.js": {
+            "name": "photonui/misc/filemanager.js",
+            "modules": {
+                "Misc": 1
+            },
+            "classes": {
+                "photonui.FileManager": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/visual/baseicon.js": {
             "name": "photonui/visual/baseicon.js",
             "modules": {
@@ -435,6 +448,7 @@
                 "Container": 1,
                 "Event": 1,
                 "Input": 1,
+                "Misc": 1,
                 "Visual": 1,
                 "Helpers": 1
             },
@@ -465,6 +479,7 @@
                 "photonui.TextAreaField": 1,
                 "photonui.TextField": 1,
                 "photonui.Slider": 1,
+                "photonui.FileManager": 1,
                 "photonui.BaseIcon": 1,
                 "photonui.Canvas": 1,
                 "photonui.FAIcon": 1,
@@ -574,6 +589,23 @@
             "module": "PhotonUI",
             "namespace": "",
             "file": "photonui/input/slider/slider.js",
+            "line": 43,
+            "description": "PhotonUI - Javascript Web User Interface."
+        },
+        "Misc": {
+            "name": "Misc",
+            "submodules": {},
+            "classes": {
+                "photonui.FileManager": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "photonui": 1
+            },
+            "module": "PhotonUI",
+            "namespace": "",
+            "file": "photonui/misc/filemanager.js",
             "line": 43,
             "description": "PhotonUI - Javascript Web User Interface."
         },
@@ -1095,6 +1127,30 @@
             "description": "Slider",
             "is_constructor": 1,
             "extends": "photonui.NumericField",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "An object that can contain any property of the widget (optional).",
+                    "type": "Object"
+                }
+            ]
+        },
+        "photonui.FileManager": {
+            "name": "photonui.FileManager",
+            "shortname": "FileManager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui",
+            "file": "photonui/misc/filemanager.js",
+            "line": 43,
+            "description": "Open files from the standard \"FileOpen\" dialog and drag & drop.\n\nwEvents:\n\n  * file-open:\n     - description: File selected or dropped.\n     - callback:    function(widget, fileBlob, x, y)  //(x=y=undefined if using a dialog)",
+            "is_constructor": 1,
+            "extends": "photonui.Base",
             "params": [
                 {
                     "name": "params",
@@ -3819,6 +3875,162 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/misc/filemanager.js",
+            "line": 79,
+            "description": "List of the accepted mime types.",
+            "itemtype": "property",
+            "name": "acceptedMimes",
+            "type": "Array",
+            "default": "[]",
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/filemanager.js",
+            "line": 97,
+            "description": "List of the accepted file extentions.",
+            "itemtype": "property",
+            "name": "acceptedExts",
+            "type": "Array",
+            "default": "[]",
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/filemanager.js",
+            "line": 115,
+            "description": "Element that accepts file drop (`null` disable d&d support).",
+            "itemtype": "property",
+            "name": "dropZone",
+            "type": "HTMLElement",
+            "default": "null",
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/filemanager.js",
+            "line": 152,
+            "description": "Allow multiselect in FileOpen dialog.",
+            "itemtype": "property",
+            "name": "multiselect",
+            "type": "Boolean",
+            "default": "false",
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/filemanager.js",
+            "line": 180,
+            "description": "The file field for opening the file dialog.",
+            "itemtype": "property",
+            "name": "__fileField",
+            "access": "private",
+            "tagname": "",
+            "type": "HTMLElement",
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/filemanager.js",
+            "line": 198,
+            "description": "Open the FileOpen dialog to allow user to browse its HDD for a file.",
+            "itemtype": "method",
+            "name": "open",
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/filemanager.js",
+            "line": 211,
+            "description": "Update accepted mimes/extentions.",
+            "itemtype": "method",
+            "name": "_updateAccepted",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/filemanager.js",
+            "line": 229,
+            "description": "Check file and call callbacks.",
+            "itemtype": "method",
+            "name": "_openFile",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "file",
+                    "description": "",
+                    "type": "File"
+                },
+                {
+                    "name": "x",
+                    "description": "The x postition of the mouse (d&d only).",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "The y postition of the mouse (d&d only).",
+                    "type": "Number"
+                }
+            ],
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/filemanager.js",
+            "line": 271,
+            "itemtype": "method",
+            "name": "__onFileDropped",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/filemanager.js",
+            "line": 285,
+            "itemtype": "method",
+            "name": "__onFileSelected",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/visual/canvas.js",
             "line": 60,
             "description": "Returns a drawing context on the canvas.\n\nProxy of the native canvas method. For more informations see:\n\n  * https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement",
@@ -4701,7 +4913,7 @@
             "line": 246,
             "description": "Register available wEvent.",
             "itemtype": "method",
-            "name": "_registerWidgetEvents",
+            "name": "_registerWEvents",
             "access": "private",
             "tagname": "",
             "params": [

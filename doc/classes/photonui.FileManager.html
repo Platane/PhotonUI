@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>photonui.FAIcon - PhotonUI</title>
+    <title>photonui.FileManager - PhotonUI</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -172,25 +172,25 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>photonui.FAIcon Class</h1>
+                        <h1>photonui.FileManager Class</h1>
 <div class="box meta">
     
 
     
         <div class="extends">
-            Extends <a href="../classes/photonui.BaseIcon.html" class="crosslink">photonui.BaseIcon</a>
+            Extends <a href="../classes/photonui.Base.html" class="crosslink">photonui.Base</a>
         </div>
     
 
     
         <div class="foundat">
-            Defined in: <a href="../files/photonui_visual_faicon.js.html#l44"><code>photonui&#x2F;visual&#x2F;faicon.js:44</code></a>
+            Defined in: <a href="../files/photonui_misc_filemanager.js.html#l43"><code>photonui&#x2F;misc&#x2F;filemanager.js:43</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/Visual.html">Visual</a><br>
+            Module: <a href="../modules/Misc.html">Misc</a><br>
             Parent Module: <a href="../modules/PhotonUI.html">PhotonUI</a>
         
     
@@ -201,21 +201,36 @@
 
 
 <div class="box intro">
-    <p>Font Awesome Icon.</p>
-<p>Special contructor params:</p>
-<pre class="code prettyprint"><code> new photonui.FAIcon( {optional params...} )
- new photonui.FAIcon( &quot;iconName&quot;, {optional params...} )</code></pre>
+    <p>Open files from the standard &quot;FileOpen&quot; dialog and drag &amp; drop.</p>
+<p>wEvents:</p>
+<ul>
+<li>file-open:<ul>
+<li>description: File selected or dropped.</li>
+<li>callback:    function(widget, fileBlob, x, y)  //(x=y=undefined if using a dialog)</li>
+</ul>
+</li>
+</ul>
 
 </div>
 
 
     <div class="constructor">
         <h2>Constructor</h2>
-        <div id="method_photonui.FAIcon" class="method item">
-    <h3 class="name"><code>photonui.FAIcon</code></h3>
+        <div id="method_photonui.FileManager" class="method item">
+    <h3 class="name"><code>photonui.FileManager</code></h3>
 
     
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>params</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
     
 
     
@@ -243,7 +258,7 @@
             
         
         
-        <a href="../files/photonui_visual_faicon.js.html#l44"><code>photonui&#x2F;visual&#x2F;faicon.js:44</code></a>
+        <a href="../files/photonui_misc_filemanager.js.html#l43"><code>photonui&#x2F;misc&#x2F;filemanager.js:43</code></a>
         
         </p>
 
@@ -257,6 +272,30 @@
         
     </div>
 
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">params</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An object that can contain any property of the widget (optional).</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
     
 
     
@@ -291,8 +330,15 @@
 
                     <ul class="index-list methods extends">
                         
-                            <li class="index-item method private inherited">
-                                <a href="#method___onContextMenu">__onContextMenu</a>
+                            <li class="index-item method private">
+                                <a href="#method___onFileDropped">__onFileDropped</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method___onFileSelected">__onFileSelected</a>
 
                                 
                                 
@@ -306,14 +352,14 @@
                             </li>
                         
                             <li class="index-item method private inherited">
-                                <a href="#method__buildHtml">_buildHtml</a>
+                                <a href="#method__callCallbacks">_callCallbacks</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item method private inherited">
-                                <a href="#method__callCallbacks">_callCallbacks</a>
+                            <li class="index-item method private">
+                                <a href="#method__openFile">_openFile</a>
 
                                 
                                 
@@ -333,6 +379,13 @@
                                 
                             </li>
                         
+                            <li class="index-item method private">
+                                <a href="#method__updateAccepted">_updateAccepted</a>
+
+                                
+                                
+                            </li>
+                        
                             <li class="index-item method private inherited">
                                 <a href="#method__updateProperties">_updateProperties</a>
 
@@ -341,21 +394,14 @@
                             </li>
                         
                             <li class="index-item method inherited">
-                                <a href="#method_addClass">addClass</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited inherited">
                                 <a href="#method_destroy">destroy</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item method inherited">
-                                <a href="#method_hide">hide</a>
+                            <li class="index-item method">
+                                <a href="#method_open">open</a>
 
                                 
                                 
@@ -370,20 +416,6 @@
                         
                             <li class="index-item method inherited">
                                 <a href="#method_removeCallback">removeCallback</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited">
-                                <a href="#method_removeClass">removeClass</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method inherited">
-                                <a href="#method_show">show</a>
 
                                 
                                 
@@ -413,99 +445,36 @@
                                 
                             </li>
                         
-                            <li class="index-item property private inherited">
-                                <a href="#property___html">__html</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_absolutePosition">absolutePosition</a>
+                            <li class="index-item property private">
+                                <a href="#property___fileField">__fileField</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_color">color</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_contextMenu">contextMenu</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_contextMenuName">contextMenuName</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_html">html</a>
+                                <a href="#property_acceptedExts">acceptedExts</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_iconName">iconName</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_layoutOptions">layoutOptions</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_name">name</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_offsetHeight">offsetHeight</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_offsetWidth">offsetWidth</a>
+                                <a href="#property_acceptedMimes">acceptedMimes</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item property">
-                                <a href="#property_size">size</a>
+                                <a href="#property_dropZone">dropZone</a>
 
                                 
                                 
                             </li>
                         
-                            <li class="index-item property inherited">
-                                <a href="#property_tooltip">tooltip</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property inherited">
-                                <a href="#property_visible">visible</a>
+                            <li class="index-item property">
+                                <a href="#property_multiselect">multiselect</a>
 
                                 
                                 
@@ -525,8 +494,8 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method___onContextMenu" class="method item private inherited">
-    <h3 class="name"><code>__onContextMenu</code></h3>
+                    <div id="method___onFileDropped" class="method item private">
+    <h3 class="name"><code>__onFileDropped</code></h3>
 
     
         <div class="args">
@@ -561,12 +530,15 @@
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method___onContextMenu">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l419"><code>photonui&#x2F;widget.js:419</code></a>
+        <a href="../files/photonui_misc_filemanager.js.html#l271"><code>photonui&#x2F;misc&#x2F;filemanager.js:271</code></a>
         
         </p>
 
@@ -577,8 +549,7 @@
     </div>
 
     <div class="description">
-        <p>Called when the context menu should be displayed.</p>
-
+        
     </div>
 
     
@@ -596,7 +567,96 @@
                     
 
                     <div class="param-description">
-                        
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method___onFileSelected" class="method item private">
+    <h3 class="name"><code>__onFileSelected</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>event</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_misc_filemanager.js.html#l285"><code>photonui&#x2F;misc&#x2F;filemanager.js:285</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">event</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
                     </div>
 
                     
@@ -766,63 +826,6 @@
 </div>
 
                 
-                    <div id="method__buildHtml" class="method item private">
-    <h3 class="name"><code>_buildHtml</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-        <span class="flag private">private</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            <p>Inherited from
-            <a href="../classes/photonui.Widget.html#method__buildHtml">
-                photonui.Widget
-            </a>
-            
-            but overwritten in
-            
-        
-        
-        <a href="../files/photonui_visual_faicon.js.html#l164"><code>photonui&#x2F;visual&#x2F;faicon.js:164</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Build the widget HTML.</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
                     <div id="method__callCallbacks" class="method item private inherited">
     <h3 class="name"><code>_callCallbacks</code></h3>
 
@@ -935,6 +938,140 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
+                    <div id="method__openFile" class="method item private">
+    <h3 class="name"><code>_openFile</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>file</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>x</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>y</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_misc_filemanager.js.html#l229"><code>photonui&#x2F;misc&#x2F;filemanager.js:229</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Check file and call callbacks.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">file</code>
+                        <span class="type">File</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">x</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The x postition of the mouse (d&amp;d only).</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">y</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The y postition of the mouse (d&amp;d only).</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method__registerWEvents" class="method item private inherited">
     <h3 class="name"><code>_registerWEvents</code></h3>
 
@@ -1006,7 +1143,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
                     
 
                     <div class="param-description">
-                        
+                         
                     </div>
 
                     
@@ -1110,6 +1247,63 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
+                    <div id="method__updateAccepted" class="method item private">
+    <h3 class="name"><code>_updateAccepted</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/photonui_misc_filemanager.js.html#l211"><code>photonui&#x2F;misc&#x2F;filemanager.js:211</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Update accepted mimes/extentions.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method__updateProperties" class="method item private inherited">
     <h3 class="name"><code>_updateProperties</code></h3>
 
@@ -1198,92 +1392,6 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
-                    <div id="method_addClass" class="method item inherited">
-    <h3 class="name"><code>addClass</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>className</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_addClass">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l364"><code>photonui&#x2F;widget.js:364</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Add a class to the outer HTML element of the widget.</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">className</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>The class to add.</p>
-
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
                     <div id="method_destroy" class="method item inherited">
     <h3 class="name"><code>destroy</code></h3>
 
@@ -1307,16 +1415,13 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 
     <div class="meta">
         
-            <p>Inherited from
-            <a href="../classes/photonui.Base.html#method_destroy">
-                photonui.Base
-            </a>
             
-            but overwritten in
+                <p>Inherited from
+                <a href="../classes/photonui.Base.html#method_destroy">photonui.Base</a>:
             
         
         
-        <a href="../files/photonui_widget.js.html#l351"><code>photonui&#x2F;widget.js:351</code></a>
+        <a href="../files/photonui_base.js.html#l140"><code>photonui&#x2F;base.js:140</code></a>
         
         </p>
 
@@ -1327,7 +1432,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     </div>
 
     <div class="description">
-        <p>Destroy the widget.</p>
+        <p>Destroy the class.</p>
 
     </div>
 
@@ -1339,8 +1444,8 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
-                    <div id="method_hide" class="method item inherited">
-    <h3 class="name"><code>hide</code></h3>
+                    <div id="method_open" class="method item">
+    <h3 class="name"><code>open</code></h3>
 
     
         <span class="paren">()</span>
@@ -1363,12 +1468,15 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_hide">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l342"><code>photonui&#x2F;widget.js:342</code></a>
+        <a href="../files/photonui_misc_filemanager.js.html#l198"><code>photonui&#x2F;misc&#x2F;filemanager.js:198</code></a>
         
         </p>
 
@@ -1379,7 +1487,7 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
     </div>
 
     <div class="description">
-        <p>DHide the widget (equivalent to widget.visible = false).</p>
+        <p>Open the FileOpen dialog to allow user to browse its HDD for a file.</p>
 
     </div>
 
@@ -1631,144 +1739,6 @@ NOTE²: if the thisArg of the callback is null, this will be binded to the curre
 </div>
 
                 
-                    <div id="method_removeClass" class="method item inherited">
-    <h3 class="name"><code>removeClass</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>className</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_removeClass">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l381"><code>photonui&#x2F;widget.js:381</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Remove a class from the outer HTML element of the widget.</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">className</code>
-                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>The class to remove.</p>
-
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_show" class="method item inherited">
-    <h3 class="name"><code>show</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#method_show">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l333"><code>photonui&#x2F;widget.js:333</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Display the widget (equivalent to widget.visible = true).</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
             </div>
         
 
@@ -1866,9 +1836,9 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property___html" class="property item private inherited">
-    <h3 class="name"><code>__html</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    <div id="property___fileField" class="property item private">
+    <h3 class="name"><code>__fileField</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
 
     
 
@@ -1883,12 +1853,15 @@ internal use).</p>
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property___html">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l315"><code>photonui&#x2F;widget.js:315</code></a>
+        <a href="../files/photonui_misc_filemanager.js.html#l180"><code>photonui&#x2F;misc&#x2F;filemanager.js:180</code></a>
         
         </p>
 
@@ -1898,7 +1871,7 @@ internal use).</p>
     </div>
 
     <div class="description">
-        <p>Object containing references to the widget HTML elements</p>
+        <p>The file field for opening the file dialog.</p>
 
     </div>
 
@@ -1910,53 +1883,9 @@ internal use).</p>
 </div>
 
                 
-                    <div id="property_absolutePosition" class="property item inherited">
-    <h3 class="name"><code>absolutePosition</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_absolutePosition">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l267"><code>photonui&#x2F;widget.js:267</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Absolute position of the widget on the page.</p>
-<p><code>{x: Number, y: Number}</code></p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_color" class="property item">
-    <h3 class="name"><code>color</code></h3>
-    <span class="type">String
-default: "inherit"</span>
+                    <div id="property_acceptedExts" class="property item">
+    <h3 class="name"><code>acceptedExts</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
 
     
 
@@ -1977,7 +1906,7 @@ default: "inherit"</span>
             
         
         
-        <a href="../files/photonui_visual_faicon.js.html#l125"><code>photonui&#x2F;visual&#x2F;faicon.js:125</code></a>
+        <a href="../files/photonui_misc_filemanager.js.html#l97"><code>photonui&#x2F;misc&#x2F;filemanager.js:97</code></a>
         
         </p>
 
@@ -1987,10 +1916,12 @@ default: "inherit"</span>
     </div>
 
     <div class="description">
-        <p>The icon color.</p>
+        <p>List of the accepted file extentions.</p>
 
     </div>
 
+    
+        <p><strong>Default:</strong> []</p>
     
 
     
@@ -1999,9 +1930,9 @@ default: "inherit"</span>
 </div>
 
                 
-                    <div id="property_contextMenu" class="property item inherited">
-    <h3 class="name"><code>contextMenu</code></h3>
-    <span class="type"><a href="../classes/photonui.PopupWindow.html" class="crosslink">photonui.PopupWindow</a></span>
+                    <div id="property_acceptedMimes" class="property item">
+    <h3 class="name"><code>acceptedMimes</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
 
     
 
@@ -2014,12 +1945,15 @@ default: "inherit"</span>
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_contextMenu">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l215"><code>photonui&#x2F;widget.js:215</code></a>
+        <a href="../files/photonui_misc_filemanager.js.html#l79"><code>photonui&#x2F;misc&#x2F;filemanager.js:79</code></a>
         
         </p>
 
@@ -2029,12 +1963,12 @@ default: "inherit"</span>
     </div>
 
     <div class="description">
-        <p>The managed contextual menu.</p>
+        <p>List of the accepted mime types.</p>
 
     </div>
 
     
-        <p><strong>Default:</strong> null (= no context menu)</p>
+        <p><strong>Default:</strong> []</p>
     
 
     
@@ -2043,52 +1977,8 @@ default: "inherit"</span>
 </div>
 
                 
-                    <div id="property_contextMenuName" class="property item inherited">
-    <h3 class="name"><code>contextMenuName</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_contextMenuName">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l198"><code>photonui&#x2F;widget.js:198</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The name of the managed contextual menu (<code>photonui.PopupWindow().name</code>).</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null (= no context menu)</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_html" class="property item">
-    <h3 class="name"><code>html</code></h3>
+                    <div id="property_dropZone" class="property item">
+    <h3 class="name"><code>dropZone</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/Document_Object_Model_(DOM)/HTMLElement" class="crosslink external" target="_blank">HTMLElement</a></span>
 
     
@@ -2101,16 +1991,16 @@ default: "inherit"</span>
 
     <div class="meta">
         
-            <p>Inherited from
-            <a href="../classes/photonui.Widget.html#property_html">
-                photonui.Widget
-            </a>
             
-            but overwritten in
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_visual_faicon.js.html#l143"><code>photonui&#x2F;visual&#x2F;faicon.js:143</code></a>
+        <a href="../files/photonui_misc_filemanager.js.html#l115"><code>photonui&#x2F;misc&#x2F;filemanager.js:115</code></a>
         
         </p>
 
@@ -2120,7 +2010,7 @@ default: "inherit"</span>
     </div>
 
     <div class="description">
-        <p>Html outer element of the widget (if any).</p>
+        <p>Element that accepts file drop (<code>null</code> disable d&amp;d support).</p>
 
     </div>
 
@@ -2134,320 +2024,8 @@ default: "inherit"</span>
 </div>
 
                 
-                    <div id="property_iconName" class="property item">
-    <h3 class="name"><code>iconName</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_visual_faicon.js.html#l85"><code>photonui&#x2F;visual&#x2F;faicon.js:85</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The Font Awesome icon name (e.g. &quot;fa-cog&quot;).</p>
-<p>Icon list: <a href="http://fontawesome.io/icons/">http://fontawesome.io/icons/</a></p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> &quot;&quot;</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_layoutOptions" class="property item inherited">
-    <h3 class="name"><code>layoutOptions</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_layoutOptions">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l235"><code>photonui&#x2F;widget.js:235</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Layout options.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> {}</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_name" class="property item inherited">
-    <h3 class="name"><code>name</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_name">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l125"><code>photonui&#x2F;widget.js:125</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The unique name of the widget.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> &quot;widget-&quot; + photonui.Helpers.uuid4()</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_offsetHeight" class="property item inherited">
-    <h3 class="name"><code>offsetHeight</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_offsetHeight">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l297"><code>photonui&#x2F;widget.js:297</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Widget height (outer HTML element).</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_offsetWidth" class="property item inherited">
-    <h3 class="name"><code>offsetWidth</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_offsetWidth">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l283"><code>photonui&#x2F;widget.js:283</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Widget width (outer HTML element).</p>
-
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_size" class="property item">
-    <h3 class="name"><code>size</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/photonui_visual_faicon.js.html#l105"><code>photonui&#x2F;visual&#x2F;faicon.js:105</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Font Awesome icon size (e.g. &quot;fa-2x&quot;).</p>
-<p>Icon sizes list: <a href="http://fontawesome.io/examples/#larger">http://fontawesome.io/examples/#larger</a></p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> &quot;&quot;</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_tooltip" class="property item inherited">
-    <h3 class="name"><code>tooltip</code></h3>
-    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_tooltip">photonui.Widget</a>:
-            
-        
-        
-        <a href="../files/photonui_widget.js.html#l175"><code>photonui&#x2F;widget.js:175</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Tooltip.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> null</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_visible" class="property item inherited">
-    <h3 class="name"><code>visible</code></h3>
+                    <div id="property_multiselect" class="property item">
+    <h3 class="name"><code>multiselect</code></h3>
     <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
 
     
@@ -2461,12 +2039,15 @@ default: "inherit"</span>
     <div class="meta">
         
             
-                <p>Inherited from
-                <a href="../classes/photonui.Widget.html#property_visible">photonui.Widget</a>:
+                
+                <p>
+                
+                Defined in
+                
             
         
         
-        <a href="../files/photonui_widget.js.html#l147"><code>photonui&#x2F;widget.js:147</code></a>
+        <a href="../files/photonui_misc_filemanager.js.html#l152"><code>photonui&#x2F;misc&#x2F;filemanager.js:152</code></a>
         
         </p>
 
@@ -2476,12 +2057,12 @@ default: "inherit"</span>
     </div>
 
     <div class="description">
-        <p>Is the widget visible or hidden.</p>
+        <p>Allow multiselect in FileOpen dialog.</p>
 
     </div>
 
     
-        <p><strong>Default:</strong> true</p>
+        <p><strong>Default:</strong> false</p>
     
 
     
