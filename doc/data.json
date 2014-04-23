@@ -3876,7 +3876,7 @@
         },
         {
             "file": "photonui/misc/filemanager.js",
-            "line": 79,
+            "line": 85,
             "description": "List of the accepted mime types.",
             "itemtype": "property",
             "name": "acceptedMimes",
@@ -3889,7 +3889,7 @@
         },
         {
             "file": "photonui/misc/filemanager.js",
-            "line": 97,
+            "line": 103,
             "description": "List of the accepted file extentions.",
             "itemtype": "property",
             "name": "acceptedExts",
@@ -3902,7 +3902,7 @@
         },
         {
             "file": "photonui/misc/filemanager.js",
-            "line": 115,
+            "line": 121,
             "description": "Element that accepts file drop (`null` disable d&d support).",
             "itemtype": "property",
             "name": "dropZone",
@@ -3915,7 +3915,7 @@
         },
         {
             "file": "photonui/misc/filemanager.js",
-            "line": 152,
+            "line": 158,
             "description": "Allow multiselect in FileOpen dialog.",
             "itemtype": "property",
             "name": "multiselect",
@@ -3928,7 +3928,7 @@
         },
         {
             "file": "photonui/misc/filemanager.js",
-            "line": 180,
+            "line": 186,
             "description": "The file field for opening the file dialog.",
             "itemtype": "property",
             "name": "__fileField",
@@ -3942,7 +3942,7 @@
         },
         {
             "file": "photonui/misc/filemanager.js",
-            "line": 198,
+            "line": 204,
             "description": "Open the FileOpen dialog to allow user to browse its HDD for a file.",
             "itemtype": "method",
             "name": "open",
@@ -3953,7 +3953,18 @@
         },
         {
             "file": "photonui/misc/filemanager.js",
-            "line": 211,
+            "line": 216,
+            "description": "Destroy the class.",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/filemanager.js",
+            "line": 230,
             "description": "Update accepted mimes/extentions.",
             "itemtype": "method",
             "name": "_updateAccepted",
@@ -3966,7 +3977,7 @@
         },
         {
             "file": "photonui/misc/filemanager.js",
-            "line": 229,
+            "line": 248,
             "description": "Check file and call callbacks.",
             "itemtype": "method",
             "name": "_openFile",
@@ -3996,7 +4007,7 @@
         },
         {
             "file": "photonui/misc/filemanager.js",
-            "line": 271,
+            "line": 290,
             "itemtype": "method",
             "name": "__onFileDropped",
             "access": "private",
@@ -4014,7 +4025,7 @@
         },
         {
             "file": "photonui/misc/filemanager.js",
-            "line": 285,
+            "line": 304,
             "itemtype": "method",
             "name": "__onFileSelected",
             "access": "private",
