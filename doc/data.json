@@ -289,6 +289,28 @@
                 "photonui": 1
             }
         },
+        "photonui/input/select/fontselect.js": {
+            "name": "photonui/input/select/fontselect.js",
+            "modules": {},
+            "classes": {
+                "photonui.FontSelect": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/input/select/select.js": {
+            "name": "photonui/input/select/select.js",
+            "modules": {},
+            "classes": {
+                "photonui.Select": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/input/slider/slider.js": {
             "name": "photonui/input/slider/slider.js",
             "modules": {},
@@ -478,6 +500,8 @@
                 "photonui.NumericField": 1,
                 "photonui.TextAreaField": 1,
                 "photonui.TextField": 1,
+                "photonui.FontSelect": 1,
+                "photonui.Select": 1,
                 "photonui.Slider": 1,
                 "photonui.FileManager": 1,
                 "photonui.BaseIcon": 1,
@@ -579,6 +603,8 @@
                 "photonui.NumericField": 1,
                 "photonui.TextAreaField": 1,
                 "photonui.TextField": 1,
+                "photonui.FontSelect": 1,
+                "photonui.Select": 1,
                 "photonui.Slider": 1
             },
             "fors": {},
@@ -1110,6 +1136,40 @@
             "description": "Text, Password, Email, Search, Tel, URL Fields.",
             "is_constructor": 1,
             "extends": "photonui.Field"
+        },
+        "photonui.FontSelect": {
+            "name": "photonui.FontSelect",
+            "shortname": "FontSelect",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/select/fontselect.js",
+            "line": 43,
+            "description": "Font Selector.\n\nwEvents:",
+            "is_constructor": 1,
+            "extends": "photonui.Select"
+        },
+        "photonui.Select": {
+            "name": "photonui.Select",
+            "shortname": "Select",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/select/select.js",
+            "line": 43,
+            "description": "Select input.\n\nwEvents:\n\n  * value-changed:\n    - description: called when the value was modified.\n    - callback:    function(widget, value)",
+            "is_constructor": 1,
+            "extends": "photonui.Widget"
         },
         "photonui.Slider": {
             "name": "photonui.Slider",
@@ -1696,6 +1756,19 @@
         {
             "file": "photonui/container/menu/menuitem.js",
             "line": 72,
+            "description": "An optional value for the item (can be used in select).",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String (maybe)",
+            "default": "\"\"",
+            "class": "photonui.MenuItem",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/menu/menuitem.js",
+            "line": 89,
             "description": "The item text.",
             "itemtype": "property",
             "name": "text",
@@ -1708,7 +1781,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 90,
+            "line": 107,
             "description": "Right icon widget name.",
             "itemtype": "property",
             "name": "iconName",
@@ -1721,7 +1794,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 111,
+            "line": 128,
             "description": "Right icon widget.",
             "itemtype": "property",
             "name": "icon",
@@ -1734,7 +1807,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 130,
+            "line": 147,
             "description": "Determine if the item is active (highlighted).",
             "itemtype": "property",
             "name": "active",
@@ -1747,7 +1820,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 154,
+            "line": 171,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -1761,7 +1834,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 166,
+            "line": 183,
             "description": "HTML Element that contain the child widget HTML.",
             "itemtype": "property",
             "name": "containerNode",
@@ -1774,7 +1847,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 186,
+            "line": 203,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -3702,6 +3775,370 @@
             "access": "private",
             "tagname": "",
             "class": "photonui.TextField",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/fontselect.js",
+            "line": 70,
+            "description": "The font list",
+            "itemtype": "property",
+            "name": "fonts",
+            "type": "Array",
+            "default": "[\"sans-serif\", \"serif\", \"monospace\"]",
+            "class": "photonui.FontSelect",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/fontselect.js",
+            "line": 90,
+            "description": "The field value.",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String (maybe)",
+            "default": "\"sans-serif\"",
+            "class": "photonui.FontSelect",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/fontselect.js",
+            "line": 99,
+            "description": "The placeholder displayed if nothing is selected.",
+            "itemtype": "property",
+            "name": "Placeholder",
+            "type": "String",
+            "default": "\"Select a font...\"",
+            "class": "photonui.FontSelect",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/fontselect.js",
+            "line": 117,
+            "description": "Add a widget to the layout.",
+            "itemtype": "method",
+            "name": "addChild",
+            "params": [
+                {
+                    "name": "fontName",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "photonui.FontSelect",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 85,
+            "description": "The field value.",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String (maybe)",
+            "default": "\"\"",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 118,
+            "description": "The placeholder displayed if nothing is selected.",
+            "itemtype": "property",
+            "name": "Placeholder",
+            "type": "String",
+            "default": "\"Select...\"",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 135,
+            "description": "Layout children widgets.",
+            "itemtype": "property",
+            "name": "children",
+            "type": "Array",
+            "default": "[]",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 148,
+            "description": "Layout children widgets name.",
+            "itemtype": "property",
+            "name": "childrenNames",
+            "type": "Array",
+            "default": "[]",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 161,
+            "description": "Width of the container node.",
+            "itemtype": "property",
+            "name": "popupWidth",
+            "type": "Number",
+            "default": ": null (auto)",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 171,
+            "description": "Height of the popup container node.",
+            "itemtype": "property",
+            "name": "popupHeight",
+            "type": "Number",
+            "default": ": null (auto)",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 181,
+            "description": "Maximum width of the popup container node.",
+            "itemtype": "property",
+            "name": "popupMaxWidth",
+            "type": "Number",
+            "default": ": null (no maximum)",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 191,
+            "description": "Minimum width of the popup container node.",
+            "itemtype": "property",
+            "name": "popupMinWidth",
+            "type": "Number",
+            "default": ": null (no minimum)",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 201,
+            "description": "Maximum height of the popup container node.",
+            "itemtype": "property",
+            "name": "popupMaxHeight",
+            "type": "Number",
+            "default": ": 300",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 211,
+            "description": "Minimum height of the popup container node.",
+            "itemtype": "property",
+            "name": "popupMinHeight",
+            "type": "Number",
+            "default": ": null (no minimum)",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 221,
+            "description": "Popup width (outer HTML element).",
+            "itemtype": "property",
+            "name": "popupOffsetWidth",
+            "type": "Number",
+            "readonly": "",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 230,
+            "description": "Popup height (outer HTML element).",
+            "itemtype": "property",
+            "name": "popupOffsetHeight",
+            "type": "Number",
+            "readonly": "",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 239,
+            "description": "Window container node padding.",
+            "itemtype": "property",
+            "name": "popupPadding",
+            "type": "Number",
+            "default": "0",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 249,
+            "description": "Define if icon on menu items are visible.",
+            "itemtype": "property",
+            "name": "iconVisible",
+            "type": "Boolean",
+            "default": ": false",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 259,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 271,
+            "description": "The popupMenu.",
+            "itemtype": "property",
+            "name": "__popupMenu",
+            "access": "private",
+            "tagname": "",
+            "type": "photonui.PopupMenu",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 289,
+            "description": "Add a widget to the layout.",
+            "itemtype": "method",
+            "name": "addChild",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "The widget to add.",
+                    "type": "photonui.Widget"
+                },
+                {
+                    "name": "layoutOption",
+                    "description": "Specific option for the layout (optional).",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 301,
+            "description": "Destroy the widget.",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 315,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 327,
+            "description": "Update the popup items binding.",
+            "itemtype": "method",
+            "name": "_updateItemsBinding",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 350,
+            "itemtype": "method",
+            "name": "__onClick",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.Select",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/select/select.js",
+            "line": 359,
+            "itemtype": "method",
+            "name": "__onItemClicked",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "widget",
+                    "description": "",
+                    "type": "photonui.MenuItem"
+                }
+            ],
+            "class": "photonui.Select",
             "module": "PhotonUI",
             "submodule": "Input",
             "namespace": "photonui"

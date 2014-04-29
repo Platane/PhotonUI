@@ -71,6 +71,8 @@
             
                 <li><a href="../classes/photonui.FluidLayout.html">photonui.FluidLayout</a></li>
             
+                <li><a href="../classes/photonui.FontSelect.html">photonui.FontSelect</a></li>
+            
                 <li><a href="../classes/photonui.GridLayout.html">photonui.GridLayout</a></li>
             
                 <li><a href="../classes/photonui.Helpers.html">photonui.Helpers</a></li>
@@ -92,6 +94,8 @@
                 <li><a href="../classes/photonui.PopupWindow.html">photonui.PopupWindow</a></li>
             
                 <li><a href="../classes/photonui.ProgressBar.html">photonui.ProgressBar</a></li>
+            
+                <li><a href="../classes/photonui.Select.html">photonui.Select</a></li>
             
                 <li><a href="../classes/photonui.Separator.html">photonui.Separator</a></li>
             
@@ -246,6 +250,23 @@ photonui.MenuItem = photonui.Container.$extend({
 
     // ====== Public properties ======
 
+
+    /**
+     * An optional value for the item (can be used in select).
+     *
+     * @property value
+     * @type String (maybe)
+     * @default &quot;&quot;
+     */
+    _value: &quot;&quot;,
+
+    getValue: function() {
+        return this._value;
+    },
+
+    setValue: function(value) {
+        this._value = value;
+    },
 
     /**
      * The item text.
