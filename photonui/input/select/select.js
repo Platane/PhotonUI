@@ -64,9 +64,9 @@ photonui.Select = photonui.Widget.$extend({
         });
         this.__popupMenu.iconVisible = false;
 
+        this._registerWEvents(["value-changed"]);
         this.$super(params);
 
-        this._registerWEvents(["value-changed"]);
         this._updateProperties(["value"]);
         this._bindEvent("popup", this.html, "click", this.__onClick.bind(this));
 
@@ -122,7 +122,7 @@ photonui.Select = photonui.Widget.$extend({
      * @type String
      * @default "Select..."
      */
-    _placeholder: "Select...",
+    _placeholder: (window.Stone) ? window.Stone.lazyGettext("Select...") : "Select...",
 
     getPlaceholder: function() {
         return this._placeholder;

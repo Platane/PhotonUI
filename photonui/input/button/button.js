@@ -57,10 +57,8 @@ photonui.Button = photonui.Widget.$extend({
 
     // Constructor
     __init__: function(params) {
-        this.$super(params);
-
-        // wEvents
         this._registerWEvents(["click"]);
+        this.$super(params);
 
         // Bind js events
         this._bindEvent("click", this.__html.button, "click", this.__onButtonClicked.bind(this));
@@ -94,7 +92,8 @@ photonui.Button = photonui.Widget.$extend({
 
     setText: function(text) {
         this._text = text;
-        this.__html.text.innerHTML = photonui.Helpers.escapeHtml(text);
+        photonui.Helpers.cleanNode(this.__html.text);
+        this.__html.text.appendChild(document.createTextNode(text));
     },
 
     /**

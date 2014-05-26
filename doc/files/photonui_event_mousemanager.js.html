@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="../classes/photonui.AccelManager.html">photonui.AccelManager</a></li>
+            
                 <li><a href="../classes/photonui.Base.html">photonui.Base</a></li>
             
                 <li><a href="../classes/photonui.BaseIcon.html">photonui.BaseIcon</a></li>
@@ -114,6 +116,8 @@
                 <li><a href="../classes/photonui.TextField.html">photonui.TextField</a></li>
             
                 <li><a href="../classes/photonui.ToggleButton.html">photonui.ToggleButton</a></li>
+            
+                <li><a href="../classes/photonui.Translation.html">photonui.Translation</a></li>
             
                 <li><a href="../classes/photonui.Viewport.html">photonui.Viewport</a></li>
             
@@ -301,13 +305,13 @@ photonui.MouseManager = photonui.Base.$extend({
 
     // Constructor
     __init__: function(element) {
-        this.$super();
-        this.element = element;
         this._registerWEvents([
             &quot;mouse-event&quot;, &quot;mouse-down&quot;, &quot;mouse-up&quot;, &quot;click&quot;, &quot;double-click&quot;,
             &quot;drag-start&quot;, &quot;dragging&quot;, &quot;drag-end&quot;, &quot;mouse-move&quot;, &quot;scroll-up&quot;,
             &quot;scroll-down&quot;
         ]);
+        this.$super();
+        this.element = element;
     },
 
 

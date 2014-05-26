@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="../classes/photonui.AccelManager.html">photonui.AccelManager</a></li>
+            
                 <li><a href="../classes/photonui.Base.html">photonui.Base</a></li>
             
                 <li><a href="../classes/photonui.BaseIcon.html">photonui.BaseIcon</a></li>
@@ -114,6 +116,8 @@
                 <li><a href="../classes/photonui.TextField.html">photonui.TextField</a></li>
             
                 <li><a href="../classes/photonui.ToggleButton.html">photonui.ToggleButton</a></li>
+            
+                <li><a href="../classes/photonui.Translation.html">photonui.Translation</a></li>
             
                 <li><a href="../classes/photonui.Viewport.html">photonui.Viewport</a></li>
             
@@ -235,49 +239,6 @@ photonui.e_parent = document.getElementsByTagName(&quot;body&quot;)[0];
 photonui.domInsert = function(widget, element) {
     var element = element || photonui.e_parent;
     element.appendChild(widget.html);
-}
-
-
-/*
- * Build widgets for an object or a list of object.
- *
- * @method build
- * @param {Object/Array} widgets
- */
-photonui.build = function(widgets) {
-    if (!(widgets instanceof Array)) {
-        var widgets = [widgets];
-    }
-
-    function buildWidget(parentWidget, widget) {
-        if (widget.__widget__ == undefined) {
-            throw &quot;Structure error: __widget__ is not defined&quot;;
-        }
-        if (photonui[widget.__widget__] == undefined) {
-            throw &quot;Structure error: The &#x27;&quot; + widget.__widget__ + &quot;&#x27;widget does not exist&quot;;
-        }
-
-        var w = new photonui[widget.__widget__](widget);
-        if (parentWidget) {
-            parentWidget.setChild(w);
-        }
-
-        if (widget.__child__ != undefined) {
-            buildWidget(w, widget.__child__);
-        }
-
-        if (widget.__children__ != undefined) {
-            for (var i in widget.__children__) {
-                w.addChild(buildWidget(null, widget.__children__[i]));
-            }
-        }
-
-        return w;
-    }
-
-    for (var i in widgets) {
-        buildWidget(null, widgets[i]);
-    }
 }
 
     </pre>

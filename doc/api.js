@@ -1,6 +1,7 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
+        "photonui.AccelManager",
         "photonui.Base",
         "photonui.BaseIcon",
         "photonui.BaseWindow",
@@ -38,6 +39,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "photonui.TextAreaField",
         "photonui.TextField",
         "photonui.ToggleButton",
+        "photonui.Translation",
         "photonui.Viewport",
         "photonui.Widget",
         "photonui.Window"

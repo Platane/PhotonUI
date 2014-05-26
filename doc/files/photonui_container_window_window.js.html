@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="../classes/photonui.AccelManager.html">photonui.AccelManager</a></li>
+            
                 <li><a href="../classes/photonui.Base.html">photonui.Base</a></li>
             
                 <li><a href="../classes/photonui.BaseIcon.html">photonui.BaseIcon</a></li>
@@ -114,6 +116,8 @@
                 <li><a href="../classes/photonui.TextField.html">photonui.TextField</a></li>
             
                 <li><a href="../classes/photonui.ToggleButton.html">photonui.ToggleButton</a></li>
+            
+                <li><a href="../classes/photonui.Translation.html">photonui.Translation</a></li>
             
                 <li><a href="../classes/photonui.Viewport.html">photonui.Viewport</a></li>
             
@@ -240,10 +244,8 @@ photonui.Window = photonui.BaseWindow.$extend({
 
     // Constructor
     __init__: function(params) {
-        this.$super(params);
-
-        // wEvents
         this._registerWEvents([&quot;close-button-clicked&quot;]);
+        this.$super(params);
 
         // Bind js events
         this._bindEvent(&quot;move.dragstart&quot;, this.__html.windowTitle, &quot;mousedown&quot;, this.__moveDragStart.bind(this));
@@ -279,7 +281,8 @@ photonui.Window = photonui.BaseWindow.$extend({
 
     setTitle: function(title) {
         this._title = title;
-        this.__html.windowTitleText.innerHTML = photonui.Helpers.escapeHtml(title);
+        photonui.Helpers.cleanNode(this.__html.windowTitleText);
+        this.__html.windowTitleText.appendChild(document.createTextNode(title));
     },
 
     /**
@@ -408,6 +411,9 @@ photonui.Window = photonui.BaseWindow.$extend({
      * @private
      */
     _buildHtml: function() {
+        if (window.Stone) {
+            var _ = window.Stone.lazyGettext;
+        }
         this.$super();
         this.__html[&quot;window&quot;].className += &quot; photonui-window&quot;;
 
@@ -417,7 +423,7 @@ photonui.Window = photonui.BaseWindow.$extend({
 
         this.__html.windowTitleCloseButton = document.createElement(&quot;button&quot;);
         this.__html.windowTitleCloseButton.className = &quot;photonui-window-title-close-button&quot;;
-        this.__html.windowTitleCloseButton.title = &quot;Close&quot;;  // FIXME i18n
+        this.__html.windowTitleCloseButton.title = (window.Stone) ? window.Stone.lazyGettext(&quot;Close&quot;) : &quot;Close&quot;;
         this.__html.windowTitle.appendChild(this.__html.windowTitleCloseButton);
 
         this.__html.windowTitleText = document.createElement(&quot;span&quot;);
@@ -513,6 +519,17 @@ photonui.Window = photonui.BaseWindow.$extend({
      */
     __closeButtonClicked: function(event) {
         this._callCallbacks(&quot;close-button-clicked&quot;);
+    },
+
+    /**
+     * Called when the locale is changed.
+     *
+     * @method __onLocaleChanged
+     * @private
+     */
+    __onLocaleChanged: function() {
+        this.$super();
+        this.__html.windowTitleCloseButton.title = (window.Stone) ? window.Stone.lazyGettext(&quot;Close&quot;) : &quot;Close&quot;;
     }
 });
 

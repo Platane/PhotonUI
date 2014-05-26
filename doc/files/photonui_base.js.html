@@ -41,6 +41,8 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="../classes/photonui.AccelManager.html">photonui.AccelManager</a></li>
+            
                 <li><a href="../classes/photonui.Base.html">photonui.Base</a></li>
             
                 <li><a href="../classes/photonui.BaseIcon.html">photonui.BaseIcon</a></li>
@@ -114,6 +116,8 @@
                 <li><a href="../classes/photonui.TextField.html">photonui.TextField</a></li>
             
                 <li><a href="../classes/photonui.ToggleButton.html">photonui.ToggleButton</a></li>
+            
+                <li><a href="../classes/photonui.Translation.html">photonui.Translation</a></li>
             
                 <li><a href="../classes/photonui.Viewport.html">photonui.Viewport</a></li>
             
@@ -240,7 +244,6 @@ photonui.Base = Class.$extend({
     __init__: function(params) {
         // New instances for object properties
         this.__events = {};
-        this.__callbacks = {};
 
         // wEvents
         this._registerWEvents([&quot;destroy&quot;]);
@@ -280,6 +283,29 @@ photonui.Base = Class.$extend({
                 this[param] = params[param];
             }
         }
+
+        // Register callbacks
+        var ev = null;
+        var i = 0;
+        var evId = &quot;&quot;;
+        if (params.callbacks) {
+            for (var wEvent in params.callbacks) {
+                ev = params.callbacks[wEvent];
+                if (typeof(ev) == &quot;function&quot;) {
+                    this.registerCallback(photonui.Helpers.uuid4(), wEvent, ev);
+                }
+                else if (ev instanceof Array) {
+                    for (i=0 ; i&lt;ev.length ; i++) {
+                        this.registerCallback(photonui.Helpers.uuid4(), wEvent, ev[i]);
+                    }
+                }
+                else {
+                    for (evId in ev) {
+                        this.registerCallback(evId, wEvent, ev[evId]);
+                    }
+                }
+            }
+        }
     },
 
 
@@ -299,7 +325,7 @@ photonui.Base = Class.$extend({
      * @type Object
      * @private
      */
-    __events: {},    // Javascript internal event
+    __events: null,    // Javascript internal event
 
     /**
      * Object containing references to registered callbacks.
@@ -308,7 +334,7 @@ photonui.Base = Class.$extend({
      * @type Object
      * @private
      */
-    __callbacks: {},  // Registered callback
+    __callbacks: null,  // Registered callback
 
 
     //////////////////////////////////////////
@@ -433,6 +459,9 @@ photonui.Base = Class.$extend({
      * @param {Array} wEvents
      */
     _registerWEvents: function(wEvents) {
+        if (this.__callbacks == null) {
+            this.__callbacks = {};
+        }
         for (var i in wEvents) {
             this.__callbacks[wEvents[i]] = {};
         }

@@ -164,11 +164,22 @@
                 "photonui": 1
             }
         },
-        "photonui/event/mousemanager.js": {
-            "name": "photonui/event/mousemanager.js",
+        "photonui/event/accelmanager.js": {
+            "name": "photonui/event/accelmanager.js",
             "modules": {
                 "Event": 1
             },
+            "classes": {
+                "photonui.AccelManager": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/event/mousemanager.js": {
+            "name": "photonui/event/mousemanager.js",
+            "modules": {},
             "classes": {
                 "photonui.MouseManager": 1
             },
@@ -335,6 +346,17 @@
                 "photonui": 1
             }
         },
+        "photonui/misc/translation.js": {
+            "name": "photonui/misc/translation.js",
+            "modules": {},
+            "classes": {
+                "photonui.Translation": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/visual/baseicon.js": {
             "name": "photonui/visual/baseicon.js",
             "modules": {
@@ -489,6 +511,7 @@
                 "photonui.PopupWindow": 1,
                 "photonui.Window": 1,
                 "photonui.Container": 1,
+                "photonui.AccelManager": 1,
                 "photonui.MouseManager": 1,
                 "photonui.Button": 1,
                 "photonui.ColorButton": 1,
@@ -504,6 +527,7 @@
                 "photonui.Select": 1,
                 "photonui.Slider": 1,
                 "photonui.FileManager": 1,
+                "photonui.Translation": 1,
                 "photonui.BaseIcon": 1,
                 "photonui.Canvas": 1,
                 "photonui.FAIcon": 1,
@@ -576,6 +600,7 @@
             "name": "Event",
             "submodules": {},
             "classes": {
+                "photonui.AccelManager": 1,
                 "photonui.MouseManager": 1
             },
             "fors": {},
@@ -622,7 +647,8 @@
             "name": "Misc",
             "submodules": {},
             "classes": {
-                "photonui.FileManager": 1
+                "photonui.FileManager": 1,
+                "photonui.Translation": 1
             },
             "fors": {},
             "is_submodule": 1,
@@ -631,7 +657,7 @@
             },
             "module": "PhotonUI",
             "namespace": "",
-            "file": "photonui/misc/filemanager.js",
+            "file": "photonui/misc/translation.js",
             "line": 43,
             "description": "PhotonUI - Javascript Web User Interface."
         },
@@ -926,6 +952,23 @@
             "is_constructor": 1,
             "extends": "photonui.Widget"
         },
+        "photonui.AccelManager": {
+            "name": "photonui.AccelManager",
+            "shortname": "AccelManager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui",
+            "file": "photonui/event/accelmanager.js",
+            "line": 43,
+            "description": "Manage keyboard accelerators.",
+            "is_constructor": 1,
+            "extends": "photonui.Base"
+        },
         "photonui.MouseManager": {
             "name": "photonui.MouseManager",
             "shortname": "MouseManager",
@@ -1219,6 +1262,30 @@
                 }
             ]
         },
+        "photonui.Translation": {
+            "name": "photonui.Translation",
+            "shortname": "Translation",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui",
+            "file": "photonui/misc/translation.js",
+            "line": 43,
+            "description": "Open files from the standard \"FileOpen\" dialog and drag & drop.\n\nDocumentation: https://github.com/flozz/stone.js/blob/master/README.md\n\nwEvents:\n\n  * locale-changed:\n     - description: The locale changed.\n     - callback:    function(widget, locale)",
+            "is_constructor": 1,
+            "extends": "photonui.Base",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "An object that can contain any property of the widget (optional).",
+                    "type": "Object"
+                }
+            ]
+        },
         "photonui.BaseIcon": {
             "name": "photonui.BaseIcon",
             "shortname": "BaseIcon",
@@ -1439,6 +1506,19 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/composite/popupmenu.js",
+            "line": 108,
+            "description": "Called when the locale is changed.",
+            "itemtype": "method",
+            "name": "__onLocaleChanged",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.PopupMenu",
+            "module": "PhotonUI",
+            "submodule": "Composite",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/container/layout/boxlayout.js",
             "line": 81,
             "description": "The layout orientation (\"vertical\" or \"horizontal\").",
@@ -1479,7 +1559,7 @@
         },
         {
             "file": "photonui/container/layout/fluidlayout.js",
-            "line": 66,
+            "line": 60,
             "description": "The vertical spacing between children widgets.",
             "itemtype": "property",
             "name": "verticalSpacing",
@@ -1492,7 +1572,7 @@
         },
         {
             "file": "photonui/container/layout/fluidlayout.js",
-            "line": 84,
+            "line": 78,
             "description": "The horizontal spacing between children widgets.",
             "itemtype": "property",
             "name": "horizontalSpacing",
@@ -1505,7 +1585,7 @@
         },
         {
             "file": "photonui/container/layout/fluidlayout.js",
-            "line": 102,
+            "line": 96,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -1519,7 +1599,7 @@
         },
         {
             "file": "photonui/container/layout/fluidlayout.js",
-            "line": 127,
+            "line": 121,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -1532,7 +1612,7 @@
         },
         {
             "file": "photonui/container/layout/fluidlayout.js",
-            "line": 138,
+            "line": 132,
             "description": "Update the layout.",
             "itemtype": "method",
             "name": "_updateLayout",
@@ -1701,6 +1781,19 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/container/layout/layout.js",
+            "line": 201,
+            "description": "Called when the locale is changed.",
+            "itemtype": "method",
+            "name": "__onLocaleChanged",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Layout",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/container/menu/menu.js",
             "line": 67,
             "description": "Define if icon on menu items are visible.",
@@ -1781,7 +1874,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 107,
+            "line": 108,
             "description": "Right icon widget name.",
             "itemtype": "property",
             "name": "iconName",
@@ -1794,7 +1887,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 128,
+            "line": 129,
             "description": "Right icon widget.",
             "itemtype": "property",
             "name": "icon",
@@ -1807,7 +1900,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 147,
+            "line": 148,
             "description": "Determine if the item is active (highlighted).",
             "itemtype": "property",
             "name": "active",
@@ -1820,7 +1913,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 171,
+            "line": 172,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -1834,7 +1927,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 183,
+            "line": 184,
             "description": "HTML Element that contain the child widget HTML.",
             "itemtype": "property",
             "name": "containerNode",
@@ -1847,7 +1940,7 @@
         },
         {
             "file": "photonui/container/menu/menuitem.js",
-            "line": 203,
+            "line": 204,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -1988,8 +2081,21 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/container/viewport/viewport.js",
+            "line": 195,
+            "description": "Called when the locale is changed.",
+            "itemtype": "method",
+            "name": "__onLocaleChanged",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Viewport",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/container/window/basewindow.js",
-            "line": 90,
+            "line": 88,
             "description": "Window position.\n\n    {x: Number, y: Number}",
             "itemtype": "property",
             "name": "position",
@@ -2002,7 +2108,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 126,
+            "line": 124,
             "description": "The X position of the Window.",
             "itemtype": "property",
             "name": "x",
@@ -2015,7 +2121,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 143,
+            "line": 141,
             "description": "The Y position of the Window.",
             "itemtype": "property",
             "name": "y",
@@ -2028,7 +2134,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 160,
+            "line": 158,
             "description": "Width of the container node.",
             "itemtype": "property",
             "name": "width",
@@ -2041,7 +2147,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 186,
+            "line": 184,
             "description": "Height of the container node.",
             "itemtype": "property",
             "name": "height",
@@ -2054,7 +2160,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 212,
+            "line": 210,
             "description": "Minimum width of the container node.",
             "itemtype": "property",
             "name": "minWidth",
@@ -2067,7 +2173,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 235,
+            "line": 233,
             "description": "Minimum height of the container node.",
             "itemtype": "property",
             "name": "minHeight",
@@ -2080,7 +2186,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 258,
+            "line": 256,
             "description": "Maximum width of the container node.",
             "itemtype": "property",
             "name": "maxWidth",
@@ -2093,7 +2199,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 281,
+            "line": 279,
             "description": "Maximum height of the container node.",
             "itemtype": "property",
             "name": "maxHeight",
@@ -2106,7 +2212,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 304,
+            "line": 302,
             "description": "Window container node padding.",
             "itemtype": "property",
             "name": "padding",
@@ -2119,7 +2225,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 322,
+            "line": 320,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -2133,7 +2239,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 334,
+            "line": 332,
             "description": "HTML Element that contain the child widget HTML.",
             "itemtype": "property",
             "name": "containerNode",
@@ -2146,7 +2252,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 354,
+            "line": 352,
             "description": "Center the window.",
             "itemtype": "method",
             "name": "center",
@@ -2157,7 +2263,7 @@
         },
         {
             "file": "photonui/container/window/basewindow.js",
-            "line": 370,
+            "line": 368,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -2170,7 +2276,7 @@
         },
         {
             "file": "photonui/container/window/dialog.js",
-            "line": 69,
+            "line": 68,
             "description": "Dialog button widgets name.",
             "itemtype": "property",
             "name": "buttonsNames",
@@ -2183,7 +2289,7 @@
         },
         {
             "file": "photonui/container/window/dialog.js",
-            "line": 87,
+            "line": 86,
             "description": "Dialog buttons widgets.",
             "itemtype": "property",
             "name": "buttons",
@@ -2196,7 +2302,7 @@
         },
         {
             "file": "photonui/container/window/dialog.js",
-            "line": 121,
+            "line": 120,
             "description": "Add a button to the dialog.",
             "itemtype": "method",
             "name": "addButton",
@@ -2214,7 +2320,7 @@
         },
         {
             "file": "photonui/container/window/dialog.js",
-            "line": 132,
+            "line": 131,
             "description": "Remove a button from the dialog.",
             "itemtype": "method",
             "name": "removeButton",
@@ -2232,7 +2338,7 @@
         },
         {
             "file": "photonui/container/window/dialog.js",
-            "line": 150,
+            "line": 149,
             "description": "Update dialog buttons.",
             "itemtype": "method",
             "name": "_updateButtons",
@@ -2245,7 +2351,7 @@
         },
         {
             "file": "photonui/container/window/dialog.js",
-            "line": 164,
+            "line": 163,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -2325,7 +2431,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 85,
+            "line": 83,
             "description": "The window title.",
             "itemtype": "property",
             "name": "title",
@@ -2338,7 +2444,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 103,
+            "line": 102,
             "description": "Determine if the window can be moved (drag & drop) by the user.",
             "itemtype": "property",
             "name": "movable",
@@ -2351,7 +2457,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 120,
+            "line": 119,
             "description": "Determine if the close button in the title bar is displayed or not.",
             "itemtype": "property",
             "name": "closeButtonVisible",
@@ -2363,7 +2469,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 146,
+            "line": 145,
             "description": "HTML Element that contain the child widget HTML.",
             "itemtype": "property",
             "name": "containerNode",
@@ -2376,7 +2482,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 177,
+            "line": 176,
             "description": "Bring the window to front.",
             "itemtype": "method",
             "name": "moveToFront",
@@ -2387,7 +2493,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 191,
+            "line": 190,
             "description": "Bring the window to the back.",
             "itemtype": "method",
             "name": "moveToBack",
@@ -2398,7 +2504,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 205,
+            "line": 204,
             "description": "Destroy the widget.",
             "itemtype": "method",
             "name": "destroy",
@@ -2409,7 +2515,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 222,
+            "line": 221,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -2422,7 +2528,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 250,
+            "line": 252,
             "description": "Update all the windows.",
             "itemtype": "method",
             "name": "_updateWindowList",
@@ -2435,7 +2541,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 275,
+            "line": 277,
             "description": "Start moving the window.",
             "itemtype": "method",
             "name": "_moveDragStart",
@@ -2455,7 +2561,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 293,
+            "line": 295,
             "description": "Move the window.",
             "itemtype": "method",
             "name": "_moveDragging",
@@ -2485,7 +2591,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 312,
+            "line": 314,
             "description": "Stop moving the window.",
             "itemtype": "method",
             "name": "_moveDragEnd",
@@ -2505,7 +2611,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 325,
+            "line": 327,
             "description": "Close button clicked.",
             "itemtype": "method",
             "name": "_closeButtonClicked",
@@ -2518,6 +2624,19 @@
                     "type": "Object"
                 }
             ],
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 338,
+            "description": "Called when the locale is changed.",
+            "itemtype": "method",
+            "name": "__onLocaleChanged",
+            "access": "private",
+            "tagname": "",
             "class": "photonui.Window",
             "module": "PhotonUI",
             "submodule": "Container",
@@ -2571,6 +2690,95 @@
             "class": "photonui.Container",
             "module": "PhotonUI",
             "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/accelmanager.js",
+            "line": 68,
+            "description": "Keyboard bindings.\n\n    {\n        \"id\": {\n            safe: Boolean,\n            callback: Function,\n            binding: Object\n        },\n        ...\n    }",
+            "itemtype": "property",
+            "name": "__kbd",
+            "type": "Object",
+            "class": "photonui.AccelManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/accelmanager.js",
+            "line": 94,
+            "description": "Add an accelerator.",
+            "itemtype": "method",
+            "name": "addAccel",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "An unique id for the accelerator.",
+                    "type": "String"
+                },
+                {
+                    "name": "kays",
+                    "description": "The keys of the accelerator (see the keyCombo section of http://robertwhurst.github.io/KeyboardJS/ ).",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                },
+                {
+                    "name": "safe",
+                    "description": "If true, the accelerator is disable if a field/textArea is focused (optional, default=true)",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "photonui.AccelManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/accelmanager.js",
+            "line": 114,
+            "description": "Remove an accelerator.",
+            "itemtype": "method",
+            "name": "removeAccel",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "the accelerator id.",
+                    "type": "String"
+                }
+            ],
+            "class": "photonui.AccelManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/event/accelmanager.js",
+            "line": 139,
+            "itemtype": "method",
+            "name": "__onAccell",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "event",
+                    "description": ""
+                },
+                {
+                    "name": "keys",
+                    "description": ""
+                },
+                {
+                    "name": "combo",
+                    "description": ""
+                }
+            ],
+            "class": "photonui.AccelManager",
+            "module": "PhotonUI",
+            "submodule": "Event",
             "namespace": "photonui"
         },
         {
@@ -2972,7 +3180,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 82,
+            "line": 80,
             "description": "The button text.",
             "itemtype": "property",
             "name": "text",
@@ -2985,7 +3193,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 100,
+            "line": 99,
             "description": "Define if the button text is displayed or hidden.",
             "itemtype": "property",
             "name": "textVisible",
@@ -2998,7 +3206,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 118,
+            "line": 117,
             "description": "Left icon widget name.",
             "itemtype": "property",
             "name": "leftIconName",
@@ -3011,7 +3219,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 139,
+            "line": 138,
             "description": "Left icon widget.",
             "itemtype": "property",
             "name": "leftIcon",
@@ -3024,7 +3232,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 158,
+            "line": 157,
             "description": "Define if the left icon is displayed or hidden.",
             "itemtype": "property",
             "name": "leftIconVisible",
@@ -3037,7 +3245,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 176,
+            "line": 175,
             "description": "Right icon widget name.",
             "itemtype": "property",
             "name": "rightIconName",
@@ -3050,7 +3258,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 197,
+            "line": 196,
             "description": "Right icon widget.",
             "itemtype": "property",
             "name": "rightIcon",
@@ -3063,7 +3271,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 216,
+            "line": 215,
             "description": "Define if the right icon is displayed or hidden.",
             "itemtype": "property",
             "name": "rightIconVisible",
@@ -3076,7 +3284,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 234,
+            "line": 233,
             "description": "Define the button appearance.\n\n  * `normal`\n  * `flat`",
             "itemtype": "property",
             "name": "appearance",
@@ -3089,7 +3297,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 261,
+            "line": 260,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -3103,7 +3311,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 282,
+            "line": 281,
             "description": "Update the button content",
             "itemtype": "method",
             "name": "_update",
@@ -3116,7 +3324,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 312,
+            "line": 311,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -3129,7 +3337,7 @@
         },
         {
             "file": "photonui/input/button/button.js",
-            "line": 341,
+            "line": 340,
             "description": "Called when the button is clicked.",
             "itemtype": "method",
             "name": "__onButtonClicked",
@@ -3343,7 +3551,7 @@
         },
         {
             "file": "photonui/input/checkbox/togglebutton.js",
-            "line": 86,
+            "line": 84,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -3435,7 +3643,7 @@
         },
         {
             "file": "photonui/input/field/field.js",
-            "line": 124,
+            "line": 127,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -3449,7 +3657,7 @@
         },
         {
             "file": "photonui/input/field/field.js",
-            "line": 145,
+            "line": 148,
             "description": "Bind Field events.",
             "itemtype": "method",
             "name": "_bindFieldEvents",
@@ -3462,7 +3670,7 @@
         },
         {
             "file": "photonui/input/field/field.js",
-            "line": 183,
+            "line": 186,
             "description": "Called when the context menu should be displayed.",
             "itemtype": "method",
             "name": "__onContextMenu",
@@ -4479,6 +4687,129 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/misc/filemanager.js",
+            "line": 318,
+            "description": "Called when the locale is changed.",
+            "itemtype": "method",
+            "name": "__onLocaleChanged",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.FileManager",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/translation.js",
+            "line": 78,
+            "description": "The current locale (e.g. \"fr\", \"en\", \"it\",...).",
+            "itemtype": "property",
+            "name": "locale",
+            "type": "String",
+            "default": "null",
+            "class": "photonui.Translation",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/translation.js",
+            "line": 97,
+            "description": "Add one or more Stone.js catalog (a catalog contain all translated strings for a specific locale).",
+            "itemtype": "method",
+            "name": "addCatalogs",
+            "params": [
+                {
+                    "name": "catalogs",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.Translation",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/translation.js",
+            "line": 105,
+            "description": "Make a string translatable.",
+            "itemtype": "method",
+            "name": "gettext",
+            "params": [
+                {
+                    "name": "string",
+                    "description": "the Translatable string",
+                    "type": "String"
+                },
+                {
+                    "name": "replacements",
+                    "description": "An object that contain replacements for the string.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "photonui.Translation",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/translation.js",
+            "line": 115,
+            "description": "Make a string translatable.\n\nTthe main difference between this method and the `gettext` method is \nthat this method does not return a translated sting but an object that\nwill translate the sting when it will be displayed (.toString() method\ncalled).",
+            "itemtype": "method",
+            "name": "lazyGettext",
+            "params": [
+                {
+                    "name": "string",
+                    "description": "the Translatable string",
+                    "type": "String"
+                },
+                {
+                    "name": "replacements",
+                    "description": "An object that contain replacements for the string.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "LazyString"
+            },
+            "class": "photonui.Translation",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/translation.js",
+            "line": 136,
+            "itemtype": "method",
+            "name": "__onStonejsLocaleChanged",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Translation",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/baseicon.js",
+            "line": 58,
+            "description": "Called when the locale is changed.",
+            "itemtype": "method",
+            "name": "__onLocaleChanged",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.BaseIcon",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/visual/canvas.js",
             "line": 60,
             "description": "Returns a drawing context on the canvas.\n\nProxy of the native canvas method. For more informations see:\n\n  * https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement",
@@ -4716,6 +5047,19 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/visual/canvas.js",
+            "line": 276,
+            "description": "Called when the locale is changed.",
+            "itemtype": "method",
+            "name": "__onLocaleChanged",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Canvas",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/visual/faicon.js",
             "line": 85,
             "description": "The Font Awesome icon name (e.g. \"fa-cog\").\n\nIcon list: http://fontawesome.io/icons/",
@@ -4795,7 +5139,7 @@
         },
         {
             "file": "photonui/visual/label.js",
-            "line": 90,
+            "line": 91,
             "description": "The text horizontal alignement.\n\n  * \"left\",\n  * \"center\",\n  * \"right\".",
             "itemtype": "property",
             "name": "textAlign",
@@ -4808,7 +5152,7 @@
         },
         {
             "file": "photonui/visual/label.js",
-            "line": 115,
+            "line": 116,
             "description": "Link the label with the given input (Field, CheckBox,...) widget.",
             "itemtype": "property",
             "name": "forInputName",
@@ -4821,7 +5165,7 @@
         },
         {
             "file": "photonui/visual/label.js",
-            "line": 137,
+            "line": 138,
             "description": "Link the label with the given input (Field, CheckBox,...) widget.",
             "itemtype": "property",
             "name": "forInput",
@@ -4834,7 +5178,7 @@
         },
         {
             "file": "photonui/visual/label.js",
-            "line": 152,
+            "line": 153,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -4848,7 +5192,7 @@
         },
         {
             "file": "photonui/visual/label.js",
-            "line": 173,
+            "line": 174,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -4939,6 +5283,19 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/visual/progressbar.js",
+            "line": 217,
+            "description": "Called when the locale is changed.",
+            "itemtype": "method",
+            "name": "__onLocaleChanged",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.ProgressBar",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/visual/separator.js",
             "line": 67,
             "description": "The separator orientation (\"vertical\" or \"horizontal\").",
@@ -4971,6 +5328,19 @@
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.Separator",
+            "module": "PhotonUI",
+            "submodule": "Visual",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/visual/separator.js",
+            "line": 131,
+            "description": "Called when the locale is changed.",
+            "itemtype": "method",
+            "name": "__onLocaleChanged",
             "access": "private",
             "tagname": "",
             "class": "photonui.Separator",
@@ -5201,7 +5571,7 @@
         },
         {
             "file": "photonui/base.js",
-            "line": 112,
+            "line": 134,
             "description": "Object containing references javascript events binding (for widget\ninternal use).",
             "itemtype": "property",
             "name": "__events",
@@ -5214,7 +5584,7 @@
         },
         {
             "file": "photonui/base.js",
-            "line": 122,
+            "line": 144,
             "description": "Object containing references to registered callbacks.",
             "itemtype": "property",
             "name": "__callbacks",
@@ -5227,7 +5597,7 @@
         },
         {
             "file": "photonui/base.js",
-            "line": 140,
+            "line": 162,
             "description": "Destroy the class.",
             "itemtype": "method",
             "name": "destroy",
@@ -5237,7 +5607,7 @@
         },
         {
             "file": "photonui/base.js",
-            "line": 152,
+            "line": 174,
             "description": "Register a callback for any PhotonUI/Widget event (called wEvent).\n\nCallback signature:\n\n    function(Object(Base/Widget) [, arg1 [, arg2 [, ...]]])",
             "itemtype": "method",
             "name": "registerCallback",
@@ -5269,7 +5639,7 @@
         },
         {
             "file": "photonui/base.js",
-            "line": 176,
+            "line": 198,
             "description": "Remove a registered callback.",
             "itemtype": "method",
             "name": "removeCallback",
@@ -5286,7 +5656,7 @@
         },
         {
             "file": "photonui/base.js",
-            "line": 194,
+            "line": 216,
             "description": "Force the update of the given properties.",
             "itemtype": "method",
             "name": "_updateProperties",
@@ -5305,7 +5675,7 @@
         },
         {
             "file": "photonui/base.js",
-            "line": 207,
+            "line": 229,
             "description": "Javascript event binding (for internal use).",
             "itemtype": "method",
             "name": "_bindEvent",
@@ -5339,7 +5709,7 @@
         },
         {
             "file": "photonui/base.js",
-            "line": 230,
+            "line": 252,
             "description": "Unbind javascript event.",
             "itemtype": "method",
             "name": "_unbindEvent",
@@ -5358,7 +5728,7 @@
         },
         {
             "file": "photonui/base.js",
-            "line": 246,
+            "line": 268,
             "description": "Register available wEvent.",
             "itemtype": "method",
             "name": "_registerWEvents",
@@ -5377,7 +5747,7 @@
         },
         {
             "file": "photonui/base.js",
-            "line": 259,
+            "line": 284,
             "description": "Call all callbacks for the given wEvent.\n\nNOTE: the first argument passed to the callback is the current widget.\nNOTE²: if the thisArg of the callback is null, this will be binded to the current widget.",
             "itemtype": "method",
             "name": "_callCallbacks",
@@ -5482,7 +5852,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 125,
+            "line": 126,
             "description": "The unique name of the widget.",
             "itemtype": "property",
             "name": "name",
@@ -5494,7 +5864,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 147,
+            "line": 148,
             "description": "Is the widget visible or hidden.",
             "itemtype": "property",
             "name": "visible",
@@ -5506,7 +5876,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 175,
+            "line": 176,
             "description": "Tooltip.",
             "itemtype": "property",
             "name": "tooltip",
@@ -5518,7 +5888,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 198,
+            "line": 199,
             "description": "The name of the managed contextual menu (`photonui.PopupWindow().name`).",
             "itemtype": "property",
             "name": "contextMenuName",
@@ -5530,7 +5900,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 215,
+            "line": 216,
             "description": "The managed contextual menu.",
             "itemtype": "property",
             "name": "contextMenu",
@@ -5542,7 +5912,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 235,
+            "line": 236,
             "description": "Layout options.",
             "itemtype": "property",
             "name": "layoutOptions",
@@ -5554,7 +5924,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 254,
+            "line": 255,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -5567,7 +5937,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 267,
+            "line": 268,
             "description": "Absolute position of the widget on the page.\n\n`{x: Number, y: Number}`",
             "itemtype": "property",
             "name": "absolutePosition",
@@ -5579,7 +5949,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 283,
+            "line": 284,
             "description": "Widget width (outer HTML element).",
             "itemtype": "property",
             "name": "offsetWidth",
@@ -5591,7 +5961,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 297,
+            "line": 298,
             "description": "Widget height (outer HTML element).",
             "itemtype": "property",
             "name": "offsetHeight",
@@ -5603,7 +5973,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 315,
+            "line": 316,
             "description": "Object containing references to the widget HTML elements",
             "itemtype": "property",
             "name": "__html",
@@ -5616,7 +5986,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 333,
+            "line": 334,
             "description": "Display the widget (equivalent to widget.visible = true).",
             "itemtype": "method",
             "name": "show",
@@ -5626,7 +5996,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 342,
+            "line": 343,
             "description": "DHide the widget (equivalent to widget.visible = false).",
             "itemtype": "method",
             "name": "hide",
@@ -5636,7 +6006,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 351,
+            "line": 352,
             "description": "Destroy the widget.",
             "itemtype": "method",
             "name": "destroy",
@@ -5646,7 +6016,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 364,
+            "line": 365,
             "description": "Add a class to the outer HTML element of the widget.",
             "itemtype": "method",
             "name": "addClass",
@@ -5663,7 +6033,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 381,
+            "line": 382,
             "description": "Remove a class from the outer HTML element of the widget.",
             "itemtype": "method",
             "name": "removeClass",
@@ -5680,7 +6050,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 403,
+            "line": 404,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -5692,7 +6062,7 @@
         },
         {
             "file": "photonui/widget.js",
-            "line": 419,
+            "line": 420,
             "description": "Called when the context menu should be displayed.",
             "itemtype": "method",
             "name": "__onContextMenu",
@@ -5704,6 +6074,18 @@
                     "description": ""
                 }
             ],
+            "class": "photonui.Widget",
+            "module": "PhotonUI",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/widget.js",
+            "line": 435,
+            "description": "Called when the locale is changed.",
+            "itemtype": "method",
+            "name": "__onLocaleChanged",
+            "access": "private",
+            "tagname": "",
             "class": "photonui.Widget",
             "module": "PhotonUI",
             "namespace": "photonui"
