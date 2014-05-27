@@ -4733,6 +4733,21 @@
         {
             "file": "photonui/misc/translation.js",
             "line": 105,
+            "description": "Guess the user language.",
+            "itemtype": "method",
+            "name": "guessUserLanguage",
+            "return": {
+                "description": "The language code (e.g. \"en\", \"fr\", \"it\",...)",
+                "type": "String"
+            },
+            "class": "photonui.Translation",
+            "module": "PhotonUI",
+            "submodule": "Misc",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/misc/translation.js",
+            "line": 113,
             "description": "Make a string translatable.",
             "itemtype": "method",
             "name": "gettext",
@@ -4759,7 +4774,7 @@
         },
         {
             "file": "photonui/misc/translation.js",
-            "line": 115,
+            "line": 123,
             "description": "Make a string translatable.\n\nTthe main difference between this method and the `gettext` method is \nthat this method does not return a translated sting but an object that\nwill translate the sting when it will be displayed (.toString() method\ncalled).",
             "itemtype": "method",
             "name": "lazyGettext",
@@ -4786,7 +4801,7 @@
         },
         {
             "file": "photonui/misc/translation.js",
-            "line": 136,
+            "line": 144,
             "itemtype": "method",
             "name": "__onStonejsLocaleChanged",
             "access": "private",
