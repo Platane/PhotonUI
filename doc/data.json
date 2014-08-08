@@ -245,11 +245,33 @@
                 "photonui": 1
             }
         },
+        "photonui/input/color/color.js": {
+            "name": "photonui/input/color/color.js",
+            "modules": {},
+            "classes": {
+                "photonui.Color": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
         "photonui/input/color/colorpalette.js": {
             "name": "photonui/input/color/colorpalette.js",
             "modules": {},
             "classes": {
                 "photonui.ColorPalette": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "photonui": 1
+            }
+        },
+        "photonui/input/color/colorpicker.js": {
+            "name": "photonui/input/color/colorpicker.js",
+            "modules": {},
+            "classes": {
+                "photonui.ColorPicker": 1
             },
             "fors": {},
             "namespaces": {
@@ -518,7 +540,9 @@
                 "photonui.CheckBox": 1,
                 "photonui.Switch": 1,
                 "photonui.ToggleButton": 1,
+                "photonui.Color": 1,
                 "photonui.ColorPalette": 1,
+                "photonui.ColorPicker": 1,
                 "photonui.Field": 1,
                 "photonui.NumericField": 1,
                 "photonui.TextAreaField": 1,
@@ -623,7 +647,9 @@
                 "photonui.CheckBox": 1,
                 "photonui.Switch": 1,
                 "photonui.ToggleButton": 1,
+                "photonui.Color": 1,
                 "photonui.ColorPalette": 1,
+                "photonui.ColorPicker": 1,
                 "photonui.Field": 1,
                 "photonui.NumericField": 1,
                 "photonui.TextAreaField": 1,
@@ -1088,6 +1114,31 @@
                 "photonui.Button"
             ]
         },
+        "photonui.Color": {
+            "name": "photonui.Color",
+            "shortname": "Color",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/color/color.js",
+            "line": 45,
+            "description": "Handle colors.\n\nwEvents:\n\n  * value-changed:\n     - description: the selected color changed.\n     - callback:    function(photonui.Color)",
+            "is_constructor": 1,
+            "extends": "photonui.Base",
+            "params": [
+                {
+                    "name": "",
+                    "description": "An object that can contain any property of the Color class (optional).",
+                    "type": "Object",
+                    "multiple": true
+                }
+            ]
+        },
         "photonui.ColorPalette": {
             "name": "photonui.ColorPalette",
             "shortname": "ColorPalette",
@@ -1102,6 +1153,30 @@
             "file": "photonui/input/color/colorpalette.js",
             "line": 54,
             "description": "A Color Palette.\n\nwEvents:\n\n  * value-changed:\n     - description: the selected color changed.\n     - callback:    function(widget, color)",
+            "is_constructor": 1,
+            "extends": "photonui.Widget",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "An object that can contain any property of the widget (optional).",
+                    "type": "Object"
+                }
+            ]
+        },
+        "photonui.ColorPicker": {
+            "name": "photonui.ColorPicker",
+            "shortname": "ColorPicker",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui",
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 45,
+            "description": "A Color Picker.\n\nwEvents:\n\n  * value-changed:\n     - description: the selected color changed.\n     - callback:    function(widget, color)",
             "is_constructor": 1,
             "extends": "photonui.Widget",
             "params": [
@@ -2470,6 +2545,19 @@
         {
             "file": "photonui/container/window/window.js",
             "line": 145,
+            "description": "Modal window?",
+            "itemtype": "property",
+            "name": "modal",
+            "type": "Boolean",
+            "default": "false",
+            "class": "photonui.Window",
+            "module": "PhotonUI",
+            "submodule": "Container",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/container/window/window.js",
+            "line": 172,
             "description": "HTML Element that contain the child widget HTML.",
             "itemtype": "property",
             "name": "containerNode",
@@ -2482,7 +2570,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 176,
+            "line": 208,
             "description": "Bring the window to front.",
             "itemtype": "method",
             "name": "moveToFront",
@@ -2493,7 +2581,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 190,
+            "line": 222,
             "description": "Bring the window to the back.",
             "itemtype": "method",
             "name": "moveToBack",
@@ -2504,7 +2592,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 204,
+            "line": 236,
             "description": "Destroy the widget.",
             "itemtype": "method",
             "name": "destroy",
@@ -2515,7 +2603,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 221,
+            "line": 254,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -2528,7 +2616,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 252,
+            "line": 285,
             "description": "Update all the windows.",
             "itemtype": "method",
             "name": "_updateWindowList",
@@ -2541,7 +2629,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 277,
+            "line": 313,
             "description": "Start moving the window.",
             "itemtype": "method",
             "name": "_moveDragStart",
@@ -2561,7 +2649,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 295,
+            "line": 331,
             "description": "Move the window.",
             "itemtype": "method",
             "name": "_moveDragging",
@@ -2591,7 +2679,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 314,
+            "line": 350,
             "description": "Stop moving the window.",
             "itemtype": "method",
             "name": "_moveDragEnd",
@@ -2611,7 +2699,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 327,
+            "line": 363,
             "description": "Close button clicked.",
             "itemtype": "method",
             "name": "_closeButtonClicked",
@@ -2631,7 +2719,7 @@
         },
         {
             "file": "photonui/container/window/window.js",
-            "line": 338,
+            "line": 374,
             "description": "Called when the locale is changed.",
             "itemtype": "method",
             "name": "__onLocaleChanged",
@@ -3357,11 +3445,10 @@
         {
             "file": "photonui/input/button/colorbutton.js",
             "line": 78,
-            "description": "The value (color).",
+            "description": "The value (color in rgb hexadecimal format (e.g. \"#ff0000\")).",
             "itemtype": "property",
             "name": "value",
             "type": "String",
-            "default": ": \"#FF0000\"",
             "class": "photonui.ColorButton",
             "module": "PhotonUI",
             "submodule": "Input",
@@ -3369,7 +3456,19 @@
         },
         {
             "file": "photonui/input/button/colorbutton.js",
-            "line": 105,
+            "line": 93,
+            "description": "The color.",
+            "itemtype": "property",
+            "name": "color",
+            "type": "kzd.Color",
+            "class": "photonui.ColorButton",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/button/colorbutton.js",
+            "line": 119,
             "description": "Update the button content",
             "itemtype": "method",
             "name": "_update",
@@ -3382,7 +3481,7 @@
         },
         {
             "file": "photonui/input/button/colorbutton.js",
-            "line": 115,
+            "line": 129,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
@@ -3395,7 +3494,7 @@
         },
         {
             "file": "photonui/input/button/colorbutton.js",
-            "line": 138,
+            "line": 152,
             "description": "Called when the button is clicked.",
             "itemtype": "method",
             "name": "__onButtonClicked",
@@ -3414,7 +3513,7 @@
         },
         {
             "file": "photonui/input/button/colorbutton.js",
-            "line": 150,
+            "line": 164,
             "description": "Called when the palette color change.",
             "itemtype": "method",
             "name": "__onPaletteValueChanged",
@@ -3563,13 +3662,275 @@
             "namespace": "photonui"
         },
         {
+            "file": "photonui/input/color/color.js",
+            "line": 89,
+            "description": "The color in HTML RGB hexadecimal format (e.g. \"#FF0000\").",
+            "itemtype": "property",
+            "name": "hexString",
+            "type": "String",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 148,
+            "description": "The color in HTML RGB format (e.g. \"rgb(255, 0, 0)\").",
+            "itemtype": "property",
+            "name": "rgbString",
+            "type": "String",
+            "readonly": "",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 159,
+            "description": "The color in HTML RGBA format (e.g. \"rgba(255, 0, 0, 1.0)\").",
+            "itemtype": "property",
+            "name": "rgbaString",
+            "type": "String",
+            "readonly": "",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 170,
+            "description": "Red (0-255).",
+            "itemtype": "property",
+            "name": "red",
+            "type": "Number",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 187,
+            "description": "Green (0-255).",
+            "itemtype": "property",
+            "name": "green",
+            "type": "Number",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 204,
+            "description": "Blue (0-255).",
+            "itemtype": "property",
+            "name": "blue",
+            "type": "Number",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 221,
+            "description": "Alpha channel (0-255)",
+            "itemtype": "property",
+            "name": "alpha",
+            "type": "Number",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 238,
+            "description": "Hue (0-360).",
+            "itemtype": "property",
+            "name": "hue",
+            "type": "Number",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 255,
+            "description": "Saturation (0-100).",
+            "itemtype": "property",
+            "name": "saturation",
+            "type": "Number",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 272,
+            "description": "Brightness (0-100).",
+            "itemtype": "property",
+            "name": "brightness",
+            "type": "Number",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 297,
+            "description": "Set RGB(A) color (alias for setRGBA).\n\nThe params can also be replaced by an array.",
+            "itemtype": "method",
+            "name": "setRGB",
+            "params": [
+                {
+                    "name": "red",
+                    "description": "(0-255)",
+                    "type": "Number"
+                },
+                {
+                    "name": "green",
+                    "description": "(0-255)",
+                    "type": "Number"
+                },
+                {
+                    "name": "blue",
+                    "description": "(0-255)",
+                    "type": "Number"
+                }
+            ],
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 311,
+            "description": "Set RGBA color.\n\nThe params can also be replaced by an array.",
+            "itemtype": "method",
+            "name": "setRGBA",
+            "params": [
+                {
+                    "name": "red",
+                    "description": "(0-255)",
+                    "type": "Number"
+                },
+                {
+                    "name": "green",
+                    "description": "(0-255)",
+                    "type": "Number"
+                },
+                {
+                    "name": "blue",
+                    "description": "(0-255)",
+                    "type": "Number"
+                },
+                {
+                    "name": "alpha",
+                    "description": "(optional, 0-255)",
+                    "type": "Number"
+                }
+            ],
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 335,
+            "description": "Get RGB.",
+            "itemtype": "method",
+            "name": "getRGB",
+            "return": {
+                "description": "[red(0-255), green(0-255), blue(0-255)]",
+                "type": "Array"
+            },
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 345,
+            "description": "Get RGBA.",
+            "itemtype": "method",
+            "name": "getRGBA",
+            "return": {
+                "description": "[red(0-255), green(0-255), blue(0-255), alpha(0-255)]",
+                "type": "Array"
+            },
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 355,
+            "description": "Set HSB color\n\nThe params can also be replaced by an array.",
+            "itemtype": "method",
+            "name": "setHSB",
+            "params": [
+                {
+                    "name": "hue",
+                    "description": "(0-360)",
+                    "type": "Number"
+                },
+                {
+                    "name": "saturation",
+                    "description": "(0-100)",
+                    "type": "Number"
+                },
+                {
+                    "name": "brightness",
+                    "description": "(0-100)",
+                    "type": "Number"
+                }
+            ],
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 383,
+            "description": "Update HSB from RGB.",
+            "itemtype": "method",
+            "name": "_updateHSB",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/color.js",
+            "line": 427,
+            "description": "Update RGB from HSB.",
+            "itemtype": "method",
+            "name": "_updateRGB",
+            "class": "photonui.Color",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
             "file": "photonui/input/color/colorpalette.js",
-            "line": 86,
-            "description": "The value (color).",
+            "line": 87,
+            "description": "The value (color in rgb hexadecimal format (e.g. \"#ff0000\")).",
             "itemtype": "property",
             "name": "value",
             "type": "String",
-            "default": ": \"#FF0000\"",
             "class": "photonui.ColorPalette",
             "module": "PhotonUI",
             "submodule": "Input",
@@ -3577,7 +3938,19 @@
         },
         {
             "file": "photonui/input/color/colorpalette.js",
-            "line": 103,
+            "line": 101,
+            "description": "The color.",
+            "itemtype": "property",
+            "name": "color",
+            "type": "kzd.Color",
+            "class": "photonui.ColorPalette",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpalette.js",
+            "line": 119,
             "description": "The color palette.",
             "itemtype": "property",
             "name": "palette",
@@ -3590,7 +3963,7 @@
         },
         {
             "file": "photonui/input/color/colorpalette.js",
-            "line": 142,
+            "line": 158,
             "description": "Html outer element of the widget (if any).",
             "itemtype": "property",
             "name": "html",
@@ -3604,13 +3977,373 @@
         },
         {
             "file": "photonui/input/color/colorpalette.js",
-            "line": 160,
+            "line": 178,
             "description": "Build the widget HTML.",
             "itemtype": "method",
             "name": "_buildHtml",
             "access": "private",
             "tagname": "",
             "class": "photonui.ColorPalette",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 92,
+            "description": "The value (color in rgb hexadecimal format (e.g. \"#ff0000\")).",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 108,
+            "description": "The color.",
+            "itemtype": "property",
+            "name": "color",
+            "type": "kzd.Color",
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 135,
+            "description": "Html outer element of the widget (if any).",
+            "itemtype": "property",
+            "name": "html",
+            "type": "HTMLElement",
+            "default": "null",
+            "readonly": "",
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 149,
+            "description": "Buffer canvas for hue circle.",
+            "itemtype": "property",
+            "name": "__buffH",
+            "access": "private",
+            "tagname": "",
+            "type": "HTMLCanvasElement",
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 158,
+            "description": "Buffer canvas for saturation/brightness square.",
+            "itemtype": "property",
+            "name": "__buffSB",
+            "access": "private",
+            "tagname": "",
+            "type": "HTMLCanvasElement",
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 167,
+            "description": "Mouse manager.",
+            "itemtype": "property",
+            "name": "__mouseManager",
+            "access": "private",
+            "tagname": "",
+            "type": "photonui.MouseManager",
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 176,
+            "description": "FLAG: Disable SB square update.",
+            "itemtype": "property",
+            "name": "__disableSBUpdate",
+            "access": "private",
+            "tagname": "",
+            "type": "Boolean",
+            "default": "false",
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 197,
+            "description": "Build the widget HTML.",
+            "itemtype": "method",
+            "name": "_buildHtml",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 221,
+            "description": "Update hue circle",
+            "itemtype": "method",
+            "name": "_updateH",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 250,
+            "description": "Update saturation/brightness square",
+            "itemtype": "method",
+            "name": "_updateSB",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 286,
+            "description": "Update the canvas",
+            "itemtype": "method",
+            "name": "_updateCanvas",
+            "access": "private",
+            "tagname": "",
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 325,
+            "description": "Is the pointer on the SB Square?",
+            "itemtype": "method",
+            "name": "_pointerOnSquare",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "mstate",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 337,
+            "description": "Is the pointer on the hue circle?",
+            "itemtype": "method",
+            "name": "_pointerOnCircle",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "mstate",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 352,
+            "description": "the angle of the pointer with the horizontal line that pass by the center of the hue circle.",
+            "itemtype": "method",
+            "name": "_pointerAngle",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "mstate",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "the angle in degree.",
+                "type": "Number"
+            },
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 378,
+            "itemtype": "method",
+            "name": "__onMouseMove",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "manager",
+                    "description": "",
+                    "type": "photonui.MouseManager"
+                },
+                {
+                    "name": "mstate",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 393,
+            "itemtype": "method",
+            "name": "__onMouseDown",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "manager",
+                    "description": "",
+                    "type": "photonui.MouseManager"
+                },
+                {
+                    "name": "mstate",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 413,
+            "itemtype": "method",
+            "name": "__onDragStart",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "manager",
+                    "description": "",
+                    "type": "photonui.MouseManager"
+                },
+                {
+                    "name": "mstate",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 431,
+            "itemtype": "method",
+            "name": "__onDraggingSquare",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "manager",
+                    "description": "",
+                    "type": "photonui.MouseManager"
+                },
+                {
+                    "name": "mstate",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 443,
+            "itemtype": "method",
+            "name": "__onDraggingCircle",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "manager",
+                    "description": "",
+                    "type": "photonui.MouseManager"
+                },
+                {
+                    "name": "mstate",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.ColorPicker",
+            "module": "PhotonUI",
+            "submodule": "Input",
+            "namespace": "photonui"
+        },
+        {
+            "file": "photonui/input/color/colorpicker.js",
+            "line": 454,
+            "itemtype": "method",
+            "name": "__onDragEnd",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "manager",
+                    "description": "",
+                    "type": "photonui.MouseManager"
+                },
+                {
+                    "name": "mstate",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "photonui.ColorPicker",
             "module": "PhotonUI",
             "submodule": "Input",
             "namespace": "photonui"

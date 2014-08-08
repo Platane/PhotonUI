@@ -57,9 +57,13 @@
             
                 <li><a href="../classes/photonui.CheckBox.html">photonui.CheckBox</a></li>
             
+                <li><a href="../classes/photonui.Color.html">photonui.Color</a></li>
+            
                 <li><a href="../classes/photonui.ColorButton.html">photonui.ColorButton</a></li>
             
                 <li><a href="../classes/photonui.ColorPalette.html">photonui.ColorPalette</a></li>
+            
+                <li><a href="../classes/photonui.ColorPicker.html">photonui.ColorPicker</a></li>
             
                 <li><a href="../classes/photonui.Container.html">photonui.Container</a></li>
             
@@ -255,6 +259,7 @@ photonui.ColorPalette = photonui.Widget.$extend({
 
     // Constructor
     __init__: function(params) {
+        this._color = new photonui.Color();
         this._registerWEvents([&quot;value-changed&quot;]);
         this.$super(params);
         this._updateProperties([&quot;palette&quot;, &quot;value&quot;]);
@@ -270,20 +275,35 @@ photonui.ColorPalette = photonui.Widget.$extend({
 
 
     /**
-     * The value (color).
+     * The value (color in rgb hexadecimal format (e.g. &quot;#ff0000&quot;)).
      *
      * @property value
      * @type String
-     * @default: &quot;#FF0000&quot;
      */
-    _value: &quot;#FF0000&quot;,
-
     getValue: function() {
-        return this._value;
+        return this.color.hexString;
     },
 
     setValue: function(value) {
-        this._value = value;
+        this.color.hexString = value;
+    },
+
+    /**
+     * The color.
+     *
+     * @property color
+     * @type kzd.Color
+     */
+    _color: null,
+
+    getColor: function() {
+        return this._color;
+    },
+
+    setColor: function(color) {
+        if (color instanceof photonui.Color) {
+            this._color = color;
+        }
     },
 
     /**
@@ -342,6 +362,8 @@ photonui.ColorPalette = photonui.Widget.$extend({
     // Methods                              //
     //////////////////////////////////////////
 
+
+    // ====== Private methods ======
 
     /**
      * Build the widget HTML.
