@@ -179,6 +179,7 @@
         <script src="../photonui/container/window/popupwindow.js"></script>
         <script src="../photonui/container/window/dialog.js"></script>
         <script src="../photonui/input/color/colorpicker.js"></script>
+        <script src="../photonui/input/color/colorpicker-old.js"></script>
         <script src="../photonui/container/layout/boxlayout.js"></script>
         <script src="../photonui/container/menu/menu.js"></script>
         <script src="../photonui/container/menu/menuitem.js"></script>
@@ -195,25 +196,36 @@
         <div id="infos" style="position: absolute; top: 380px; left: 40px; font-family: monospace"></div>
         <div id="widget-area"></div>
         <script id="photonui-demo">
-            function onValueChanged() {
-                var e = document.getElementById("infos");
-                e.innerHTML = "Color name: " + cp.color.hexString + "<br />";
-                e.innerHTML += "<br />";
-                e.innerHTML += "Red: " + cp.color.red + "<br />";
-                e.innerHTML += "Green: " + cp.color.green + "<br />";
-                e.innerHTML += "Blue: " + cp.color.blue + "<br />";
-                e.innerHTML += "Alpha: " + cp.color.alpha + "<br />";
-                e.innerHTML += "<br />";
-                e.innerHTML += "Hue: " + cp.color.hue + "<br />";
-                e.innerHTML += "Saturation: " + cp.color.saturation + "<br />";
-                e.innerHTML += "Brightness: " + cp.color.brightness + "<br />";
+            var e = document.getElementById("infos");
+
+            function onValueChanged( ) {
+                
+                var html = "Color name: " + cp.color.hexString + "<br />";
+                html += "<br />";
+                html += "Red: " + cp.color.red + "<br />";
+                html += "Green: " + cp.color.green + "<br />";
+                html += "Blue: " + cp.color.blue + "<br />";
+                html += "Alpha: " + cp.color.alpha + "<br />";
+                html += "<br />";
+                html += "Hue: " + cp.color.hue + "<br />";
+                html += "Saturation: " + cp.color.saturation + "<br />";
+                html += "Brightness: " + cp.color.brightness + "<br />";
+
+                e.innerHTML = html;
+                
+                cp2.setValue( cp.color.hexString )
             }
 
             var cp = new photonui.ColorPicker();
             cp.registerCallback("change", "value-changed", onValueChanged);
+
+
+            var cp2 = new photonui.ColorPickerOld();
+
             onValueChanged();
 
             photonui.domInsert(cp, document.getElementById("widget-area"));
+            photonui.domInsert(cp2, document.getElementById("widget-area"));
         </script>
         <!-- /Demo Script -->
 
